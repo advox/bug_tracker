@@ -10,7 +10,8 @@ const userSchema = new Schema({
     color: String,
     createdAt: {type: Date, default: Date.now},
     updatedAt: {type: Date, default: Date.now},
-    lastLogin: {type: Date}
+    lastLogin: {type: Date},
+    tasks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Task' }]
 });
 
 const User = mongoose.model('User', userSchema);
