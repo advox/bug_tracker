@@ -7,11 +7,11 @@ const taskSchema = new Schema({
     description: String,
     rank: Number,
     important: Number,
-    authorId: {
+    author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    assigneeId: {
+    assignee: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },

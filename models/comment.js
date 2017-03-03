@@ -2,17 +2,17 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
-    authorId: {
+    author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    parentId: {
+    parent: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comment'
     },
     content: String,
     status: Number,
-    taskId: {
+    task: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Task'
     },
