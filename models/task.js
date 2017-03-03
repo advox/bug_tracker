@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const taskSchema = new Schema({
     status: Number,
     title: String,
-    description: String,
+    content: String,
     rank: Number,
     important: Number,
     author: {
@@ -17,8 +17,12 @@ const taskSchema = new Schema({
     },
     notifications: Array,
     files: Array,
-    createdAt: {type: Date, default: Date.now},
-    updatedAt: {type: Date, default: Date.now}
+    createdAt: { type: Date, default: Date.now },
+    updatedAt: { type: Date, default: Date.now },
+    comments: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comment'
+    }]
 });
 
 const Task = mongoose.model('Task', taskSchema);

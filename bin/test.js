@@ -4,45 +4,54 @@ const Comment = require('../models/comment');
 const Task = require('../models/task');
 
 // Task.remove({}, function () {console.log('removed tasks')});
-// User.remove({}, function () {console.log('removed tasks')});
+// User.remove({}, function () {console.log('removed users')});
+// return null;
 
-var mc = new User({
-    login: 'maciej',
-    password: 'xxx',
-    email: 'mmbozek',
+const user = new User({
+    login: 'michal',
+    password: 'pass',
+    email: 'michalpnowicki',
     status: 1,
     group: 1,
-    color: 'cccccc'
+    color: '#cccccc'
 });
 
-// mc.save((err) => {
-//     console.log(err)
-// });
+//user.save();
 
-User.findOne({login:'maciej'}, (err, user) => {
-    var tc = new Task({
-        status: 1,
-        title: 'test',
-        description: 'cvc',
-        rank: 1,
-        important: 1,
-        author: user._id,
-        assignee: user._id,
-        notifications: [],
-        files: [],
-    });
-    // tc.save();
-    // user.tasks.push(tc);
-});
 
-Task.findOne({title:'test'})
-    .populate('author assignee')
-    .exec((err, task) => {
-        console.log(task);
+setTimeout(function() {
+    User.findOne({login : 'michal'},function(err, data) {
+        var task = new Task({
+            status: 1,
+            title: 'test task',
+            content: 'test desc',
+            rank: 1,
+            important: 1,
+            author: data._id,
+            assignee: data._id,
+            notifications: [],
+            files: [],
+        });
+        //task.save();
+        data.tasks.push(task);
+        //data.save();
     });
+}, 1000);
 
-User.findOne({ login: 'maciej' })
-    .populate('tasks')
-    .exec(function (err, user) {
-        console.log(user);
-    });
+setTimeout(function() {
+    Task.findOne( {title : 'test task'} )
+        .populate('author assignee')
+        .exec((err, data) => {
+            console.log(data);
+            console.log(data.title);
+        });
+
+    User.findOne({ login: 'michal' })
+        .populate('tasks')
+        .exec(function (err, data) {
+            console.log(data);
+            console.log(data.login);
+        });
+}, 1000);
+
+return null;
