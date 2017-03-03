@@ -2,11 +2,20 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
-    author: Number,
-    parentId: Number,
+    authorId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    parentId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comment'
+    },
     content: String,
     status: Number,
-    taskId: Number,
+    taskId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Task'
+    },
     files: String,
     notifications: Array,
     priority: Number,

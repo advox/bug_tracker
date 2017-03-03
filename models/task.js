@@ -7,8 +7,14 @@ const taskSchema = new Schema({
     description: String,
     rank: Number,
     important: Number,
-    author: [{type:Schema.ObjectId, ref:'User'}],
-    assignee: [{type:Schema.ObjectId, ref:'User'}],
+    authorId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    assigneeId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
     notifications: Array,
     files: Array,
     createdAt: {type: Date, default: Date.now},
