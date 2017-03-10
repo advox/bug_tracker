@@ -5,10 +5,13 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
 const app = express();
+const passport = require('passport');
+const hbs = require('./app/handlebars');
 
 app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 
 app.set('views', path.join(__dirname, 'views'));
+app.engine('handlebars', hbs);
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
@@ -16,7 +19,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-const passport = require('passport');
 
 app.use(passport.initialize());
 app.use(passport.session());

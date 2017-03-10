@@ -26,6 +26,29 @@ const taskSchema = new Schema({
     }]
 });
 
-const Task = mongoose.model('Task', taskSchema);
+
+taskSchema.statics.findDone = function () {
+    return new Promise((resolve, reject) => {
+        this.find({status: 4}, (err, tasks) => {
+            if (err) {
+                return reject(err);
+            }
+            return resolve(tasks);
+        });
+    });
+};
+
+taskSchema.statics.findToDo = function () {
+    return new Promise((resolve, reject) => {
+        this.find({status: {$ne: 4}}, (err, tasks) => {
+            if (err) {
+                return reject(err);
+            }
+            return resolve(tasks);
+        })
+    })
+};
+
+let Task = mongoose.model('Task', taskSchema);
 
 module.exports = Task;

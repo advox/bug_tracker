@@ -6,6 +6,7 @@
     "start": "node_modules/.bin/node-sass --output-style compressed public/stylesheets/_bootstrap.scss public/stylesheets/bootstrap.css && node_modules/.bin/node-sass --output-style compressed public/stylesheets/style.scss public/stylesheets/style.css && nodemon ./bin/www"
   },
   "dependencies": {
+    "bluebird": "^3.5.0",
     "body-parser": "~1.16.0",
     "bootstrap": "^3.3.7",
     "connect-ensure-login": "^0.1.1",
@@ -17,6 +18,7 @@
     "hbs": "~4.0.1",
     "mongoose": "^4.8.5",
     "morgan": "~1.7.0",
+    "node-datetime": "^1.0.0",
     "node-sass": "^4.5.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",

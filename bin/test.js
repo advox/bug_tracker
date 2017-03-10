@@ -16,7 +16,7 @@ const user = new User({
     color: '#cccccc'
 });
 
-//user.save();
+// user.save();
 
 
 setTimeout(function() {
@@ -32,9 +32,9 @@ setTimeout(function() {
             notifications: [],
             files: [],
         });
-        //task.save();
+        task.save();
         data.tasks.push(task);
-        //data.save();
+        data.save();
     });
 }, 1000);
 
