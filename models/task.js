@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const db = require('../bin/db');
 
 const taskSchema = new Schema({
     status: Number,
