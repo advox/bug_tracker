@@ -1,5 +1,43 @@
-<div id="tasks">
-    {{#each tasks}}
-        <p>{{{title}}}</p>
-    {{/each}}
+
+        <h1>Active tasks</h1>
+
+        <div id="task-index">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Status</th>
+                    <th>Rank</th>
+                    <th>[!!!]</th>
+                    <th>SEB</th>
+                    <th>Title</th>
+                    <th>Brief</th>
+                    <th>From</th>
+                    <th>For</th>
+                    <th>Posts</th>
+                    <th>Created</th>
+                    <th>Updated</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each tasks}}
+                    <tr>
+                        <td>{{{id}}}</td>
+                        <td>{{{status}}}</td>
+                        <td>{{{rank}}}</td>
+                        <td>{{{important}}}</td>
+                        <td>{{{important}}}</td>
+                        <td>{{{title}}}</td>
+                        <td>{{{description}}}</td>
+                        <td>{{{author}}}</td>
+                        <td>{{{assignee}}}</td>
+                        <td>posty</td>
+                        <td>{{{createdAt}}}</td>
+                        <td>{{{updatedAt}}}</td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
