@@ -5,19 +5,6 @@ const LocalStrategy = require('passport-local').Strategy;
 const user = require('../models/user');
 const app = express();
 
-router.get('/', (req, res) => {
-    res.render('security/login')
-});
-
-app.post('/login', passport.authenticate('local', { failureRedirect: '/' }), (req, res) => {
-    res.redirect('/');
-});
-
-router.post('/login2', (req, res) => {
-    console.log(req.body);
-    res.render('security/login2');
-});
-
 passport.serializeUser(function(user, done) {
     done(null, user);
 });
@@ -36,5 +23,14 @@ passport.use(new LocalStrategy(
         });
     }
 ));
+
+router.get('/', (req, res) => {
+    res.render('security/login')
+});
+
+app.post('/login', passport.authenticate('local', { failureRedirect: '/' }), (req, res) => {
+    res.redirect('/dashboard');
+});
+
 
 module.exports = router;
