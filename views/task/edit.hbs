@@ -1,5 +1,74 @@
-<div id="tasks">
-    {{#each tasks}}
-        <p>{{{title}}}</p>
-    {{/each}}
+<h1>Create/Edit entry</h1>
+{{#each users}}
+    {{{login}}}
+{{/each}}
+<div class="panel panel-default">
+    <div class="panel-body">
+
+        <form id="taskSave" enctype="multipart/form-data" action="task/save" method="post">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" placeholder="Title" value="{{{task.title}}}">
+            </div>
+            <div class="form-group">
+                <label for="content">Description</label>
+                <textarea class="form-control" id="content" name="content">
+                    {{{task.content}}}
+                </textarea>
+            </div>
+            <div class="form-group">
+                <label for="files">Files</label>
+                <input type="file" id="files" multiple>
+            </div>
+            <div class="form-group">
+                <label for="notify">Notify</label>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> [D] Paweł Florczak
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> [D] Paweł Florczak
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> [D] Paweł Florczak
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="priority">Priority</label>
+                <select id="priority" name="priority">
+                    <option value="1">Normal</option>
+                    <option value="2">Urgent</option>
+                </select>
+                <label for="rank">Rank</label>
+                <select id="rank" name="rank">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Sebastian
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="author">From</label>
+                <select id="author" name="author">
+                    <option value="1">Maciej Bozek</option>
+                </select>
+                <label for="assignee">For</label>
+                <select id="assignee" name="assignee">
+                    <option value="1">Maciej Bozek</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+    </div>
 </div>
