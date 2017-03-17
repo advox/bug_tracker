@@ -7,7 +7,6 @@ const routes = require('./routes');
 const app = express();
 const passport = require('passport');
 const hbs = require('./app/handlebars');
-const upload = multer({ storage : storage }).array('files', 5);
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination: function (req, file, callback) {
@@ -17,6 +16,7 @@ const storage = multer.diskStorage({
         callback(null, file.fieldname + '-' + Date.now());
     }
 });
+const upload = multer({ storage : storage }).array('files', 5);
 
 app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 
@@ -29,7 +29,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-const passport = require('passport');
 
 app.use(passport.initialize());
 app.use(passport.session());

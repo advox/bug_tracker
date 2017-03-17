@@ -11,7 +11,7 @@ router.get('/',
         Promise.props({
             done: Task.findDone(),
             todo: Task.findToDo(),
-        }).then(function(results) {
+        }).then(function (results) {
             res.render('task/index', {
                 done: results.done,
                 todo: results.todo,
@@ -25,18 +25,18 @@ router.get('/edit/:id',
         Promise.props({
             task: getTask(req),
             users: getUsers()
-        }).then((function (results) {
+        }).then(function (results) {
             res.render('task/edit', {
                 task: taskData
             });
-        }).catch(function(error){
+        }).catch(function (error) {
             console.log(error);
-        });
+        })
     });
 
 router.post('/save', (req, res) => {
     upload(req, res, (err) => {
-        if(err) {
+        if (err) {
             return res.end("Error uploading file.");
         }
         res.end("File is uploaded");
