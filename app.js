@@ -21,7 +21,7 @@ const upload = multer({ storage : storage }).array('files', 5);
 app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', hbs);
+app.engine('handlebars', hbs());
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));

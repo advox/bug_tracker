@@ -40,12 +40,14 @@ taskSchema.statics.findDone = function () {
 
 taskSchema.statics.findToDo = function () {
     return new Promise((resolve, reject) => {
-        this.find({status: {$ne: 4}}, (err, tasks) => {
-            if (err) {
-                return reject(err);
-            }
-            return resolve(tasks);
-        })
+        this.find({status: {$ne: 4}})
+            .populate('author assignee comments')
+            .exec((err, tasks) => {
+                if (err) {
+                    return reject(err);
+                }
+                return resolve(tasks);
+            })
     })
 };
 

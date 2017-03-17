@@ -1,7 +1,10 @@
 <div class="container">
     <h2>Active tasks</h2>
+    <p>
+        <button onclick="window.document.location='/task/new'" class="btn btn-lg btn-primary">Add new</button>
+    </p>
     <div id="task-index">
-        <table class="table table-hover">
+        <table class="table table-bordered table-hover">
             <thead>
             <tr>
                 <th>ID</th>
@@ -28,11 +31,11 @@
                     <td>{{{important}}}</td>
                     <td>{{{title}}}</td>
                     <td>{{{description}}}</td>
-                    <td>{{{author}}}</td>
-                    <td>{{{assignee}}}</td>
-                    <td>posty</td>
-                    <td>{{{ createdAt}}}</td>
-                    <td>{{{ updatedAt}}}</td>
+                    <td>{{{author.login}}}</td>
+                    <td>{{{assignee.login}}}</td>
+                    <td>{{{comments.length}}}</td>
+                    <td>{{{createdAt}}}</td>
+                    <td>{{{updatedAt}}}</td>
                 </tr>
             {{/each}}
             </tbody>
@@ -41,7 +44,7 @@
 
     <h2>Done tasks</h2>
     <div id="task-index">
-        <table class="table table-hover">
+        <table class="table table-bordered table-hover">
             <thead>
             <tr>
                 <th>ID</th>
@@ -60,7 +63,7 @@
             </thead>
             <tbody>
             {{#each done}}
-                <tr>
+                <tr onclick="window.document.location='/task/edit/{{{id}}}'">
                     <td>{{{id}}}</td>
                     <td>{{{status}}}</td>
                     <td>{{{rank}}}</td>
@@ -68,9 +71,9 @@
                     <td>{{{important}}}</td>
                     <td>{{{title}}}</td>
                     <td>{{{description}}}</td>
-                    <td>{{{author}}}</td>
-                    <td>{{{assignee}}}</td>
-                    <td>posty</td>
+                    <td>{{{author.login}}}</td>
+                    <td>{{{assignee.login}}}</td>
+                    <td>{{{comments.length}}}</td>
                     <td>{{{createdAt}}}</td>
                     <td>{{{updatedAt}}}</td>
                 </tr>

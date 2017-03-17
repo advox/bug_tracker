@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Task = require('../models/task');
 const User = require('../models/user');
+const Comment = require('../models/comment');
 const db = require('../bin/db');
 const Promise = require('bluebird');
 
