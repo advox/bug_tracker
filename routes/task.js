@@ -27,7 +27,8 @@ router.get('/edit/:id',
             users: getUsers()
         }).then(function (results) {
             res.render('task/edit', {
-                task: taskData
+                task: results.task,
+                users: results.users
             });
         }).catch(function (error) {
             console.log(error);
