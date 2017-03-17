@@ -1,0 +1,119 @@
+INSTALACJA
+
+VirtualBox:
+sudo apt-get install virtualbox
+sudo apt-get install virtualbox-qt
+Vagrant:
+sudo apt-get install vagrant (najnowsza wersja 1.9.2)
+VirtualBox DKMS (Dynamic Kernel Module Support Framework) - żeby upewnić się, że najważniejsze moduły VirtualBox'a (vboxdrv, vboxnetflt, vboxnetadp) zostały updateowane  w przypadku zmiany wersji kernela linuxa:
+sudo apt-get install virtualbox-dkms
+VirtualBox Guest Additions:
+vagrant plugin install vagrant-vbguest
+NFS:
+    Local: sudo apt-get install nfs-kernel-server nfs-common portmap
+    Guest: sudo apt-get install nfs-common portmap
+
+
+VAGRANT FILE
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "centos65” # Box bazowy
+  #config.vm.box_url = "http://domain.com/path/to/above.box"” # Url do pobrania boxa - chyba ze jest on już dodany do systemu
+  #config.vm.network "forwarded_port", guest: 80, host: 808 # Port
+  config.vm.network :private_network, ip: "192.168.58.111" # Adres IP do komunikacji host->guest
+  #config.vm.network "public_network" # Sieć publiczna (pojawi się w systemie) 
+  #config.vm.synced_folder "../data", "/vagrant_data" # Folder wymiany
+  config.vm.synced_folder ".", "/vagrant", :nfs => true # folder wymiany z włączonym nfs - taki kod należy wkleić dla naszych systemów
+  config.vm.provider :virtualbox do |vb| # Konfiguracja providera
+    vb.gui = true # Wyświetl gui
+    vb.customize [ # Zasoby      
+      '--memory', '512',
+      '--cpus', '2'
+    ]
+  end
+  # config.push.define "atlas" do |push| # Możliwość pushowania do Vagrant atlas
+  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
+  # end
+  # config.vm.provision "shell", inline: <←SHELL # Shell podczas uruchamiania
+  #   apt-get install -y apache2
+  # SHELL
+end
+
+COMMAND LINE
+VirtualBox list (prawdopodobnie uruchomi GUI)
+vagrant 
+    box             zarządzanie boxami [list, add, remove][--all]
+    connect         połączenie ze zdalnym środowiskiem
+    destroy         stop oraz całkowite usunięcie maszyny
+    halt            zatrzymanie maszyny
+    init            init nowego środowiska Vagranta - utworzenie pliku Vagrantfile
+    login           login do HashiCorp Atlas
+    package         pakowanie zawartości maszyny do nowego boxa
+    plugin          instalacja pluginów
+    provision       odpalenie provisionów
+    reload          restart maszyny - załadowanie nowych ustawień z Vagrantfile
+    resume          wznowienie zawieszonej maszyny
+    share           share wysyłanie na Atlas
+    ssh             połączenie via SSH
+    ssh-config      pokazanie konviguracji serwera OpenSSH
+    status          status
+    suspend         zawieszenie maszyny
+    up              start i odpalenie provisionów środowiska
+    
+FLOW
+
+1) Dostajemy maszynę wirtualną przykładowo DROPCLIENT
+2) vagrant box list - sprawdzamy jakie mamy zainstalowane
+3) usuwamy niepotrzebne boxy bazowe (np. starego dropclienta) przez - vagrant box remove [nazwa] --all, gdzie nazwa to stary identyfikator dropclienta, --all oznacza usunięcie wszystkich plików związanych z tą maszyną prócz współdzielonych oczywiście
+4) dodajemy nowy box bazowy dropclienta: vagrant box add [nazwa] /path/to/file.box czyli w przypadku dropclienta będzie to: vagrant box add dropclient /path/to/file.box
+5) po zadkończeniu importu boxu bazowego, przechodzimy do katalogu gdzie chcemy mieć nasz projekt i piszemy: vagrant init [nazwa] ,czyli dla dropclienta: vagrant init dropclient - oznacza to że w tym miejscu chcemy aby zainstalował się system bazowy dropclienta
+6) zostaje wygenerowany Vagrantfile, gdzie mozemy zmienić ustawienia maszyny (patrz wyżej)
+7) vagrant up - start: dopiero teraz zostanie utworzona maszyna
+8) vagrant ssh - zalogowanie przez SSH
+9) należy skopiować do katalogu głównego gdzie znajdują się plik Vagrantfile wszystkie pliki należące do danego projektu
+10) należy pamiętać aby nadać odpowiednie uprawnienia i tak jeżeli pojawi nam się problem z sesją, oznacza to że katalog var/ ma złe uprawnienia. Pod warunkiem włączonego NFS, należy będąc w głównym katalogu projekti: sudo chown -R www-data:michal var/ oraz sudo chmod -R 0755 var/
+11) należy upewnić się że mamy .htaccess w przypadku dropclienta (apache2) - przykładowy htaccess: https://github.com/nexcess/magento/blob/master/.htaccess.sample
+
+TWORZENIE NOWEGO BOXA BAZOWEGO
+
+1) warto zrobić update czyli: 
+
+sudo apt-get update -y
+sudo apt-get upgrade -y
+# Restart maszyny
+sudo shutdown -r now
+
+2) Aby zalogować się do maszyny trzeba upewnić się że są zainstalowane klucze publiczne:
+
+mkdir -p /home/vagrant/.ssh
+chmod 0700 /home/vagrant/.ssh
+wget --no-check-certificate \
+    https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub \
+    -O /home/vagrant/.ssh/authorized_keys    
+chmod 0600 /home/vagrant/.ssh/authorized_keys
+chown -R vagrant /home/vagrant/.ssh
+
+3) Jeśli nie mamy zainstalowanego, to instalujemy openSSH server
+sudo apt-get install -y openssh-server
+sudo nano /etc/ssh/sshd_config
+4) W pliku sprawdzamy czy Port 22, PubKeyAuthentication yes, AuthorizedKeysFile %h/.ssh/authorized_keys, PermitEmptyPasswords no
+5) Restartujemy ssh
+sudo service ssh restart
+6) Update Guest Additions
+sudo apt-get install -y build-essential linux-headers-server
+
+7) Redukcja rozmiaru (opcjonalnie)
+sudo dd if=/dev/zero of=/EMPTY bs=1M
+sudo rm -f /EMPTY
+
+8) Zamykamy maszyne
+sudo shutdown -h now
+
+8) Pakowanie boxa
+vagrant package --base [nazwa distro maszyny] --output /path/to/file.box
+Nazwę możemy uzyskać po wejściu w VirtualBox. Uwaga nie jest to nazwa boxu bazowego jaki kiedyś doodawaliśmy. Vagrant up tworzy nową maszynę wirtualną w VirtualBoxie i to właśnie nazwa tej maszyny powinna się tu znaleźć
+
+9) Test boxa
+vagrant box add [nazwa] /path/to/file.box
+vagrant init [nazwa]
+vagrant up
