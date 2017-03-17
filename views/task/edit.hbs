@@ -3,6 +3,7 @@
     <div class="panel-body">
 
         <form id="taskSave" enctype="multipart/form-data" action="task/save" method="post">
+            <input type="hidden" name="_id" value="{{{task._id}}}"/>
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" id="title" placeholder="Title" value="{{{task.title}}}">
@@ -30,11 +31,8 @@
             <div class="form-group">
                 <label for="priority">Priority</label>
                 <select id="priority" name="priority">
-                    {{{priority}}}
-                    {{#each priority}}
-                    <option value="{{{id}}}">{{{name}}}</option>
-                    <option value="{{{id}}}">{{{name}}}</option>
-                    {{/each}}
+                    <option value="1">Normal</option>
+                    <option value="2">Urgent</option>
                 </select>
                 <label for="rank">Rank</label>
                 <select id="rank" name="rank">
