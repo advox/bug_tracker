@@ -20,7 +20,7 @@
             </thead>
             <tbody>
             {{#each todo}}
-                <tr>
+                <tr onclick="window.document.location='/edit/{{{id}}}'">
                     <td>{{{id}}}</td>
                     <td>{{{status}}}</td>
                     <td>{{{rank}}}</td>
