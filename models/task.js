@@ -26,7 +26,6 @@ const taskSchema = new Schema({
     }]
 });
 
-
 taskSchema.statics.findDone = function () {
     return new Promise((resolve, reject) => {
         this.find({status: 4}, (err, tasks) => {
@@ -47,6 +46,24 @@ taskSchema.statics.findToDo = function () {
             return resolve(tasks);
         })
     })
+};
+
+taskSchema.statics.findById = function (taskId) {
+    return new Promise((resolve, reject) => {
+        Task.findOne({_id: taskId}, (err, task) => {
+            if (err) {
+                return reject(err);
+            }
+            return resolve(task);
+        });
+    });
+};
+
+taskSchema.statics.getTaskPriorityArray = function () {
+    return [
+        {id: 0, name: 'Normal'},
+        {id: 1, name: 'Urgent'}
+    ];
 };
 
 let Task = mongoose.model('Task', taskSchema);

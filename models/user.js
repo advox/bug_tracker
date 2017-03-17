@@ -5,6 +5,8 @@ const userSchema = new Schema({
     login: String,
     password: String,
     email: String,
+    name: String,
+    surname: String,
     status: Boolean,
     group: Number,
     color: String,
@@ -17,6 +19,18 @@ const userSchema = new Schema({
     }]
 });
 
-const User = mongoose.model('User', userSchema);
+userSchema.statics.findAll = function () {
+    return new Promise((resolve, reject) => {
+        User.find({}, (err, users) => {
+            if (err) {
+                return reject(err);
+            }
+            return resolve(users);
+
+        });
+    });
+};
+
+let User = mongoose.model('User', userSchema);
 
 module.exports = User;

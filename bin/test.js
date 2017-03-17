@@ -3,6 +3,14 @@ const User = require('../models/user');
 const Comment = require('../models/comment');
 const Task = require('../models/task');
 
+User.remove({_id: "58cbc65a0c236d5081b1e208"}, function(err, result) {
+    if (err) {
+        console.log(err);
+    }
+    console.log(result);
+    db.close();
+});
+return null;
 // Task.remove({}, function () {console.log('removed tasks')});
 // User.remove({}, function () {console.log('removed users')});
 // return null;
@@ -11,12 +19,14 @@ const user = new User({
     login: 'michal',
     password: 'pass',
     email: 'michalpnowicki',
+    name: 'Michal',
+    surname: 'Nowicki',
     status: 1,
     group: 1,
     color: '#cccccc'
 });
 
-// user.save();
+ user.save();
 
 
 setTimeout(function() {
