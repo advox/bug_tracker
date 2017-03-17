@@ -1,11 +1,9 @@
 <h1>Create/Edit entry</h1>
-{{#each users}}
-    {{{login}}}
-{{/each}}
 <div class="panel panel-default">
     <div class="panel-body">
 
         <form id="taskSave" enctype="multipart/form-data" action="task/save" method="post">
+            <input type="hidden" name="_id" value="{{{task._id}}}"/>
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" id="title" placeholder="Title" value="{{{task.title}}}">
@@ -22,21 +20,13 @@
             </div>
             <div class="form-group">
                 <label for="notify">Notify</label>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> [D] Paweł Florczak
-                    </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> [D] Paweł Florczak
-                    </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> [D] Paweł Florczak
-                    </label>
-                </div>
+                {{#each users}}
+                    <div class="checkbox">
+                        <label>
+                            <input value="{{{id}}}" type="checkbox"> {{{name}}} {{{surname}}}
+                        </label>
+                    </div>
+                {{/each}}
             </div>
             <div class="form-group">
                 <label for="priority">Priority</label>

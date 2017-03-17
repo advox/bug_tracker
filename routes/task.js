@@ -20,16 +20,34 @@ router.get('/',
         });
     });
 
+router.get('/edit',
+    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+    (req, res) => {
+        Promise.props({
+            users: User.findAll(),
+            priority: Task.getTaskPriorityArray(),
+        }).then(function (results) {
+            res.render('task/edit', {
+                users: results.users,
+                priority: results.priority,
+            });
+        }).catch(function (error) {
+            console.log(error);
+        })
+    });
+
 router.get('/edit/:id',
     require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (req, res) => {
         Promise.props({
-            task: getTask(req),
-            users: getUsers()
+            task: Task.findById(req.params.id),
+            users: User.findAll(),
+            priority: Task.getTaskPriorityArray(),
         }).then(function (results) {
             res.render('task/edit', {
                 task: results.task,
-                users: results.users
+                users: results.users,
+                priority: results.priority,
             });
         }).catch(function (error) {
             console.log(error);
@@ -37,36 +55,13 @@ router.get('/edit/:id',
     });
 
 router.post('/save', (req, res) => {
-    upload(req, res, (err) => {
-        if (err) {
-            return res.end("Error uploading file.");
-        }
-        res.end("File is uploaded");
-    });
+
+    // upload(req, res, (err) => {
+    //     if (err) {
+    //         return res.end("Error uploading file.");
+    //     }
+    //     res.end("File is uploaded");
+    // });
 });
-
-getTask = function getTask(req) {
-    return new Promise((resolve, reject) => {
-        Task.findOne({_id: req.params.id}, (err, task) => {
-            if (err) {
-                return reject(err);
-            }
-            return resolve(task);
-        });
-    });
-};
-
-
-getUsers = function getUsers() {
-    return new Promise((resolve, reject) => {
-        User.find({}, (err, users) => {
-            if (err) {
-                return reject(err);
-            }
-            return resolve(users);
-
-        });
-    });
-};
 
 module.exports = router;
