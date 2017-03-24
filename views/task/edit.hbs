@@ -47,11 +47,15 @@
             <div class="form-group">
                 <label for="author">From</label>
                 <select id="author" name="author">
-                    <option value="1">Maciej Bozek</option>
+                    {{#each users}}
+                        <option value="{{{id}}}">{{{name}}} {{{surname}}}</option>
+                    {{/each}}
                 </select>
                 <label for="assignee">For</label>
                 <select id="assignee" name="assignee">
-                    <option value="1">Maciej Bozek</option>
+                    {{#each users}}
+                        <option value="{{{id}}}">{{{name}}} {{{surname}}}</option>
+                    {{/each}}
                 </select>
             </div>
 

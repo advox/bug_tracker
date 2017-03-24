@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const extend = require('util')._extend;
 const Task = require('../models/task');
 const User = require('../models/user');
 const Comment = require('../models/comment');
@@ -72,21 +71,24 @@ router.post('/save', function(request, response) {
             console.log(err);
             return;
         }
-        Task.findOne({_id: request.body._id}, function(err, data) {
-            if (!data)
-                return next(new Error('Could not load Document'));
-            else {
 
-                data.title = 'dupa44';
-
-                data.save(function(err) {
-                    if (err) {
-                        console.log('error')
-                    }
-                    response.redirect('/task');
-                });
-            }
-        });
+        if (request.body._id) {
+            Task.findOneAndUpdate({_id: request.body._id}, request.body, {}, function(err){
+                if (err) {
+                    console.log(err);
+                }
+                response.redirect('/task');
+            });
+        } else {
+            console.log(request.body);
+            delete request.body['_id'];
+            var task = new Task(request.body);
+            task.status = 1;
+            task.notifications = [];
+            task.files = [];
+            task.save();
+            response.redirect('/task');
+        }
     })
 });
 
