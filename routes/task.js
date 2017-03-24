@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const extend = require('util')._extend;
 const Task = require('../models/task');
 const User = require('../models/user');
 const Comment = require('../models/comment');
@@ -49,6 +50,7 @@ router.get('/new',
 router.get('/edit/:id',
     require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (req, res) => {
+        console.log(req.params.id);
         Promise.props({
             task: Task.findById(req.params.id),
             users: User.findAll(),
@@ -70,8 +72,21 @@ router.post('/save', function(request, response) {
             console.log(err);
             return;
         }
-        console.log(request.body);
-        response.end('Your File Uploaded');
+        Task.findOne({_id: request.body._id}, function(err, data) {
+            if (!data)
+                return next(new Error('Could not load Document'));
+            else {
+
+                data.title = 'dupa44';
+
+                data.save(function(err) {
+                    if (err) {
+                        console.log('error')
+                    }
+                    response.redirect('/task');
+                });
+            }
+        });
     })
 });
 
