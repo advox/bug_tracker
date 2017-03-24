@@ -72,3 +72,15 @@
 
     </div>
 </div>
+<script>
+    jQuery(document).ready(function($){
+        alert(123);
+        return false;
+    });
+    jQuery(document).on('click', '#taskDelete button', function(){
+
+        if (confirm("Are you sure?") == false) {
+            return false;
+        }
+    });
+</script>
