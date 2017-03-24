@@ -80,7 +80,6 @@ router.post('/save', function(request, response) {
                 response.redirect('/task');
             });
         } else {
-            console.log(request.body);
             delete request.body['_id'];
             var task = new Task(request.body);
             task.status = 1;
@@ -90,6 +89,13 @@ router.post('/save', function(request, response) {
             response.redirect('/task');
         }
     })
+});
+
+router.post('/delete', function(request, response) {
+    Task.remove({ _id: request.body._id }, function (err) {
+        if (err) return handleError(err);
+        response.redirect('/task');
+    });
 });
 
 module.exports = router;

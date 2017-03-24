@@ -1,4 +1,12 @@
-<h1>Create/Edit entry</h1>
+{{#if task._id}}
+    <form id="taskDelete" action="/task/delete" method="post">
+        <input type="hidden" name="_id" value="{{{task._id}}}">
+        <h1>Edit entry<small><button type="submit">delete</button></small></h1>
+    </form>
+{{else}}
+    <h1>Create entry</h1>
+{{/if}}
+
 <div class="panel panel-default">
     <div class="panel-body">
 
