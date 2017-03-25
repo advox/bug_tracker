@@ -6,13 +6,18 @@ const bodyParser = require('body-parser');
 const routes = require('./routes');
 const app = express();
 const passport = require('passport');
-const hbs = require('./app/handlebars');
+const hbs = require('hbs');
+const fs = require('fs');
+const exphbs  = require('express-handlebars');
 
 app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', hbs());
+app.engine('handlebars', exphbs());
 app.set('view engine', 'hbs');
+
+hbs.registerPartials(__dirname + '/views/task/partial');
+hbs.registerPartial('taskGrid', fs.readFileSync(__dirname + '/views/task/partial/grid.hbs', 'utf8'));
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
