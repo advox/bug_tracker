@@ -72,6 +72,20 @@ router.post('/save', function(request, response) {
             return;
         }
 
+        request.checkBody('content', 'Description cant be empty').notEmpty();
+
+        request.getValidationResult().then(function(result) {
+            if (!result.isEmpty()) {
+                response.status(400).send('There have been validation errors: ' + util.inspect(result.array()));
+                return;
+            }
+            response.json({
+                urlparam: req.params.urlparam,
+                getparam: req.params.getparam,
+                postparam: req.params.postparam
+            });
+        });
+
         if (request.body._id) {
             Task.findOneAndUpdate({_id: request.body._id}, request.body, {}, function(err){
                 if (err) {
