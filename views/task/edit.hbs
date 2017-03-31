@@ -1,22 +1,28 @@
-<h1>Create/Edit entry</h1>
+{{#if task._id}}
+    <form id="taskDelete" action="/task/delete" method="post">
+        <input type="hidden" name="_id" value="{{{task._id}}}">
+        <h1>Edit entry<small><button type="submit">delete</button></small></h1>
+    </form>
+{{else}}
+    <h1>Create entry</h1>
+{{/if}}
+
 <div class="panel panel-default">
     <div class="panel-body">
 
-        <form id="taskSave" enctype="multipart/form-data" action="task/save" method="post">
+        <form id="taskSave" enctype="multipart/form-data" action="/task/save" method="post">
             <input type="hidden" name="_id" value="{{{task._id}}}"/>
             <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" placeholder="Title" value="{{{task.title}}}">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="{{{task.title}}}">
             </div>
             <div class="form-group">
                 <label for="content">Description</label>
-                <textarea class="form-control" id="content" name="content">
-                    {{{task.content}}}
-                </textarea>
+                <textarea class="form-control" id="content" name="content">{{{task.content}}}</textarea>
             </div>
             <div class="form-group">
                 <label for="files">Files</label>
-                <input type="file" id="files" multiple>
+                <input type="file" name="files" id="files" multiple>
             </div>
             <div class="form-group">
                 <label for="notify">Notify</label>
@@ -49,11 +55,15 @@
             <div class="form-group">
                 <label for="author">From</label>
                 <select id="author" name="author">
-                    <option value="1">Maciej Bozek</option>
+                    {{#each users}}
+                        <option value="{{{id}}}">{{{name}}} {{{surname}}}</option>
+                    {{/each}}
                 </select>
                 <label for="assignee">For</label>
                 <select id="assignee" name="assignee">
-                    <option value="1">Maciej Bozek</option>
+                    {{#each users}}
+                        <option value="{{{id}}}">{{{name}}} {{{surname}}}</option>
+                    {{/each}}
                 </select>
             </div>
 
@@ -62,3 +72,15 @@
 
     </div>
 </div>
+<script>
+    jQuery(document).ready(function($){
+        alert(123);
+        return false;
+    });
+    jQuery(document).on('click', '#taskDelete button', function(){
+
+        if (confirm("Are you sure?") == false) {
+            return false;
+        }
+    });
+</script>

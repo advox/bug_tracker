@@ -5,6 +5,16 @@ const User = require('../models/user');
 const Comment = require('../models/comment');
 const db = require('../bin/db');
 const Promise = require('bluebird');
+const multer = require('multer');
+const storage = multer.diskStorage({
+    destination: function (req, file, callback) {
+        callback(null, 'upload');
+    },
+    filename: function (req, file, callback) {
+        callback(null, file.fieldname + '-' + Date.now());
+    }
+});
+const upload = multer({ storage : storage }).array('files', 5);
 
 router.get('/',
     require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
@@ -20,7 +30,7 @@ router.get('/',
         });
     });
 
-router.get('/edit',
+router.get('/new',
     require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (req, res) => {
         Promise.props({
@@ -39,6 +49,7 @@ router.get('/edit',
 router.get('/edit/:id',
     require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (req, res) => {
+        console.log(req.params.id);
         Promise.props({
             task: Task.findById(req.params.id),
             users: User.findAll(),
@@ -54,14 +65,37 @@ router.get('/edit/:id',
         })
     });
 
-router.post('/save', (req, res) => {
+router.post('/save', function(request, response) {
+    upload(request, response, function(err) {
+        if(err) {
+            console.log(err);
+            return;
+        }
 
-    // upload(req, res, (err) => {
-    //     if (err) {
-    //         return res.end("Error uploading file.");
-    //     }
-    //     res.end("File is uploaded");
-    // });
+        if (request.body._id) {
+            Task.findOneAndUpdate({_id: request.body._id}, request.body, {}, function(err){
+                if (err) {
+                    console.log(err);
+                }
+                response.redirect('/task');
+            });
+        } else {
+            delete request.body['_id'];
+            var task = new Task(request.body);
+            task.status = 1;
+            task.notifications = [];
+            task.files = [];
+            task.save();
+            response.redirect('/task');
+        }
+    })
+});
+
+router.post('/delete', function(request, response) {
+    Task.remove({ _id: request.body._id }, function (err) {
+        if (err) return handleError(err);
+        response.redirect('/task');
+    });
 });
 
 module.exports = router;
