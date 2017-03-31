@@ -1,7 +1,8 @@
-var exphbs  = require('express-handlebars');
-var helpers = require('./helpers');
+const exphbs  = require('express-handlebars');
+const helpers = require('./helpers');
+const fs = require('fs');
 
-var hbs = exphbs.create({
+const hbs = exphbs.create({
     helpers: helpers,
     layoutsDir: 'views',
     defaultLayout: 'layout',
@@ -10,5 +11,8 @@ var hbs = exphbs.create({
         'views/partials/'
     ]
 });
+
+const partialsDir = __dirname + '/../../views/partials/';
+hbs.handlebars.registerPartial('taskGrid', fs.readFileSync(partialsDir + 'task/grid.hbs', 'utf8'));
 
 module.exports = hbs;

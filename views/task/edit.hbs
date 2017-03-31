@@ -42,9 +42,9 @@
                 </select>
                 <label for="rank">Rank</label>
                 <select id="rank" name="rank">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
+                    {{#times 10}}
+                        <option value="{{{@current}}}">{{{@current}}}</option>
+                    {{/times}}
                 </select>
                 <div class="checkbox">
                     <label>
@@ -72,15 +72,3 @@
 
     </div>
 </div>
-<script>
-    jQuery(document).ready(function($){
-        alert(123);
-        return false;
-    });
-    jQuery(document).on('click', '#taskDelete button', function(){
-
-        if (confirm("Are you sure?") == false) {
-            return false;
-        }
-    });
-</script>

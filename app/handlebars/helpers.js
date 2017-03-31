@@ -46,6 +46,9 @@ module.exports = {
         return accum;
     },
     substring: (text, charactersCount) => {
+        if (0 === text.length) {
+            return '';
+        }
         return text.substr(0, charactersCount) + '...';
     }
 };

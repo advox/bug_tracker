@@ -1,0 +1,63 @@
+<div id="task-index">
+    <div id="tbl-container"></div>
+    <table class="table table-striped table-sortable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Status</th>
+            <th>Rank</th>
+            <th>[!!!]</th>
+            <th>SEB</th>
+            <th>Title</th>
+            <th>Brief</th>
+            <th>From</th>
+            <th>For</th>
+            <th>Posts</th>
+            <th>Created</th>
+            <th>Updated</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each tasks}}
+            <tr class="todo-clickable" data-target_id="{{{id}}}">
+                <td>{{{id}}}</td>
+                <td>{{{status}}}</td>
+                <td data-order="{{{rank}}}">
+                    <select name="rank" class="rank-ajax form-control" data-target_id="{{{id}}}">
+                        {{#times 10 use=rank}}
+                            <option {{#compare @used @current}} selected="selected" {{/compare}} value="{{@current}}">{{{@current}}}</option>
+                        {{/times}}
+                    </select>
+                </td>
+                {{#compare important 1 operator='!='}}
+                    <td data-order="1">
+                        <img src="/images/star.mono.webp" alt="">
+                    </td>
+                {{/compare}}
+                {{#compare important 1}}
+                    <td data-order="2">
+                        <img src="/images/star.color.webp" alt="">
+                    </td>
+                {{/compare}}
+                {{#compare important 2}}
+                    <td data-order="1">
+                        <img src="/images/superman.color.webp" alt="">
+                    </td>
+                {{/compare}}
+                {{#compare important 2 operator='!='}}
+                    <td data-order="2">
+                        <img src="/images/superman.mono.webp" alt="">
+                    </td>
+                {{/compare}}
+                <td>{{{title}}}</td>
+                <td>{{{substring content 30}}}</td>
+                <td>{{{author.login}}}</td>
+                <td>{{{assignee.login}}}</td>
+                <td>{{{comments.length}}}</td>
+                <td>{{{dateYmdHis createdAt}}}</td>
+                <td>{{{dateYmdHis updatedAt}}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
