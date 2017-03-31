@@ -1,3 +1,10 @@
+{{#if errors}}
+<ul>
+    {{#each errors}}
+    <li>{{this.msg}}</li>
+    {{/each}}
+</ul>
+{{/if}}
 <div class="container">
     <h2>Active tasks</h2>
     <p>

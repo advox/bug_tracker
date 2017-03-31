@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const db = require('../bin/db');
+const assert = require('assert');
 
 const taskSchema = new Schema({
     status: Number,
@@ -70,6 +71,11 @@ taskSchema.statics.getTaskPriorityArray = function () {
     ];
 };
 
+taskSchema.pre('update', true, function(next, done) {
+    console.log('GÓWNOIOIOIOIOIOIO');
+});
+
 let Task = mongoose.model('Task', taskSchema);
+
 
 module.exports = Task;

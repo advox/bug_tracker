@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
 const app = express();
+const flash = require('connect-flash');
 const passport = require('passport');
 const hbs = require('./app/handlebars');
 const multer = require('multer');
@@ -32,6 +33,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(flash());
 
 app.use('/', routes);
 
