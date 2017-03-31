@@ -28,12 +28,14 @@ const taskSchema = new Schema({
 
 taskSchema.statics.findDone = function () {
     return new Promise((resolve, reject) => {
-        this.find({status: 4}, (err, tasks) => {
-            if (err) {
-                return reject(err);
-            }
-            return resolve(tasks);
-        });
+        this.find({status: 4})
+            .populate('author assignee comments')
+            .exec((err, tasks) => {
+                if (err) {
+                    return reject(err);
+                }
+                return resolve(tasks);
+            })
     });
 };
 

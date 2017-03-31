@@ -1,10 +1,14 @@
-const hbs = require('express-handlebars');
-const handlebars = require('handlebars');
-const helpers = require('./helpers');
+var exphbs  = require('express-handlebars');
+var helpers = require('./helpers');
 
-module.exports = function () {
-    handlebars.registerHelper('dateYmdHis', (dateString) => helpers.dateYmdHis(dateString));
-    return hbs({
-        defaultLayout: 'main',
-    })
-};
+var hbs = exphbs.create({
+    helpers: helpers,
+    layoutsDir: 'views',
+    defaultLayout: 'layout',
+    extname: '.hbs',
+    partialsDir: [
+        'views/partials/'
+    ]
+});
+
+module.exports = hbs;

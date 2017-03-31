@@ -4,6 +4,7 @@
         <button onclick="window.document.location='/task/new'" class="btn btn-lg btn-primary">Add new</button>
     </p>
     <div id="task-index">
+        <div id="tbl-container"></div>
         <table class="table table-bordered table-hover">
             <thead>
             <tr>
@@ -23,24 +24,45 @@
             </thead>
             <tbody>
             {{#each todo}}
-                <tr onclick="window.document.location='/task/edit/{{{id}}}'">
+                <tr class="todo-clickable" data-target_id="{{{id}}}">
                     <td>{{{id}}}</td>
                     <td>{{{status}}}</td>
-                    <td>{{{rank}}}</td>
-                    <td>{{{important}}}</td>
-                    <td>{{{important}}}</td>
+                    <td>
+                        <select name="rank" class="form-control">
+                            {{#times 10 use=rank}}
+                                <option {{#compare @used @current}} selected="selected" {{/compare}} value="{{@current}}">{{{@current}}}</option>
+                            {{/times}}
+                        </select>
+                    </td>
+                    <td>
+                        {{#compare important 1 operator='!='}}
+                            <img src="/images/star.mono.webp" alt="">
+                        {{/compare}}
+                        {{#compare important 1}}
+                            <img src="/images/star.color.webp" alt="">
+                        {{/compare}}
+                    </td>
+                    <td>
+                        {{#compare important 2}}
+                            <img src="/images/superman.color.webp" alt="">
+                        {{/compare}}
+                        {{#compare important 2 operator='!='}}
+                            <img src="/images/superman.mono.webp" alt="">
+                        {{/compare}}
+                    </td>
                     <td>{{{title}}}</td>
-                    <td>{{{description}}}</td>
+                    <td>{{{substring content 30}}}</td>
                     <td>{{{author.login}}}</td>
                     <td>{{{assignee.login}}}</td>
                     <td>{{{comments.length}}}</td>
-                    <td>{{{createdAt}}}</td>
-                    <td>{{{updatedAt}}}</td>
+                    <td>{{{dateYmdHis createdAt}}}</td>
+                    <td>{{{dateYmdHis updatedAt}}}</td>
                 </tr>
             {{/each}}
             </tbody>
         </table>
     </div>
+    <script src="/javascripts/task/index.js"></script>
 
     <h2>Done tasks</h2>
     <div id="task-index">
@@ -74,8 +96,8 @@
                     <td>{{{author.login}}}</td>
                     <td>{{{assignee.login}}}</td>
                     <td>{{{comments.length}}}</td>
-                    <td>{{{createdAt}}}</td>
-                    <td>{{{updatedAt}}}</td>
+                    <td>{{{dateYmdHis createdAt}}}</td>
+                    <td>{{{dateYmdHis updatedAt}}}</td>
                 </tr>
             {{/each}}
             </tbody>
