@@ -1,0 +1,45 @@
+<div class="task-grid-container">
+    <h2>Active tasks</h2>
+    <p>
+        <button onclick="window.document.location='/task/new'" class="btn btn-lg btn-primary">Add new</button>
+    </p>
+    <div id="task-index">
+        <div id="tbl-container"></div>
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Rank</th>
+                <th>[!!!]</th>
+                <th>SEB</th>
+                <th>Title</th>
+                <th>Brief</th>
+                <th>From</th>
+                <th>For</th>
+                <th>Posts</th>
+                <th>Created</th>
+                <th>Updated</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each task}}
+                <tr onclick="window.document.location='/task/edit/{{{id}}}'">
+                    <td>{{{id}}}</td>
+                    <td>{{{status}}}</td>
+                    <td>{{{rank}}}</td>
+                    <td>{{{important}}}</td>
+                    <td>{{{important}}}</td>
+                    <td>{{{title}}}</td>
+                    <td>{{{description}}}</td>
+                    <td>{{{author.login}}}</td>
+                    <td>{{{assignee.login}}}</td>
+                    <td>{{{comments.length}}}</td>
+                    <td>{{{createdAt}}}</td>
+                    <td>{{{updatedAt}}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
