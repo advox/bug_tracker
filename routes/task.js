@@ -5,6 +5,7 @@ const User = require('../models/user');
 const Comment = require('../models/comment');
 const db = require('../bin/db');
 const Promise = require('bluebird');
+const util = require('util');
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination: function (req, file, callback) {
@@ -24,8 +25,8 @@ router.get('/',
             todo: Task.findToDo(),
         }).then(function (results) {
             res.render('task/index', {
-                done: results.done,
-                todo: results.todo,
+                done:     results.done,
+                todo:     results.todo,
             })
         });
     });
@@ -49,7 +50,6 @@ router.get('/new',
 router.get('/edit/:id',
     require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (req, res) => {
-        console.log(req.params.id);
         Promise.props({
             task: Task.findById(req.params.id),
             users: User.findAll(),
@@ -72,27 +72,34 @@ router.post('/save', function(request, response) {
             return;
         }
 
-        request.checkBody('content', 'Description cant be empty').notEmpty();
-
-        request.getValidationResult().then(function(result) {
-            if (!result.isEmpty()) {
-                response.status(400).send('There have been validation errors: ' + util.inspect(result.array()));
-                return;
-            }
-            response.json({
-                urlparam: req.params.urlparam,
-                getparam: req.params.getparam,
-                postparam: req.params.postparam
-            });
-        });
+        // request.checkBody('content', 'Description cant be empty').notEmpty();
+        // request.sanitizeBody('content').toBoolean();
+        //
+        // request.getValidationResult().then(function(result) {
+        //     if (false === result.isEmpty()) {
+        //         errors = util.inspect(result.array());
+        //         response.render('/task', { errors: errors });
+        //     }
+        // });
 
         if (request.body._id) {
-            Task.findOneAndUpdate({_id: request.body._id}, request.body, {}, function(err){
-                if (err) {
-                    console.log(err);
+
+            Task.findById(request.body._id, function (err, body) {
+                console.log(body);
+                if (body) {
+                    body = request.body;
+                    body.save(function (err) {
+                        console.log(err);
+                    });
                 }
-                response.redirect('/task');
             });
+
+            // Task.findOneAndUpdate({_id: request.body._id}, request.body, {}, function(err){
+            //     if (err) {
+            //         console.log(err);
+            //     }
+            //     response.redirect('/task');
+            // });
         } else {
             delete request.body['_id'];
             var task = new Task(request.body);
