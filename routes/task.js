@@ -72,34 +72,14 @@ router.post('/save', function(request, response) {
             return;
         }
 
-        // request.checkBody('content', 'Description cant be empty').notEmpty();
-        // request.sanitizeBody('content').toBoolean();
-        //
-        // request.getValidationResult().then(function(result) {
-        //     if (false === result.isEmpty()) {
-        //         errors = util.inspect(result.array());
-        //         response.render('/task', { errors: errors });
-        //     }
-        // });
-
         if (request.body._id) {
 
-            Task.findById(request.body._id, function (err, body) {
-                console.log(body);
-                if (body) {
-                    body = request.body;
-                    body.save(function (err) {
-                        console.log(err);
-                    });
+            Task.findOneAndUpdate({_id: request.body._id}, request.body, {runValidators: true}, function(err){
+                if (err) {
+                    console.log(err);
                 }
+                response.redirect('/task');
             });
-
-            // Task.findOneAndUpdate({_id: request.body._id}, request.body, {}, function(err){
-            //     if (err) {
-            //         console.log(err);
-            //     }
-            //     response.redirect('/task');
-            // });
         } else {
             delete request.body['_id'];
             var task = new Task(request.body);
