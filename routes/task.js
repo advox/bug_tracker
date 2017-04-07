@@ -59,6 +59,7 @@ router.get('/edit/:id',
                 task: results.task,
                 users: results.users,
                 priority: results.priority,
+                errors: req.flash('errors'),
             });
         }).catch(function (error) {
             console.log(error);
@@ -73,12 +74,11 @@ router.post('/save', function(request, response) {
         }
 
         if (request.body._id) {
-
-            Task.findOneAndUpdate({_id: request.body._id}, request.body, {runValidators: true}, function(err){
+            Task.findOneAndUpdate({_id: request.body._id}, request.body, { runValidators: true }, function(err){
                 if (err) {
-                    console.log(err);
+                    request.flash('errors', err.errors);
                 }
-                response.redirect('/task');
+                response.redirect('/task/edit/' + request.body._id);
             });
         } else {
             delete request.body['_id'];
