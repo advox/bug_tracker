@@ -10,104 +10,19 @@
     <p>
         <button onclick="window.document.location='/task/new'" class="btn btn-lg btn-primary">Add new</button>
     </p>
-    <div id="task-index">
-        <div id="tbl-container"></div>
-        <table class="table table-bordered table-hover">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Status</th>
-                <th>Rank</th>
-                <th>[!!!]</th>
-                <th>SEB</th>
-                <th>Title</th>
-                <th>Brief</th>
-                <th>From</th>
-                <th>For</th>
-                <th>Posts</th>
-                <th>Created</th>
-                <th>Updated</th>
-            </tr>
-            </thead>
-            <tbody>
-            {{#each todo}}
-                <tr class="todo-clickable" data-target_id="{{{id}}}">
-                    <td>{{{id}}}</td>
-                    <td>{{{status}}}</td>
-                    <td>
-                        <select name="rank" class="form-control">
-                            {{#times 10 use=rank}}
-                                <option {{#compare @used @current}} selected="selected" {{/compare}} value="{{@current}}">{{{@current}}}</option>
-                            {{/times}}
-                        </select>
-                    </td>
-                    <td>
-                        {{#compare important 1 operator='!='}}
-                            <img src="/images/star.mono.webp" alt="">
-                        {{/compare}}
-                        {{#compare important 1}}
-                            <img src="/images/star.color.webp" alt="">
-                        {{/compare}}
-                    </td>
-                    <td>
-                        {{#compare important 2}}
-                            <img src="/images/superman.color.webp" alt="">
-                        {{/compare}}
-                        {{#compare important 2 operator='!='}}
-                            <img src="/images/superman.mono.webp" alt="">
-                        {{/compare}}
-                    </td>
-                    <td>{{{title}}}</td>
-                    <td>{{{substring content 30}}}</td>
-                    <td>{{{author.login}}}</td>
-                    <td>{{{assignee.login}}}</td>
-                    <td>{{{comments.length}}}</td>
-                    <td>{{{dateYmdHis createdAt}}}</td>
-                    <td>{{{dateYmdHis updatedAt}}}</td>
-                </tr>
-            {{/each}}
-            </tbody>
-        </table>
-    </div>
-    <script src="/javascripts/task/index.js"></script>
-
+    {{>taskGrid
+            tasks=todo
+    }}
     <h2>Done tasks</h2>
-    <div id="task-index">
-        <table class="table table-bordered table-hover">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Status</th>
-                <th>Rank</th>
-                <th>[!!!]</th>
-                <th>SEB</th>
-                <th>Title</th>
-                <th>Brief</th>
-                <th>From</th>
-                <th>For</th>
-                <th>Posts</th>
-                <th>Created</th>
-                <th>Updated</th>
-            </tr>
-            </thead>
-            <tbody>
-            {{#each done}}
-                <tr onclick="window.document.location='/task/edit/{{{id}}}'">
-                    <td>{{{id}}}</td>
-                    <td>{{{status}}}</td>
-                    <td>{{{rank}}}</td>
-                    <td>{{{important}}}</td>
-                    <td>{{{important}}}</td>
-                    <td>{{{title}}}</td>
-                    <td>{{{description}}}</td>
-                    <td>{{{author.login}}}</td>
-                    <td>{{{assignee.login}}}</td>
-                    <td>{{{comments.length}}}</td>
-                    <td>{{{dateYmdHis createdAt}}}</td>
-                    <td>{{{dateYmdHis updatedAt}}}</td>
-                </tr>
-            {{/each}}
-            </tbody>
-        </table>
-    </div>
+    {{>taskGrid
+            tasks=done
+    }}
+    <script src="/javascripts/task/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery('.table-sortable').DataTable();
+        });
+    </script>
 </div>
