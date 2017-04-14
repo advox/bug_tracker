@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node_modules/.bin/node-sass --output-style compressed public/stylesheets/_bootstrap.scss public/stylesheets/bootstrap.css && node_modules/.bin/node-sass --output-style compressed public/stylesheets/style.scss public/stylesheets/style.css && nodemon ./bin/www"
+    "start": "node_modules/.bin/node-sass --output-style compressed public/stylesheets/_bootstrap.scss public/stylesheets/bootstrap.css && node_modules/.bin/node-sass --output-style compressed public/stylesheets/style.scss public/stylesheets/style.css && nodemon ./bin/www",
+    "import": "node importer/index.js"
   },
   "dependencies": {
     "bluebird": "^3.5.0",
@@ -11,6 +12,7 @@
     "bootstrap": "^3.3.7",
     "connect-ensure-login": "^0.1.1",
     "connect-flash": "^0.1.1",
+    "connect-mongo": "^1.3.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
     "express": "~4.14.1",
@@ -20,6 +22,7 @@
     "mongoose": "^4.8.5",
     "morgan": "~1.7.0",
     "multer": "^1.3.0",
+    "mysql": "^2.13.0",
     "node-datetime": "^1.0.0",
     "node-sass": "^4.5.0",
     "passport": "^0.3.2",

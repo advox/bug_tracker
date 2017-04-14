@@ -9,6 +9,9 @@ const flash = require('connect-flash');
 const passport = require('passport');
 const hbs = require('./app/handlebars');
 const multer = require('multer');
+const session = require('express-session');
+const db = require('./bin/db');
+const MongoStore = require('connect-mongo')(session);
 const storage = multer.diskStorage({
     destination: function (req, file, callback) {
         callback(null, './upload');
@@ -17,9 +20,21 @@ const storage = multer.diskStorage({
         callback(null, file.fieldname + '-' + Date.now());
     }
 });
+
 const upload = multer({ storage : storage }).array('files', 5);
 
-app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
+app.use(
+    session({
+        store: new MongoStore({
+            mongooseConnection: db.connection,
+            autoRemove: 'interval',
+            autoRemoveInterval: 60
+        }),
+        resave: false,
+        saveUninitialized: false,
+        secret: '53cr3t',
+    })
+);
 
 app.set('views', path.join(__dirname, 'views'));
 app.engine('hbs', hbs.engine);
