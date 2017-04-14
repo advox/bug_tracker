@@ -19,6 +19,7 @@
             <div class="form-group">
                 <label for="content">Description</label>
                 <textarea class="form-control" id="content" name="content">{{{task.content}}}</textarea>
+                <div class="error-message">{{#errorMessage errors 'content'}}{{/errorMessage}}</div>
             </div>
             <div class="form-group">
                 <label for="files">Files</label>

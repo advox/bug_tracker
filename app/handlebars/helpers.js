@@ -50,5 +50,15 @@ module.exports = {
             return '';
         }
         return text.substr(0, charactersCount) + '...';
+    },
+    errorMessage: (errors, fieldName) => {
+        let message = '';
+        errors.map((element) => {
+            if (typeof element[fieldName] !== 'undefined') {
+                message = element[fieldName].message;
+            }
+        });
+
+        return message;
     }
 };

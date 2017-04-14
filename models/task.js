@@ -6,7 +6,10 @@ const assert = require('assert');
 const taskSchema = new Schema({
     status: Number,
     title: String,
-    content: String,
+    content: {
+        type: String,
+        required: true
+    },
     rank: Number,
     important: Number,
     author: {
@@ -71,11 +74,6 @@ taskSchema.statics.getTaskPriorityArray = function () {
     ];
 };
 
-taskSchema.pre('update', true, function(next, done) {
-    console.log('GÓWNOIOIOIOIOIOIO');
-});
-
 let Task = mongoose.model('Task', taskSchema);
-
 
 module.exports = Task;
