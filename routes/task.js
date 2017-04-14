@@ -53,11 +53,13 @@ router.get('/edit/:id',
         Promise.props({
             task: Task.findById(req.params.id),
             users: User.findAll(),
+            comments: Comment.findByTaskId(req.params.id),
             priority: Task.getTaskPriorityArray(),
         }).then(function (results) {
             res.render('task/edit', {
                 task: results.task,
                 users: results.users,
+                comments: results.comments,
                 priority: results.priority,
                 errors: req.flash('errors'),
             });
@@ -65,6 +67,32 @@ router.get('/edit/:id',
             console.log(error);
         })
     });
+
+
+router.post('/comment', function(request, response) {
+    Promise.props({
+        comments: Comment.findByTaskId(request.body.taskId, request.body.commentId),
+    }).then(function (results) {
+        response.render('partials/comment/entries', {
+            layout: false,
+            comments: results.comments,
+        });
+    }).catch(function (error) {
+        console.log(error);
+    });
+});
+
+
+router.post('/comment/save', function(request, response) {
+    console.log(request.body);
+    var comment = new Comment(request.body);
+    comment.status = 1;
+    comment.notifications = [];
+    comment.author = '58cbc6515eab8b506e33c5f3';
+    comment.save();
+    response.redirect('/task/edit/' + request.body.task);
+    console.log(request.body);
+});
 
 router.post('/save', function(request, response) {
     upload(request, response, function(err) {

@@ -1,0 +1,28 @@
+<div class="media">
+    <div class="media-left">
+        <a href="#">
+            {{{comment.id}}}
+        </a>
+    </div>
+    <div class="media-body">
+        <h4>Commented by: {{{comment.author}}}</h4>
+        {{{comment.content}}}
+        <div id="children-{{{comment.id}}}"></div>
+        <button class="btn btn-default add-comment-button" data-task="{{{comment.task}}}" data-parent="{{{comment.id}}}">Reply</button>
+    </div>
+</div>
+
+<script>
+    jQuery(document).ready(function($){
+        const commentId = '{{{comment.id}}}', taskId = '{{{comment.task}}}';
+        $.ajax({
+            method: 'post',
+            dataType: 'html',
+            data: {commentId: commentId, taskId: taskId},
+            url: "/task/comment",
+            context: document.body
+        }).done(function(response) {
+            $('#children-' + commentId).html(response);
+        });
+    });
+</script>

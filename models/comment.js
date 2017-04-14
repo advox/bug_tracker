@@ -29,6 +29,20 @@ const commentSchema = new Schema({
     }
 });
 
+commentSchema.statics.findByTaskId = function (taskId, parent) {
+    return new Promise((resolve, reject) => {
+        this.find({task: taskId, parent: parent})
+            .sort({'createdAt': 'desc'})
+            .exec((err, comments) => {
+                if (err) {
+                    return reject(err);
+                }
+
+                return resolve(comments);
+            })
+    });
+};
+
 let Comment = mongoose.model('Comment', commentSchema);
 
 module.exports = Comment;

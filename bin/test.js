@@ -3,14 +3,26 @@ const User = require('../models/user');
 const Comment = require('../models/comment');
 const Task = require('../models/task');
 
-User.remove({_id: "58cbc65a0c236d5081b1e208"}, function(err, result) {
-    if (err) {
-        console.log(err);
-    }
-    console.log(result);
-    db.close();
+
+const comment = new Comment({
+    author: '58cbc6515eab8b506e33c5f3',
+    content: "Witam serdecznie oto komentarz 76676",
+    status: 1,
+    task: '58de11f382530646e3aa35e5',
+    parent: '58f0997558e659583c61de7b',
+    priority: 2,
 });
+comment.save();
 return null;
+
+// User.remove({_id: "58cbc65a0c236d5081b1e208"}, function(err, result) {
+//     if (err) {
+//         console.log(err);
+//     }
+//     console.log(result);
+//     db.close();
+// });
+// return null;
 // Task.remove({}, function () {console.log('removed tasks')});
 // User.remove({}, function () {console.log('removed users')});
 // return null;
