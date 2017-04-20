@@ -10,13 +10,19 @@ const commentSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comment'
     },
-    content: String,
-    status: Number,
+    content: {
+        type: String,
+        required: true
+    },
+    status: {
+        type: Number,
+        required: true
+    },
     task: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Task'
     },
-    files: String,
+    files: Array,
     notifications: Array,
     priority: Number,
     createdAt: {
@@ -32,6 +38,7 @@ const commentSchema = new Schema({
 commentSchema.statics.findByTaskId = function (taskId, parent) {
     return new Promise((resolve, reject) => {
         this.find({task: taskId, parent: parent})
+            .populate('author')
             .sort({'createdAt': 'desc'})
             .exec((err, comments) => {
                 if (err) {

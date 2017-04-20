@@ -60,5 +60,21 @@ module.exports = {
         });
 
         return message;
+    },
+    toHex: (string) => {
+        var hash = 0;
+        for (var i = 0; i < string.length; i++) {
+            hash = string.charCodeAt(i) + ((hash << 5) - hash);
+        }
+        var colour = '#';
+        for (var i = 0; i < 3; i++) {
+            var value = (hash >> (i * 8)) & 0xFF;
+            colour += ('00' + value.toString(16)).substr(-2);
+        }
+
+        return colour;
+    },
+    firstLetter: (string) => {
+        return string.charAt(0);
     }
 };

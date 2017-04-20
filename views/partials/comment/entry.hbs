@@ -1,14 +1,19 @@
 <div class="media">
     <div class="media-left">
-        <a href="#">
-            {{{comment.id}}}
+        <a style="background-color:{{{toHex comment.author.surname}}}">
+            {{{firstLetter comment.author.login}}}
         </a>
     </div>
     <div class="media-body">
-        <h4>Commented by: {{{comment.author}}}</h4>
-        {{{comment.content}}}
+        <h4>
+            Commented by: {{{comment.author.name}}} {{{comment.author.surname}}} ({{{comment.author.login}}})
+            <small>on {{{dateYmdHis comment.createdAt}}}</small>
+        </h4>
+        <div class="content">
+            {{{comment.content}}}
+        </div>
+        <button class="btn btn-default add-comment-button" data-task="{{{comment.task}}}" data-parent="{{{comment.id}}}">Reply to this post</button>
         <div id="children-{{{comment.id}}}"></div>
-        <button class="btn btn-default add-comment-button" data-task="{{{comment.task}}}" data-parent="{{{comment.id}}}">Reply</button>
     </div>
 </div>
 
@@ -18,8 +23,8 @@
         $.ajax({
             method: 'post',
             dataType: 'html',
-            data: {commentId: commentId, taskId: taskId},
-            url: "/task/comment",
+            data: { commentId: commentId, taskId: taskId },
+            url: "/comment",
             context: document.body
         }).done(function(response) {
             $('#children-' + commentId).html(response);
