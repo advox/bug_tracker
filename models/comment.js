@@ -8,7 +8,8 @@ const commentSchema = new Schema({
     },
     parent: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Comment'
+        ref: 'Comment',
+        required: false
     },
     content: {
         type: String,

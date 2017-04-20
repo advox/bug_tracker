@@ -33,14 +33,21 @@ router.post('/', function(request, response) {
 
 
 router.post('/save', function(request, response) {
-    console.log(request.body);
     var comment = new Comment(request.body);
     comment.status = 1;
     comment.notifications = [];
-    comment.author = '58cbc6515eab8b506e33c5f3';
-    comment.save();
+    comment.author = request.session.passport.user._id;
+
+    if (typeof comment.parent == 'undefined') {
+        comment.parent = null;
+    }
+
+    comment.save(function(err){
+        if (err) {
+            request.flash('errors', err.errors);
+        }
+    });
     response.redirect('/task/edit/' + request.body.task);
-    console.log(request.body);
 });
 
 module.exports = router;
