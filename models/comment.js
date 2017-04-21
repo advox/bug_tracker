@@ -25,6 +25,7 @@ const commentSchema = new Schema({
     files: Array,
     notifications: Array,
     priority: Number,
+    externalId: Number,
     createdAt: {
         type: Date,
         default: Date.now
@@ -48,6 +49,17 @@ commentSchema.statics.findByTaskId = function (taskId, parent) {
                 return resolve(comments);
             })
     });
+};
+
+commentSchema.statics.getByExternalId = function (id) {
+    return new Promise((resolve, reject) => {
+        this.find({externalId: id}, (err, user) => {
+            if (err) {
+                return reject(err);
+            }
+            return resolve(user);
+        })
+    })
 };
 
 let Comment = mongoose.model('Comment', commentSchema);

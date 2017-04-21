@@ -22,6 +22,7 @@ const taskSchema = new Schema({
     },
     notifications: Array,
     files: Array,
+    externalId: Number,
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
     comments: [{
@@ -65,6 +66,28 @@ taskSchema.statics.findById = function (taskId) {
             return resolve(task);
         });
     });
+};
+
+taskSchema.statics.findByTitle = function (title) {
+    return new Promise((resolve, reject) => {
+        Task.find({title: title}, (err, user) => {
+            if (err) {
+                return reject(err);
+            }
+            return resolve(user);
+        })
+    })
+};
+
+taskSchema.statics.getByExternalId = function (id) {
+    return new Promise((resolve, reject) => {
+        this.find({externalId: id}, (err, user) => {
+            if (err) {
+                return reject(err);
+            }
+            return resolve(user);
+        })
+    })
 };
 
 taskSchema.statics.getTaskPriorityArray = function () {

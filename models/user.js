@@ -10,6 +10,7 @@ const userSchema = new Schema({
     status: Boolean,
     group: Number,
     color: String,
+    externalId: Number,
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
     lastLogin: { type: Date },
@@ -31,9 +32,9 @@ userSchema.statics.findAll = function () {
     });
 };
 
-userSchema.statics.getByEmail = function (email) {
+userSchema.statics.getByExternalId = function (id) {
     return new Promise((resolve, reject) => {
-        User.find({email: email}, (err, user) => {
+        User.find({externalId: id}, (err, user) => {
             if (err) {
                 return reject(err);
             }
