@@ -64,8 +64,9 @@
 }
 h1{
   small{
-    button{
+    button, a{
       float:right;
+      margin-left:5px;
     }
   }
 }
