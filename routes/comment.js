@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Task = require('../models/task');
-const User = require('../models/user');
 const Comment = require('../models/comment');
-const db = require('../bin/db');
 const Promise = require('bluebird');
 const util = require('util');
 const multer = require('multer');
@@ -17,29 +14,33 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage : storage }).array('files', 5);
 
-
-router.post('/', function(request, response) {
-    Promise.props({
-        comments: Comment.findByTaskId(request.body.taskId, request.body.commentId),
-    }).then(function (results) {
-        response.render('partials/comment/entries', {
-            layout: false,
-            comments: results.comments,
+/**
+ * comment get ajax action
+ */
+router.post('/', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+    (request, response) => {
+        Promise.props({
+            comments: Comment.findByTaskId(request.body.taskId, request.body.commentId),
+        }).then(function (results) {
+            response.render('partials/comment/entries', {
+                layout: false,
+                comments: results.comments,
+            });
+        }).catch(function (error) {
+            console.log(error);
         });
-    }).catch(function (error) {
-        console.log(error);
-    });
-});
+    }
+);
 
-
-router.post('/save',
-    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
-    (req, res) => {
-
-        var comment = new Comment(req.body);
+/**
+ * comment create action
+ */
+router.post('/save', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+    (request, response) => {
+        var comment = new Comment(request.body);
         comment.status = 1;
         comment.notifications = [];
-        comment.author = req.session.passport.user._id;
+        comment.author = request.session.passport.user._id;
 
         if (typeof comment.parent == 'undefined') {
             comment.parent = null;
@@ -48,15 +49,11 @@ router.post('/save',
         comment.save(function(err){
             if (err) {
                 console.log(err.errors);
-                req.flash('errors', err.errors);
+                request.flash('errors', err.errors);
             }
         });
-        res.redirect('/task/edit/' + req.body.task);
-    });
-
-
-router.post('/save', function(request, response) {
-
-});
+        response.redirect('/task/edit/' + request.body.task);
+    }
+);
 
 module.exports = router;
