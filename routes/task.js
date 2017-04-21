@@ -68,7 +68,7 @@ router.get('/edit/:id', require('connect-ensure-login').ensureLoggedIn({redirect
                 users: results.users,
                 comments: results.comments,
                 priority: results.priority,
-                errors: request.flash('errors'),
+                errors: request.flash('errors')
             });
         }).catch(function (error) {
             console.log(error);
@@ -119,7 +119,9 @@ router.post('/save', require('connect-ensure-login').ensureLoggedIn({redirectTo:
 router.post('/delete', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         Task.remove({ _id: request.body._id }, function (err) {
-            if (err) return handleError(err);
+            if (err) {
+                console.log(err);
+            }
             response.redirect('/task');
         });
     }

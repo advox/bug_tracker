@@ -7,8 +7,8 @@
   }
 }
 #error-list{
-  .entry{
-    display:inline-block;
+  li{
+    margin-left: 20px;
   }
 }
 .add-comment-button{
@@ -34,6 +34,16 @@
     .content{
       margin-top:10px;
       margin-bottom:15px;
+    }
+  }
+}
+#add-comment-modal{
+  .modal-errors{
+    display:none;
+    margin-bottom: 0;
+    margin-top: 5px;
+    li{
+      margin-left: 20px;
     }
   }
 }

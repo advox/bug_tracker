@@ -1,11 +1,9 @@
 {{#if errors}}
-    <div id="error-list" class="alert alert-danger">
+    <ul id="error-list" class="alert alert-danger">
         {{#each errors as |value key|}}
             {{#each value as |errorValue errorKey|}}
-                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                <span class="sr-only">Error:</span>
-                <span class="entry">{{{errorValue.message}}}</span><br/>
+                <li class="entry">{{{errorValue.message}}}</li>
             {{/each}}
         {{/each}}
-    </div>
+    </ul>
 {{/if}}

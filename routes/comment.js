@@ -33,7 +33,7 @@ router.post('/', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'
 );
 
 /**
- * comment create action
+ * comment create ajax action
  */
 router.post('/save', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
@@ -45,14 +45,13 @@ router.post('/save', require('connect-ensure-login').ensureLoggedIn({redirectTo:
         if (typeof comment.parent == 'undefined') {
             comment.parent = null;
         }
-
-        comment.save(function(err){
-            if (err) {
-                console.log(err.errors);
-                request.flash('errors', err.errors);
+        comment.save(function(err) {
+            let errors;
+            if(err) {
+                errors = err.errors;
             }
+            response.status(200).json({'errors': errors});
         });
-        response.redirect('/task/edit/' + request.body.task);
     }
 );
 
