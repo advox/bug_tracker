@@ -65,13 +65,15 @@
                 <label for="author">From</label>
                 <select class="form-control" id="author" name="author">
                     {{#each users}}
-                        <option value="{{{id}}}">{{{name}}} {{{surname}}}</option>
+                        <option {{#compare id ../task.author}} selected="selected" {{/compare}}
+                                value="{{{id}}}">{{{name}}} {{{surname}}}</option>
                     {{/each}}
                 </select>
                 <label for="assignee">For</label>
                 <select class="form-control" id="assignee" name="assignee">
                     {{#each users}}
-                        <option value="{{{id}}}">{{{name}}} {{{surname}}}</option>
+                        <option  {{#compare id ../task.assignee}} selected="selected" {{/compare}}
+                                value="{{{id}}}">{{{name}}} {{{surname}}}</option>
                     {{/each}}
                 </select>
             </div>
