@@ -47,3 +47,25 @@
     }
   }
 }
+#task-save{
+  .priority-area,
+  .author-area{
+    select{
+      max-width:300px;
+    }
+  }
+  .notification-area{
+    overflow:hidden;
+    .checkbox{
+      margin-top:0px;
+      margin-bottom:5px;
+    }
+  }
+}
+h1{
+  small{
+    button{
+      float:right;
+    }
+  }
+}

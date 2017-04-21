@@ -1,7 +1,7 @@
 {{#if task._id}}
-    <form id="taskDelete" action="/task/delete" method="post">
+    <form id="task-delete" action="/task/delete" method="post">
         <input type="hidden" name="_id" value="{{{task._id}}}">
-        <h1>Edit entry<small><button type="submit">delete</button></small></h1>
+        <h1>Edit entry<small><button class="btn btn-danger" type="submit">delete</button></small></h1>
     </form>
 {{else}}
     <h1>Create entry</h1>
@@ -12,7 +12,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        <form id="taskSave" enctype="multipart/form-data" action="/task/save" method="post">
+        <form id="task-save" enctype="multipart/form-data" action="/task/save" method="post">
             <input type="hidden" name="_id" value="{{{task._id}}}"/>
             <div class="form-group">
                 <label for="title">Title</label>
@@ -26,24 +26,26 @@
                 <label for="files">Files</label>
                 <input type="file" name="files" id="files" multiple>
             </div>
-            <div class="form-group">
-                <label for="notify">Notify</label>
+            <div class="form-group notification-area">
+                <div style="clear:both">
+                    <label for="notify">Notify</label>
+                </div>
                 {{#each users}}
-                    <div class="checkbox">
+                    <div class="checkbox col-sm-3">
                         <label>
                             <input value="{{{id}}}" type="checkbox"> {{{name}}} {{{surname}}}
                         </label>
                     </div>
                 {{/each}}
             </div>
-            <div class="form-group">
+            <div class="form-group priority-area">
                 <label for="priority">Priority</label>
-                <select id="priority" name="priority">
+                <select class="form-control" id="priority" name="priority">
                     <option value="1">Normal</option>
                     <option value="2">Urgent</option>
                 </select>
                 <label for="rank">Rank</label>
-                <select id="rank" name="rank">
+                <select class="form-control" id="rank" name="rank">
                     {{#times 10}}
                         <option value="{{{@current}}}">{{{@current}}}</option>
                     {{/times}}
@@ -54,15 +56,15 @@
                     </label>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group author-area">
                 <label for="author">From</label>
-                <select id="author" name="author">
+                <select class="form-control" id="author" name="author">
                     {{#each users}}
                         <option value="{{{id}}}">{{{name}}} {{{surname}}}</option>
                     {{/each}}
                 </select>
                 <label for="assignee">For</label>
-                <select id="assignee" name="assignee">
+                <select class="form-control" id="assignee" name="assignee">
                     {{#each users}}
                         <option value="{{{id}}}">{{{name}}} {{{surname}}}</option>
                     {{/each}}
@@ -75,7 +77,7 @@
     </div>
 </div>
 
-<button class="btn btn-default add-comment-button" data-task="{{{task._id}}}" data-parent="">Add Comment</button>
+<button class="btn btn-default add-comment-button btn-xs" data-task="{{{task._id}}}" data-parent="">Add Comment</button>
 
 {{>commentAdd}}
 
