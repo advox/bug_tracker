@@ -7,6 +7,8 @@
     <h1>Create entry</h1>
 {{/if}}
 
+{{>errorMessages errors=errors}}
+
 <div class="panel panel-default">
     <div class="panel-body">
 
@@ -19,7 +21,6 @@
             <div class="form-group">
                 <label for="content">Description</label>
                 <textarea class="form-control" id="content" name="content">{{{task.content}}}</textarea>
-                <div class="error-message">{{#errorMessage errors 'content'}}{{/errorMessage}}</div>
             </div>
             <div class="form-group">
                 <label for="files">Files</label>
@@ -68,7 +69,7 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
     </div>

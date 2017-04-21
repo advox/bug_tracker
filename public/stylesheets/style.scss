@@ -6,8 +6,10 @@
     margin-bottom:5px;
   }
 }
-.error-message{
-  color:#ff0000;
+#error-list{
+  .entry{
+    display:inline-block;
+  }
 }
 .add-comment-button{
   margin-bottom:10px;

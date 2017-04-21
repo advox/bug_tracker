@@ -32,22 +32,31 @@ router.post('/', function(request, response) {
 });
 
 
-router.post('/save', function(request, response) {
-    var comment = new Comment(request.body);
-    comment.status = 1;
-    comment.notifications = [];
-    comment.author = request.session.passport.user._id;
+router.post('/save',
+    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+    (req, res) => {
 
-    if (typeof comment.parent == 'undefined') {
-        comment.parent = null;
-    }
+        var comment = new Comment(req.body);
+        comment.status = 1;
+        comment.notifications = [];
+        comment.author = req.session.passport.user._id;
 
-    comment.save(function(err){
-        if (err) {
-            request.flash('errors', err.errors);
+        if (typeof comment.parent == 'undefined') {
+            comment.parent = null;
         }
+
+        comment.save(function(err){
+            if (err) {
+                console.log(err.errors);
+                req.flash('errors', err.errors);
+            }
+        });
+        res.redirect('/task/edit/' + req.body.task);
     });
-    response.redirect('/task/edit/' + request.body.task);
+
+
+router.post('/save', function(request, response) {
+
 });
 
 module.exports = router;
