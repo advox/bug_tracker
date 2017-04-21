@@ -5,7 +5,10 @@ const assert = require('assert');
 
 const taskSchema = new Schema({
     status: Number,
-    title: String,
+    title: {
+        type: String,
+        required: true
+    },
     content: {
         type: String,
         required: true

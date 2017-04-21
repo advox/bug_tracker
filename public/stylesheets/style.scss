@@ -6,6 +6,11 @@
     margin-bottom:5px;
   }
 }
+#error-list{
+  li{
+    margin-left: 20px;
+  }
+}
 .add-comment-button{
   margin-bottom:10px;
 }
@@ -29,6 +34,16 @@
     .content{
       margin-top:10px;
       margin-bottom:15px;
+    }
+  }
+}
+#add-comment-modal{
+  .modal-errors{
+    display:none;
+    margin-bottom: 0;
+    margin-top: 5px;
+    li{
+      margin-left: 20px;
     }
   }
 }

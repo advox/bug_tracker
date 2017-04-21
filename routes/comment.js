@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Task = require('../models/task');
-const User = require('../models/user');
 const Comment = require('../models/comment');
-const db = require('../bin/db');
 const Promise = require('bluebird');
 const util = require('util');
 const multer = require('multer');
@@ -17,30 +14,45 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage : storage }).array('files', 5);
 
-
-router.post('/', function(request, response) {
-    Promise.props({
-        comments: Comment.findByTaskId(request.body.taskId, request.body.commentId),
-    }).then(function (results) {
-        response.render('partials/comment/entries', {
-            layout: false,
-            comments: results.comments,
+/**
+ * comment get ajax action
+ */
+router.post('/', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+    (request, response) => {
+        Promise.props({
+            comments: Comment.findByTaskId(request.body.taskId, request.body.commentId),
+        }).then(function (results) {
+            response.render('partials/comment/entries', {
+                layout: false,
+                comments: results.comments,
+            });
+        }).catch(function (error) {
+            console.log(error);
         });
-    }).catch(function (error) {
-        console.log(error);
-    });
-});
+    }
+);
 
+/**
+ * comment create ajax action
+ */
+router.post('/save', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+    (request, response) => {
+        var comment = new Comment(request.body);
+        comment.status = 1;
+        comment.notifications = [];
+        comment.author = request.session.passport.user._id;
 
-router.post('/save', function(request, response) {
-    console.log(request.body);
-    var comment = new Comment(request.body);
-    comment.status = 1;
-    comment.notifications = [];
-    comment.author = '58cbc6515eab8b506e33c5f3';
-    comment.save();
-    response.redirect('/task/edit/' + request.body.task);
-    console.log(request.body);
-});
+        if (typeof comment.parent == 'undefined') {
+            comment.parent = null;
+        }
+        comment.save(function(err) {
+            let errors;
+            if(err) {
+                errors = err.errors;
+            }
+            response.status(200).json({'errors': errors});
+        });
+    }
+);
 
 module.exports = router;

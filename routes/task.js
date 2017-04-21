@@ -3,7 +3,6 @@ const router = express.Router();
 const Task = require('../models/task');
 const User = require('../models/user');
 const Comment = require('../models/comment');
-const db = require('../bin/db');
 const Promise = require('bluebird');
 const util = require('util');
 const multer = require('multer');
@@ -17,88 +16,115 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage : storage }).array('files', 5);
 
-router.get('/',
-    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
-    (req, res) => {
+/**
+ * task index action
+ */
+router.get('/', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+    (request, response) => {
         Promise.props({
             done: Task.findDone(),
             todo: Task.findToDo(),
         }).then(function (results) {
-            res.render('task/index', {
+            response.render('task/index', {
                 done:     results.done,
                 todo:     results.todo,
             })
         });
-    });
+    }
+);
 
-router.get('/new',
-    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
-    (req, res) => {
+/**
+ * task create action
+ */
+router.get('/new', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+    (request, response) => {
         Promise.props({
             users: User.findAll(),
             priority: Task.getTaskPriorityArray(),
         }).then(function (results) {
-            res.render('task/edit', {
+            response.render('task/edit', {
                 users: results.users,
                 priority: results.priority,
             });
         }).catch(function (error) {
             console.log(error);
         })
-    });
+    }
+);
 
-router.get('/edit/:id',
-    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
-    (req, res) => {
+/**
+ * task edit action
+ */
+router.get('/edit/:id', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+    (request, response) => {
         Promise.props({
-            task: Task.findById(req.params.id),
+            task: Task.findById(request.params.id),
             users: User.findAll(),
-            comments: Comment.findByTaskId(req.params.id),
+            comments: Comment.findByTaskId(request.params.id),
             priority: Task.getTaskPriorityArray(),
         }).then(function (results) {
-            res.render('task/edit', {
+            response.render('task/edit', {
                 task: results.task,
                 users: results.users,
                 comments: results.comments,
                 priority: results.priority,
-                errors: req.flash('errors'),
+                errors: request.flash('errors')
             });
         }).catch(function (error) {
             console.log(error);
         })
-    });
+    }
+);
 
-router.post('/save', function(request, response) {
-    upload(request, response, function(err) {
-        if(err) {
-            console.log(err);
-            return;
-        }
+/**
+ * task save action
+ */
+router.post('/save', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+    (request, response) => {
+        upload(request, response, function(err) {
 
-        if (request.body._id) {
-            Task.findOneAndUpdate({_id: request.body._id}, request.body, { runValidators: true }, function(err){
-                if (err) {
-                    request.flash('errors', err.errors);
-                }
-                response.redirect('/task/edit/' + request.body._id);
-            });
-        } else {
-            delete request.body['_id'];
-            var task = new Task(request.body);
-            task.status = 1;
-            task.notifications = [];
-            task.files = [];
-            task.save();
+            if(err) {
+                console.log(err);
+                return;
+            }
+
+            if (request.body._id) {
+                Task.findOneAndUpdate(
+                    {_id: request.body._id},
+                    request.body,
+                    { runValidators: true },
+                    function(err){
+                        if (err) {
+                            request.flash('errors', err.errors);
+                        }
+                        response.redirect('/task/edit/' + request.body._id);
+                    }
+                );
+            } else {
+                delete request.body['_id'];
+                var task = new Task(request.body);
+                task.status = 1;
+                task.notifications = [];
+                task.files = [];
+                task.save();
+                response.redirect('/task');
+            }
+        });
+    }
+);
+
+/**
+ * task delete action
+ */
+router.post('/delete', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+    (request, response) => {
+        Task.remove({ _id: request.body._id }, function (err) {
+            if (err) {
+                console.log(err);
+            }
             response.redirect('/task');
-        }
-    })
-});
-
-router.post('/delete', function(request, response) {
-    Task.remove({ _id: request.body._id }, function (err) {
-        if (err) return handleError(err);
-        response.redirect('/task');
-    });
-});
+        });
+    }
+);
 
 module.exports = router;

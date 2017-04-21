@@ -1,0 +1,9 @@
+{{#if errors}}
+    <ul id="error-list" class="alert alert-danger">
+        {{#each errors as |value key|}}
+            {{#each value as |errorValue errorKey|}}
+                <li class="entry">{{{errorValue.message}}}</li>
+            {{/each}}
+        {{/each}}
+    </ul>
+{{/if}}
