@@ -28,6 +28,8 @@
                   task = $(this).data('task');
             $('#comment-form .task').val(task);
             $('#comment-form .parent').val(parent);
+            $('#add-comment-modal .modal-errors').empty();
+            $('#add-comment-modal .modal-errors').hide();
             $('#add-comment-modal').modal('show');
         });
 
