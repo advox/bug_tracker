@@ -76,5 +76,26 @@ module.exports = {
     },
     firstLetter: (string) => {
         return string.charAt(0);
-    }
+    },
+    inArray: (needle, haystack) => {
+        var length = haystack.length;
+        for(var i = 0; i < length; i++) {
+            if(haystack[i] == needle) {
+                return true;
+            }
+        }
+        return false;
+    },
+    isCheckboxChecked: (needle, haystack) => {
+        var length = haystack.length;
+        for(var i = 0; i < length; i++) {
+            if(haystack[i] == needle) {
+                return 'checked';
+            }
+        }
+        return '';
+    },
+    stringReplace: (replace, to, subject) => {
+        return subject.replace(replace,to);
+    },
 };
