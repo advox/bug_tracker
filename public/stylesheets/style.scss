@@ -70,3 +70,34 @@ h1{
     }
   }
 }
+.media{
+  .media-left{
+    .file-text{
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      width: 90px;
+      display: block;
+      text-align: center;
+      padding: 16px;
+    }
+    .file-text:before{
+      content:"other";
+    }
+    .file-text.image-png:before,
+    .file-text.image-jpg:before,
+    .file-text.image-jpeg:before{
+      content:"image";
+    }
+    .file-text.application-octet-stream:before{
+      content:"octet";
+    }
+    .file-text.text-csv:before{
+      content:"csv";
+    }
+  }
+  .media-body{
+    vertical-align:middle;
+  }
+}

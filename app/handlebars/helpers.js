@@ -95,4 +95,7 @@ module.exports = {
         }
         return '';
     },
+    stringReplace: (replace, to, subject) => {
+        return subject.replace(replace,to);
+    },
 };

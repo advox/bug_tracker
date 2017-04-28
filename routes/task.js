@@ -5,13 +5,19 @@ const User = require('../models/user');
 const Comment = require('../models/comment');
 const Promise = require('bluebird');
 const util = require('util');
+const mkdirp = require('mkdirp');
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination: function (req, file, callback) {
-        callback(null, 'upload');
+        mkdirp('upload/' + req.body._id, function(err) {
+            if (err) {
+                console.log(err);
+            }
+            callback(null, 'upload/' + req.body._id);
+        });
     },
     filename: function (req, file, callback) {
-        callback(null, file.fieldname + '-' + Date.now());
+        callback(null, Date.now() + '-' + file.originalname);
     }
 });
 const upload = multer({ storage : storage }).array('files', 5);
@@ -82,10 +88,11 @@ router.get('/edit/:id', require('connect-ensure-login').ensureLoggedIn({redirect
 router.post('/save', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         upload(request, response, function(err) {
-
             if(err) {
                 console.log(err);
                 return;
+            } else {
+                request.body.files = request.files;
             }
 
             if (request.body._id) {
@@ -105,7 +112,7 @@ router.post('/save', require('connect-ensure-login').ensureLoggedIn({redirectTo:
                 var task = new Task(request.body);
                 task.status = 1;
                 task.notifications = [];
-                task.files = [];
+                task.files = request.files;
                 task.save();
                 response.redirect('/task');
             }
