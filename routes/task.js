@@ -21,15 +21,7 @@ const upload = multer({ storage : storage }).array('files', 5);
  */
 router.get('/', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
-        Promise.props({
-            done: Task.findDone(),
-            todo: Task.findToDo(),
-        }).then(function (results) {
-            response.render('task/index', {
-                done:     results.done,
-                todo:     results.todo,
-            })
-        });
+        response.render('task/index')
     }
 );
 

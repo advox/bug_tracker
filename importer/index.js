@@ -2,6 +2,7 @@ const usersImporter = require('./Users');
 const taskImporter = require('./Tasks');
 const commentImporter = require('./Comments');
 
+console.log('Started');
 usersImporter
     .removeAllUsers()
     .then(() => {

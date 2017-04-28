@@ -3,21 +3,10 @@
     <p>
         <button onclick="window.document.location='/task/new'" class="btn btn-lg btn-primary">Add new</button>
     </p>
-    {{>taskGrid
-            tasks=todo
-    }}
+    {{>taskGrid tasks=todo id='todoTasks'}}
     <h2>Done tasks</h2>
-    {{>taskGrid
-            tasks=done
-    }}
-    <script src="/javascripts/task/index.js"></script>
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+    {{>taskGrid tasks=done id='doneTasks'}}
     <script>
-        (function () {
-            var tables = document.getElementsByClassName('table-sortable');
-            for (var i = 0; i < tables.length; i++) {
-                jQuery(tables[i]).DataTable()
-            }
-        })();
+
     </script>
 </div>

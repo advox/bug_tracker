@@ -20,7 +20,6 @@ module.exports = {
         return new Promise((resolved, reject) => {
             pool.query(`select * from zgloszenia_odp where odp_text > '' order by odp_main_odp_id`,
             function (error, results, fields) {
-                console.log(results);
                 if (error) console.log(error);
                 results.map(row => {
                     Promise.props({

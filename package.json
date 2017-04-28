@@ -7,9 +7,6 @@
     "import": "node importer/index.js"
   },
   "dependencies": {
-    "babel-core": "^6.24.1",
-    "babel-loader": "^6.4.1",
-    "babel-preset-es2015": "^6.24.1",
     "bluebird": "^3.5.0",
     "body-parser": "~1.16.0",
     "bootstrap": "^3.3.7",
@@ -22,6 +19,7 @@
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.1",
     "hbs": "~4.0.1",
+    "md5": "^2.2.1",
     "mongoose": "^4.8.5",
     "morgan": "~1.7.0",
     "multer": "^1.3.0",
