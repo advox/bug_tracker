@@ -38,26 +38,29 @@
                 {{#each users}}
                     <div class="checkbox col-sm-3">
                         <label>
-                            <input value="{{{id}}}" type="checkbox"> {{{name}}} {{{surname}}}
+                            <input name="notifications[]" value="{{{id}}}" type="checkbox"
+                                {{{isCheckboxChecked id ../task.notifications}}}>{{{name}}} {{{surname}}}
                         </label>
                     </div>
                 {{/each}}
             </div>
             <div class="form-group priority-area">
-                <label for="priority">Priority</label>
-                <select class="form-control" id="priority" name="priority">
-                    <option value="1">Normal</option>
-                    <option value="2">Urgent</option>
+                <label for="important">Priority</label>
+                <select class="form-control" id="important" name="important[]">
+                    <option selected="{{{inArray 1 task.important}}}" value="1">Normal</option>
+                    <option selected="{{{inArray 2 task.important}}}" value="2">Urgent</option>
                 </select>
                 <label for="rank">Rank</label>
                 <select class="form-control" id="rank" name="rank">
                     {{#times 10}}
-                        <option value="{{{@current}}}">{{{@current}}}</option>
+                        <option {{#compare @current ../task.rank}} selected="selected" {{/compare}}
+                            value="{{{@current}}}">{{{@current}}}</option>
                     {{/times}}
                 </select>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox"> Sebastian
+                        <input name="important[]"  value="3" type="checkbox"
+                            {{{isCheckboxChecked 3 task.important}}}> Sebastian
                     </label>
                 </div>
             </div>
