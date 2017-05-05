@@ -49,8 +49,8 @@
                         return data.substring(0,40) + "...";
                     }
                 },
-                { "data": "author.login"},
-                { "data": "assignee.login"},
+                { "data": "author.name"},
+                { "data": "assignee.name"},
                 { "data": "comments"},
                 {
                     "data": "createdAt",
