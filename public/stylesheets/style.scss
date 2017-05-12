@@ -6,21 +6,29 @@
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
-  input{
-    margin-bottom:5px;
+  input {
+    margin-bottom: 5px;
   }
 }
-#error-list{
-  li{
+
+#error-list {
+  li {
     margin-left: 20px;
   }
 }
-.add-comment-button{
-  margin-bottom:10px;
+
+.add-comment-button {
+  margin-bottom: 10px;
 }
-.media{
-  .media-left{
-    a{
+
+.media {
+  width: auto;
+  display: inline-block;
+  img {
+    max-height: 100px;
+  }
+  .media-left {
+    a {
       width: 50px;
       height: 50px;
       text-align: center;
@@ -28,55 +36,59 @@
       vertical-align: middle;
       padding-left: 10px;
       padding-right: 10px;
-      font-size:40px;
+      font-size: 40px;
       text-transform: uppercase;
-      text-decoration:none;
-      color:#ffffff;
+      text-decoration: none;
+      color: #ffffff;
     }
   }
-  .media-body{
-    .content{
-      margin-top:10px;
-      margin-bottom:15px;
+  .media-body {
+    .content {
+      margin-top: 10px;
+      margin-bottom: 15px;
     }
   }
 }
-#add-comment-modal{
-  .modal-errors{
-    display:none;
+
+#add-comment-modal {
+  .modal-errors {
+    display: none;
     margin-bottom: 0;
     margin-top: 5px;
-    li{
+    li {
       margin-left: 20px;
     }
   }
 }
-#task-save{
+
+#task-save {
   .priority-area,
-  .author-area{
-    select{
-      max-width:300px;
+  .author-area {
+    select {
+      max-width: 300px;
     }
   }
-  .notification-area{
-    overflow:hidden;
-    .checkbox{
-      margin-top:0px;
-      margin-bottom:5px;
-    }
-  }
-}
-h1{
-  small{
-    button, a{
-      float:right;
-      margin-left:5px;
+  .notification-area {
+    overflow: hidden;
+    .checkbox {
+      margin-top: 0px;
+      margin-bottom: 5px;
     }
   }
 }
-.media{
-  .media-left{
-    .file-text{
+
+h1 {
+  small {
+    button, a {
+      float: right;
+      margin-left: 5px;
+    }
+  }
+}
+
+.media {
+  .media-left {
+    .file-text {
       color: #ffffff;
       font-size: 14px;
       font-weight: bold;
@@ -86,22 +98,22 @@ h1{
       text-align: center;
       padding: 16px;
     }
-    .file-text:before{
-      content:"other";
+    .file-text:before {
+      content: "other";
     }
     .file-text.image-png:before,
     .file-text.image-jpg:before,
-    .file-text.image-jpeg:before{
-      content:"image";
+    .file-text.image-jpeg:before {
+      content: "image";
     }
-    .file-text.application-octet-stream:before{
-      content:"octet";
+    .file-text.application-octet-stream:before {
+      content: "octet";
     }
-    .file-text.text-csv:before{
-      content:"csv";
+    .file-text.text-csv:before {
+      content: "csv";
     }
   }
-  .media-body{
-    vertical-align:middle;
+  .media-body {
+    vertical-align: middle;
   }
 }

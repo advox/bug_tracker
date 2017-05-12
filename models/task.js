@@ -130,6 +130,7 @@ taskSchema.statics.getTaskPriorityArray = function () {
     ];
 };
 
+
 let Task = mongoose.model('Task', taskSchema);
 
 module.exports = Task;
