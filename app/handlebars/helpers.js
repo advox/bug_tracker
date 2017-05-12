@@ -98,4 +98,16 @@ module.exports = {
     stringReplace: (replace, to, subject) => {
         return subject.replace(replace,to);
     },
+    baseUrl: () => {
+        return 'http://localhost:3000/';
+    },
+
+    isImage: (mimeType) => {
+        let mimeTypeExploded = mimeType.split('/');
+        return (
+            mimeTypeExploded.constructor === Array
+            && mimeTypeExploded.length > 0
+            && mimeTypeExploded[0] === 'image'
+        );
+    }
 };
