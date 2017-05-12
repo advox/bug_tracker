@@ -47,6 +47,24 @@ router.get(
     }
 );
 
+router.post('/grid', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+    (request, response) => {
+        Promise.props({
+            taskList: Task.findByStatus(request.body.status),
+        }).then(function (results) {
+            response.status(200).json(
+                {
+                    "draw": request.body.draw,
+                    "recordsTotal": results.taskList.length,
+                    "data": results.taskList
+                }
+            );
+        }).catch(function (error) {
+            console.log(error);
+        });
+    }
+);
+
 router.get(
     '/edit/:id',
     require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
