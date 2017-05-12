@@ -1,12 +1,142 @@
 <div class="container">
-    <h2>Active tasks</h2>
-    <p>
-        <button onclick="window.document.location='/task/new'" class="btn btn-lg btn-primary">Add new</button>
-    </p>
-    {{>taskGrid tasks=todo id='todoTasks'}}
-    <h2>Done tasks</h2>
-    {{>taskGrid tasks=done id='doneTasks'}}
-    <script>
+    <h2>Task list</h2>
+    <div>
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#active-tasks" aria-controls="active-tasks" role="tab" data-toggle="tab">Active tasks</a></li>
+            <li role="presentation"><a href="#done-tasks" aria-controls="done-tasks" role="tab" data-toggle="tab">Done tasks</a></li>
+        </ul>
 
-    </script>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="active-tasks">
+                <h4>Done tasks</h4>
+                <p>
+                    <button onclick="window.document.location='/task/new'" class="btn btn-lg btn-primary">Add new</button>
+                    {{>taskGrid tasks=todo id='todoTasks'}}
+                </p>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="done-tasks">
+                <h4>Done tasks</h4>
+                {{>taskGrid tasks=done id='doneTasks'}}
+            </div>
+        </div>
+    </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#todoTasks').DataTable({
+            processing: true,
+            serverSide: true,
+            sPaginationType: "full_numbers",
+            lengthMenu: [[10, 30, 50, 100], [10, 30, 50, 100]],
+            order: [[10, "desc"]],
+            pageLength: 30,
+            ajax: {
+                url: "/task/grid",
+                type: "POST",
+                data: function (d) {
+                    d.status = "1,3";
+                },
+            },
+            columns : [
+                {
+                    data: "title",
+                    render: function ( data, type, full, meta ) {
+                        return '<a href="/task/edit/' + full._id + '">' + data + '</a>';
+                    }
+                },
+                { data: "status"},
+                { data: "rank"},
+                { data: "important"},
+                {
+                    data: "important",
+                    render: function ( data, type, full, meta ) {
+                        if (data.indexOf('3') > 0) {
+                            return '<img src="images/superman.color.webp">'
+                        }
+                        return '<img src="images/superman.mono.webp">';
+                    }
+                },
+                {
+                    data: "content",
+                    render: function ( data, type, full, meta ) {
+                        return data.substring(0,40) + "...";
+                    }
+                },
+                { data: "author.name"},
+                { data: "assignee.name"},
+                { data: "comments"},
+                {
+                    data: "createdAt",
+                    render: function ( data, type, full, meta ) {
+                        return '{{{dateYmdHis data}}}';
+                    }
+                },
+                {
+                    data: "updatedAt",
+                    render: function (data, type, full, meta) {
+                        return '{{{dateYmdHis data}}}';
+                    }
+                },
+            ]
+        });
+
+        $('#doneTasks').DataTable({
+            processing: true,
+            serverSide: true,
+            sPaginationType: "full_numbers",
+            lengthMenu: [[10, 30, 50, 100], [10, 30, 50, 100]],
+            order: [[10, "desc"]],
+            pageLength: 30,
+            ajax: {
+                url: "/task/grid",
+                type: "POST",
+                data: function (d) {
+                    d.status = "2";
+                },
+            },
+            columns : [
+                {
+                    data: "title",
+                    render: function ( data, type, full, meta ) {
+                        return '<a href="/task/edit/' + full._id + '">' + data + '</a>';
+                    }
+                },
+                { data: "status"},
+                { data: "rank"},
+                { data: "important"},
+                {
+                    data: "important",
+                    render: function ( data, type, full, meta ) {
+                        if (data.indexOf('3') > 0) {
+                            return '<img src="images/superman.color.webp">'
+                        }
+                        return '<img src="images/superman.mono.webp">';
+                    }
+                },
+                {
+                    data: "content",
+                    render: function ( data, type, full, meta ) {
+                        return data.substring(0,40) + "...";
+                    }
+                },
+                { data: "author.name"},
+                { data: "assignee.name"},
+                { data: "comments"},
+                {
+                    data: "createdAt",
+                    render: function ( data, type, full, meta ) {
+                        return '{{{dateYmdHis data}}}';
+                    }
+                },
+                {
+                    data: "updatedAt",
+                    render: function (data, type, full, meta) {
+                        return '{{{dateYmdHis data}}}';
+                    }
+                },
+            ]
+        });
+
+    } );
+</script>

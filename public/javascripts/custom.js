@@ -12,106 +12,24 @@
         minHeight: 300,
     });
 
-    $(document).ready(function() {
-        $('#todoTasks').DataTable({
-            "processing": true,
-            "serverSide": true,
-            "order": [[10, "desc"]],
-            "ajax": {
-                "url": "/task/grid",
-                "type": "POST",
-                "data": function (d) {
-                    d.status = "1,3";
-                }
-            },
-            "columns" : [
-                {
-                    "data": "title",
-                    "render": function ( data, type, full, meta ) {
-                        return '<a href="/task/edit/' + full._id + '">' + data + '</a>';
-                    }
-                },
-                { "data": "status"},
-                { "data": "rank"},
-                { "data": "important"},
-                {
-                    "data": "important",
-                    "render": function ( data, type, full, meta ) {
-                        if (data.indexOf('3') > 0) {
-                            return '<img src="images/superman.color.webp">'
-                        }
-                        return '<img src="images/superman.mono.webp">';
-                    }
-                },
-                {
-                    "data": "content",
-                    "render": function ( data, type, full, meta ) {
-                        return data.substring(0,40) + "...";
-                    }
-                },
-                { "data": "author.name"},
-                { "data": "assignee.name"},
-                { "data": "comments"},
-                {
-                    "data": "createdAt",
-                    "render": function ( data, type, full, meta ) {
-                        var date = new Date(data);
-                        return date;
-                    }
-                },
-                { "data": "updatedAt"},
-            ]
-        });
+    $(document).on('keyup', '#todoTasks_wrapper input[type="search"]', function (){
+        let searchValue = $(this).val();
+        hideTableDetails(searchValue, '#todoTasks_wrapper');
+    });
 
-        $('#doneTasks').DataTable({
-            "processing": true,
-            "serverSide": true,
-            "order": [[10, "desc"]],
-            "ajax": {
-                "url": "/task/grid",
-                "type": "POST",
-                "data": function (d) {
-                    d.status = "2";
-                }
-            },
-            "columns" : [
-                {
-                    "data": "title",
-                    "render": function ( data, type, full, meta ) {
-                        return '<a href="/task/edit/' + full._id + '">' + data + '</a>';
-                    }
-                },
-                { "data": "status"},
-                { "data": "rank"},
-                { "data": "important"},
-                {
-                    "data": "important",
-                    "render": function ( data, type, full, meta ) {
-                        if (data.indexOf('3') > 0) {
-                            return '<img src="images/superman.color.webp">'
-                        }
-                        return '<img src="images/superman.mono.webp">';
-                    }
-                },
-                {
-                    "data": "content",
-                    "render": function ( data, type, full, meta ) {
-                        return data.substring(0,40) + "...";
-                    }
-                },
-                { "data": "author.login"},
-                { "data": "assignee.login"},
-                { "data": "comments"},
-                {
-                    "data": "createdAt",
-                    "render": function ( data, type, full, meta ) {
-                        return new Date(data);
-                    }
-                },
-                { "data": "updatedAt"},
-            ]
-        });
+    $(document).on('keyup', '#doneTasks_wrapper input[type="search"]', function (){
+        let searchValue = $(this).val();
+        hideTableDetails(searchValue, '#doneTasks_wrapper');
+    });
 
-    } );
+    function hideTableDetails(searchValue, element) {
+        if (searchValue == '') {
+            $(element + ' .dataTables_paginate').show();
+            $(element + ' .dataTables_info').show();
+        } else {
+            $(element + ' .dataTables_paginate').hide();
+            $(element + ' .dataTables_info').hide();
+        }
+    }
 
 })(jQuery);

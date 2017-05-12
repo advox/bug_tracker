@@ -34,22 +34,59 @@ const taskSchema = new Schema({
     }]
 });
 
-taskSchema.statics.findByStatus = function (status) {
+taskSchema.statics.countTasks = function (filter) {
     return new Promise((resolve, reject) => {
-        var statusArray = status.split(',');
+        let statusString = filter.status;
+        let statusArray = statusString.split(',');
         this.find(
             {
                 status: { $in: statusArray }
             }
-        )
-        .limit(30)
-        .populate('author assignee comments')
-        .exec((err, tasks) => {
+        ).exec((err, result) => {
             if (err) {
                 return reject(err);
             }
-            return resolve(tasks);
-        })
+            return resolve(result);
+        });
+    });
+};
+
+taskSchema.statics.filterTasks = function (filter) {
+    return new Promise((resolve, reject) => {
+        let statusString = filter.status;
+        let statusArray = statusString.split(',');
+        let tasks = this.find(
+            {
+                status: { $in: statusArray },
+                title: new RegExp(filter["search[value]"], 'i'),
+                content: new RegExp(filter["search[value]"], 'i'),
+            }
+        )
+        .populate('author assignee comments');
+
+        if (typeof filter.start != "undefined") {
+            tasks.skip(parseInt(filter.start));
+        }
+
+        if (typeof filter.length != "undefined") {
+            tasks.limit(parseInt(filter.length));
+        }
+
+        let orderColumnId = filter['order[0][column]'];
+        let orderColumnName = filter['columns['+orderColumnId+'][name]'];
+        let orderColumnDir = filter['order[0][dir]'];
+        let dir = '';
+        if (orderColumnDir == 'desc') {
+            dir = '-';
+        }
+        tasks.sort(dir + orderColumnName);
+
+        tasks.exec((err, result) => {
+            if (err) {
+                return reject(err);
+            }
+            return resolve(result);
+        });
     });
 };
 
