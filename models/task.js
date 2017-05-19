@@ -53,6 +53,7 @@ taskSchema.statics.countTasks = function (filter) {
 
 taskSchema.statics.filterTasks = function (filter) {
     return new Promise((resolve, reject) => {
+        console.log(filter);
         let statusString = filter.status;
         let statusArray = statusString.split(',');
         let tasks = this.find(
@@ -75,11 +76,8 @@ taskSchema.statics.filterTasks = function (filter) {
         let orderColumnId = filter['order[0][column]'];
         let orderColumnName = filter['columns['+orderColumnId+'][name]'];
         let orderColumnDir = filter['order[0][dir]'];
-        let dir = '';
-        if (orderColumnDir == 'desc') {
-            dir = '-';
-        }
-        tasks.sort(dir + orderColumnName);
+
+        tasks.sort({ [orderColumnName] : orderColumnDir });
 
         tasks.exec((err, result) => {
             if (err) {

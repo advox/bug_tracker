@@ -15,17 +15,12 @@ const commentSchema = new Schema({
         type: String,
         required: true
     },
-    status: {
-        type: Number,
-        required: true
-    },
     task: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Task'
     },
     files: Array,
     notifications: Array,
-    priority: Number,
     externalId: Number,
     createdAt: {
         type: Date,

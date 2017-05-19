@@ -1,18 +1,25 @@
 const express = require('express');
 const router = express.Router();
 const Comment = require('../models/comment');
+const Task = require('../models/task');
 const Promise = require('bluebird');
 const util = require('util');
+const mkdirp = require('mkdirp');
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination: function (req, file, callback) {
-        callback(null, 'upload');
+        mkdirp('public/images/upload/' + req.body._id, function (err) {
+            if (err) {
+                console.log(err);
+            }
+            callback(null, 'public/images/upload/' + req.body._id);
+        });
     },
     filename: function (req, file, callback) {
-        callback(null, file.fieldname + '-' + Date.now());
+        callback(null, Date.now() + '-' + file.originalname);
     }
 });
-const upload = multer({ storage : storage }).array('files', 5);
+const upload = multer({storage: storage}).array('files', 5);
 
 /**
  * comment get ajax action
@@ -35,22 +42,35 @@ router.post('/', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'
 /**
  * comment create ajax action
  */
-router.post('/save', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+router.post('/save',
+    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
-        var comment = new Comment(request.body);
-        comment.status = 1;
-        comment.notifications = [];
-        comment.author = request.session.passport.user._id;
-
-        if (typeof comment.parent == 'undefined') {
-            comment.parent = null;
-        }
-        comment.save(function(err) {
-            let errors;
-            if(err) {
-                errors = err.errors;
+        upload(request, response, function (err) {
+            if (err) {
+                if (err) {
+                    console.log('err');
+                    request.flash('errors', err.errors);
+                }
+                response.redirect('/task/edit/' + request.body._id);
             }
-            response.status(200).json({'errors': errors});
+            let comment = new Comment({
+                content: request.body.content,
+                files: request.files,
+                notifications: request.notifications,
+                task: request.body.task,
+                parent: request.body.parent,
+                author: request.session.passport.user._id
+            });
+            comment.save();
+            Task.findOneAndUpdate(
+                {_id: request.body.task},
+                {
+                    important: request.body.important,
+                    rank: request.body.rank,
+                    assignee: request.body.assignee,
+                }
+            );
+            response.status(200).json({});
         });
     }
 );

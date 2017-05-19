@@ -47,7 +47,9 @@ router.get(
     }
 );
 
-router.post('/grid', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+router.post(
+    '/grid',
+    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         Promise.props({
             taskList: Task.filterTasks(request.body),
