@@ -53,7 +53,6 @@ taskSchema.statics.countTasks = function (filter) {
 
 taskSchema.statics.filterTasks = function (filter) {
     return new Promise((resolve, reject) => {
-        console.log(filter);
         let statusString = filter.status;
         let statusArray = statusString.split(',');
         let tasks = this.find(
@@ -125,6 +124,16 @@ taskSchema.statics.getTaskPriorityArray = function () {
     return [
         {id: 0, name: 'Normal'},
         {id: 1, name: 'Urgent'}
+    ];
+};
+
+taskSchema.statics.getTaskStatusArray = function () {
+    return [
+        { id: 0, name: 'Dev-wait' },
+        { id: 1, name: 'Paker' },
+        { id: 2, name: 'Done' },
+        { id: 3, name: 'Feature' },
+        { id: 4, name: 'Dev-active' }
     ];
 };
 

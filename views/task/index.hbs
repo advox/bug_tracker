@@ -44,9 +44,16 @@
                         return '<a href="/task/edit/' + full._id + '">' + data + '</a>';
                     }
                 },
-                { data: "status"},
-                { data: "rank"},
-                { data: "important"},
+                {
+                    data: "status",
+                    render: function ( data, type, full, meta ) {
+                        return '{{{guwno statusArray data}}}';
+                    }
+                },
+                { data: "rank" },
+                {
+                    data: "important"
+                },
                 {
                     data: "important",
                     render: function ( data, type, full, meta ) {
@@ -114,7 +121,12 @@
                         return '<a href="/task/edit/' + full._id + '">' + data + '</a>';
                     }
                 },
-                { data: "status"},
+                {
+                    data: "status",
+                    render: function ( data, type, full, meta ) {
+                        return '{{{getDataFromArray statusArray data}}}';
+                    }
+                },
                 { data: "rank"},
                 { data: "important"},
                 {

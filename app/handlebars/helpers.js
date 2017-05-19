@@ -101,7 +101,6 @@ module.exports = {
     baseUrl: () => {
         return 'http://localhost:3000/';
     },
-
     isImage: (mimeType) => {
         let mimeTypeExploded = mimeType.split('/');
         return (
@@ -109,5 +108,10 @@ module.exports = {
             && mimeTypeExploded.length > 0
             && mimeTypeExploded[0] === 'image'
         );
+    },
+    guwno: (dataArray, key) => {
+        console.log(dataArray);
+        console.log(key);
+        return dataArray[0].name;
     }
 };
