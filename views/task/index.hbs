@@ -8,14 +8,12 @@
 
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="active-tasks">
-                <h4>Done tasks</h4>
-                <p>
-                    <button onclick="window.document.location='/task/new'" class="btn btn-lg btn-primary">Add new</button>
-                    {{>taskGrid tasks=todo id='todoTasks'}}
-                </p>
+                <h3>Active tasks</h3>
+                <button onclick="window.document.location='/task/new'" class="btn btn-lg btn-primary">Add new</button>
+                {{>taskGrid tasks=todo id='todoTasks'}}
             </div>
             <div role="tabpanel" class="tab-pane" id="done-tasks">
-                <h4>Done tasks</h4>
+                <h3>Done tasks</h3>
                 {{>taskGrid tasks=done id='doneTasks'}}
             </div>
         </div>
@@ -27,6 +25,7 @@
         $('#todoTasks').DataTable({
             processing: true,
             serverSide: true,
+            dom: '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
             sPaginationType: "full_numbers",
             lengthMenu: [[10, 30, 50, 100], [10, 30, 50, 100]],
             order: [[10, "desc"]],
@@ -63,9 +62,24 @@
                         return data.substring(0,40) + "...";
                     }
                 },
-                { data: "author.name"},
-                { data: "assignee.name"},
-                { data: "comments"},
+                {
+                    data: "author.name",
+                    render: function ( data, type, row ) {
+                        return data + ' ' + row.author.surname;
+                    }
+                },
+                {
+                    data: "assignee.name",
+                    render: function ( data, type, row ) {
+                        return data + ' ' + row.assignee.surname;
+                    }
+                },
+                {
+                    data: "comments",
+                    render:  function ( data, type, row ) {
+                        return data.length;
+                    }
+                },
                 {
                     data: "createdAt",
                     render: function ( data, type, full, meta ) {
@@ -84,6 +98,7 @@
         $('#doneTasks').DataTable({
             processing: true,
             serverSide: true,
+            dom: '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
             sPaginationType: "full_numbers",
             lengthMenu: [[10, 30, 50, 100], [10, 30, 50, 100]],
             order: [[10, "desc"]],
@@ -120,9 +135,24 @@
                         return data.substring(0,40) + "...";
                     }
                 },
-                { data: "author.name"},
-                { data: "assignee.name"},
-                { data: "comments"},
+                {
+                    data: "author.name",
+                    render: function ( data, type, row ) {
+                        return data + ' ' + row.author.surname;
+                    }
+                },
+                {
+                    data: "assignee.name",
+                    render: function ( data, type, row ) {
+                        return data + ' ' + row.assignee.surname;
+                    }
+                },
+                {
+                    data: "comments",
+                    render:  function ( data, type, row ) {
+                        return data.length;
+                    }
+                },
                 {
                     data: "createdAt",
                     render: function ( data, type, full, meta ) {

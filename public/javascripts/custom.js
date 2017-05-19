@@ -24,11 +24,11 @@
 
     function hideTableDetails(searchValue, element) {
         if (searchValue == '') {
-            $(element + ' .dataTables_paginate').show();
-            $(element + ' .dataTables_info').show();
+            $(element + ' .dataTables_paginate').css('display', 'block');
+            $(element + ' .dataTables_info').css('display', 'block');
         } else {
-            $(element + ' .dataTables_paginate').hide();
-            $(element + ' .dataTables_info').hide();
+            $(element + ' .dataTables_paginate').css('display', 'none');
+            $(element + ' .dataTables_info').css('display', 'none');
         }
     }
 
