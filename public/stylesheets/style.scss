@@ -117,3 +117,32 @@ h1 {
     vertical-align: middle;
   }
 }
+
+.dataTables_wrapper{
+  .top, .bottom{
+    margin-top:20px;
+    .dataTables_info, .dataTables_filter, .dataTables_length, .dataTables_paginate {
+      width:50%;
+      float:left;
+      margin:0;
+      padding:0;
+      height:40px;
+    }
+    input{
+      height: 32px;
+      width: 250px;
+      max-width: 100%;
+      border: 1px solid #979797;
+    }
+    .dataTables_filter{
+      float:right;
+      width:70%;
+    }
+    .dataTables_info, .dataTables_length{
+      width:30%;
+    }
+    .dataTables_paginate{
+      width:70%;
+    }
+  }
+}
