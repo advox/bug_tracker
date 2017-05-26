@@ -127,16 +127,6 @@ taskSchema.statics.getTaskPriorityArray = function () {
     ];
 };
 
-taskSchema.statics.getTaskStatusArray = function () {
-    return [
-        { id: 0, name: 'Dev-wait' },
-        { id: 1, name: 'Paker' },
-        { id: 2, name: 'Done' },
-        { id: 3, name: 'Feature' },
-        { id: 4, name: 'Dev-active' }
-    ];
-};
-
 
 let Task = mongoose.model('Task', taskSchema);
 

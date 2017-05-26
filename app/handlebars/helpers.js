@@ -1,5 +1,6 @@
 'use strict';
 const datetime = require('node-datetime');
+const Task = require('../../models/task');
 
 module.exports = {
     dateYmdHis: (dateString) => {
@@ -109,9 +110,10 @@ module.exports = {
             && mimeTypeExploded[0] === 'image'
         );
     },
-    guwno: (dataArray, key) => {
-        console.log(dataArray);
+    getStatusForValue: (key) => {
+        var statusArray = Task.getTaskStatusArray();
+        console.log(statusArray);
         console.log(key);
-        return dataArray[0].name;
+        return statusArray[key].name;
     }
 };
