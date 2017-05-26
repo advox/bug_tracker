@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const commentSchema = new Schema({
     author: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true
     },
     parent: {
         type: mongoose.Schema.Types.ObjectId,
@@ -17,7 +18,8 @@ const commentSchema = new Schema({
     },
     task: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Task'
+        ref: 'Task',
+        required: true
     },
     files: Array,
     notifications: Array,
