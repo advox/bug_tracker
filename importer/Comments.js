@@ -16,6 +16,7 @@ module.exports = {
             });
         })
     },
+
     importComments: function () {
         return new Promise((resolved, reject) => {
             pool.query(`select * from zgloszenia_odp where odp_text > '' order by odp_main_odp_id`,
@@ -46,6 +47,30 @@ module.exports = {
                     });
                 });
             });
+        })
+    },
+
+    assignCommentsToItsTasks: function() {
+        return new Promise((resolved, reject) => {
+            Task.find({}, (err, tasks) => {
+                if (err) {
+                    reject();
+                }
+                tasks.map(task => {
+                    Comment.find({task: task._id}, (err, comments) => {
+                        if (err) {
+                            reject();
+                        }
+                        task.comments = comments;
+                        task.save(err => {
+                            if (err) {
+                                reject();
+                            }
+                        });
+                    })
+                });
+                resolved()
+            })
         })
     }
 };

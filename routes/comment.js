@@ -48,29 +48,37 @@ router.post('/save',
         upload(request, response, function (err) {
             if (err) {
                 if (err) {
-                    console.log('err');
                     request.flash('errors', err.errors);
                 }
                 response.redirect('/task/edit/' + request.body._id);
             }
-            let comment = new Comment({
-                content: request.body.content,
-                files: request.files,
-                notifications: request.notifications,
-                task: request.body.task,
-                parent: request.body.parent,
-                author: request.session.passport.user._id
-            });
-            comment.save();
-            Task.findOneAndUpdate(
-                {_id: request.body.task},
-                {
-                    important: request.body.important,
-                    rank: request.body.rank,
-                    assignee: request.body.assignee,
+
+            Promise.props({
+                comment: function () {
+                    let comment = new Comment({
+                        content: request.body.content,
+                        files: request.files,
+                        notifications: request.notifications,
+                        task: request.body.task,
+                        parent: request.body.parent,
+                        author: request.session.passport.user._id
+                    });
+                    console.log(comment);
+                    comment.save();
+                },
+                task: function () {
+                    Task.findOneAndUpdate(
+                        {_id: request.body.task},
+                        {
+                            important: request.body.important,
+                            rank: request.body.rank,
+                            assignee: request.body.assignee,
+                        }
+                    );
                 }
-            );
-            response.status(200).json({});
+            }).then(function () {
+                response.status(200).json({});
+            });
         });
     }
 );

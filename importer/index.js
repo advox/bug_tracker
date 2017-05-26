@@ -14,7 +14,7 @@ usersImporter
     .then(() => {
         return usersImporter.getImportedUsersIdsString();
     })
-    .then((adminIdsString) => {
+    .then(adminIdsString => {
         return taskImporter.importTasks(adminIdsString);
     })
     .then(() => {
@@ -22,6 +22,9 @@ usersImporter
     })
     .then(() => {
         return commentImporter.importComments();
+    })
+    .then(() => {
+        return commentImporter.assignCommentsToItsTasks();
     })
     .then(() => {
         return console.log('Finished');

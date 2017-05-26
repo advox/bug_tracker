@@ -112,6 +112,5 @@ module.exports = {
     guwno: (dataArray, key) => {
         console.log(dataArray);
         console.log(key);
-        return dataArray[0].name;
     }
 };

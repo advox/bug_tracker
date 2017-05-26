@@ -16,7 +16,6 @@ module.exports = {
     importUsers: function () {
         return new Promise((resolve, reject) => {
             pool.query('SELECT * FROM admins where `login` not like "xxx%" and `name` not like "xxx%"', function (error, results, fields) {
-                console.log(error);
                 results.map(row => {
                     name = row.name.split(' ');
                     let user = new User({
