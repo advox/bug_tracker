@@ -1,7 +1,18 @@
 const db = require("./db");
 const User = require('../models/user');
 const Comment = require('../models/comment');
+const Status = require('../models/status');
 const Task = require('../models/task');
+
+status.save();
+
+{ id: 0, name: 'Dev-wait' },
+{ id: 1, name: 'Paker' },
+{ id: 2, name: 'Done' },
+{ id: 3, name: 'Feature' },
+{ id: 4, name: 'Dev-active' }
+
+return null;
 
 
 const comment = new Comment({

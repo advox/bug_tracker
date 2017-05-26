@@ -109,8 +109,10 @@ module.exports = {
             && mimeTypeExploded[0] === 'image'
         );
     },
-    guwno: (dataArray, key) => {
-        console.log(dataArray);
+    getStatusForValue: (key) => {
+        var statusArray = Task.getTaskStatusArray();
+        console.log(statusArray);
         console.log(key);
+        return statusArray[key].name;
     }
 };
