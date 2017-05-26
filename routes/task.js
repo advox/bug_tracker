@@ -27,7 +27,6 @@ router.get(
     require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         response.render('task/index', {
-            statusArray: Task.getTaskStatusArray(),
             importanceArray: Task.getTaskPriorityArray(),
         });
     }
