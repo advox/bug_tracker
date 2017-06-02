@@ -32,8 +32,8 @@
                         <h4>Modify task</h4>
                         <label for="important">Priority</label>
                         <select class="form-control" id="important" name="important[]">
-                            <option selected="{{{inArray 1 task.important}}}" value="1">Normal</option>
-                            <option selected="{{{inArray 2 task.important}}}" value="2">Urgent</option>
+                            <option {{{isSelectSelectedInArray 1 task.important}}} value="1">Normal</option>
+                            <option {{{isSelectSelectedInArray 2 task.important}}} value="2">Urgent</option>
                         </select>
                         <label for="rank">Rank</label>
                         <select class="form-control" id="rank" name="rank">
