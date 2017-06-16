@@ -84,7 +84,7 @@ console.log(request.body.important);
                 .save()
                 .then(function(result){
                     Task.findOne({ _id: request.body.task }, function (err, task) {
-                        task.important = [request.body.important];
+                        task.important = request.body.important;
                         task.rank = request.body.rank;
                         task.assignee = request.body.assignee;
                         task.save();
