@@ -58,8 +58,8 @@ taskSchema.statics.filterTasks = function (filter) {
         let tasks = this.find(
             {
                 status: { $in: statusArray },
-                title: new RegExp(filter["search[value]"], 'i'),
-                content: new RegExp(filter["search[value]"], 'i'),
+                title: new RegExp(filter.search.value, 'i'),
+                content: new RegExp(filter.search.value, 'i'),
             }
         )
         .populate('author assignee comments');
@@ -72,9 +72,9 @@ taskSchema.statics.filterTasks = function (filter) {
             tasks.limit(parseInt(filter.length));
         }
 
-        let orderColumnId = filter['order[0][column]'];
-        let orderColumnName = filter['columns['+orderColumnId+'][name]'];
-        let orderColumnDir = filter['order[0][dir]'];
+        let orderColumnId = filter.order[0].column;
+        let orderColumnName = filter.columns[orderColumnId].name;
+        let orderColumnDir = filter.order[0].dir;
 
         tasks.sort({ [orderColumnName] : orderColumnDir });
 

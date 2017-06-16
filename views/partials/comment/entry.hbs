@@ -1,4 +1,5 @@
 <div class="media">
+    {{log comment.task}}
     <div class="media-left">
         <a style="background-color:{{{toHex comment.author.surname}}}">
             {{{firstLetter comment.author.login}}}
@@ -11,6 +12,19 @@
         </h4>
         <div class="content">
             {{{comment.content}}}
+        </div>
+        <div class="files">
+            {{#if comment.files}}
+                {{#each comment.files}}
+                    <div class="media">
+                        {{#if (isImage mimetype)}}
+                            <a href="{{{baseUrl}}}images/upload/{{{../comment.task}}}/{{{filename}}}"><img class="img-thumbnail" src="{{{baseUrl}}}images/upload/{{{../comment.task}}}/{{{filename}}}" alt=""></a>
+                        {{else}}
+                            <a href="{{{baseUrl}}}images/upload/{{{../comment.task}}}/{{{filename}}}">{{{filename}}}</a>
+                        {{/if}}
+                    </div>
+                {{/each}}
+            {{/if}}
         </div>
         <button class="btn btn-default add-comment-button btn-xs" data-task="{{{comment.task}}}" data-parent="{{{comment.id}}}">Reply to this post</button>
         <div id="children-{{{comment.id}}}"></div>

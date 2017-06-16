@@ -18,7 +18,7 @@
     <div class="panel-body">
 
         <form id="task-save" enctype="multipart/form-data" action="/task/save" method="post">
-            <fieldset  {{#unless task._id}}disabled{{/unless}} >
+            <fieldset>
                 <input type="hidden" name="_id" value="{{{task._id}}}"/>
                 <div class="form-group">
                     <label for="title">Title</label>
@@ -26,7 +26,11 @@
                 </div>
                 <div class="form-group">
                     <label for="content">Description</label>
-                    <textarea class="form-control {{#unless task._id}}wysiwyg{{/unless}}" id="content" name="content" rows="12">{{{task.content}}}</textarea>
+                    {{#if task._id}}
+                        <div class="edit-content">{{{task.content}}}</div>
+                    {{else}}
+                        <textarea class="form-control wysiwyg" id="content" name="content" rows="12">{{{task.content}}}</textarea>
+                    {{/if}}
                 </div>
                 <div class="form-group">
                     <label for="files">Files</label>

@@ -8,11 +8,12 @@ const mkdirp = require('mkdirp');
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination: function (req, file, callback) {
-        mkdirp('public/images/upload/' + req.body._id, function (err) {
+        console.log(req.body.task_id);
+        mkdirp('public/images/upload/' + req.body.task_id, function (err) {
             if (err) {
                 console.log(err);
             }
-            callback(null, 'public/images/upload/' + req.body._id);
+            callback(null, 'public/images/upload/' + req.body.task_id);
         });
     },
     filename: function (req, file, callback) {
@@ -45,12 +46,13 @@ router.post('/', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'
 router.post('/save',
     require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
+        console.log(request.body);
         upload(request, response, function (err) {
             if (err) {
                 if (err) {
                     request.flash('errors', err.errors);
                 }
-                console.log('error');
+                console.log(err);
                 response.redirect('/task/edit/' + request.body._id);
             }
 
@@ -60,7 +62,7 @@ router.post('/save',
             }
 
             let notifications = [];
-            if (typeof request.files !== 'undefined') {
+            if (typeof request.notifications !== 'undefined') {
                 notifications = request.notifications;
             }
 
@@ -79,7 +81,7 @@ router.post('/save',
             };
 
             let comment = new Comment(data);
-console.log(request.body.important);
+
             comment
                 .save()
                 .then(function(result){
