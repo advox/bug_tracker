@@ -4,6 +4,10 @@ const Comment = require('../models/comment');
 const Status = require('../models/status');
 const Task = require('../models/task');
 
+var status = new Status();
+
+
+
 status.save();
 
 { id: 0, name: 'Dev-wait' },

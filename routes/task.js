@@ -9,8 +9,6 @@ const mkdirp = require('mkdirp');
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination: function (req, file, callback) {
-        console.log('task');
-        console.log(file);
         mkdirp('public/images/upload/' + req.body._id, function (err) {
             if (err) {
                 console.log(err);
@@ -44,7 +42,8 @@ router.get(
         }).then(function (results) {
             response.render('task/edit', {
                 users: results.users,
-                priority: results.priority
+                priority: results.priority,
+                task: new Task(),
             });
         })
     }
