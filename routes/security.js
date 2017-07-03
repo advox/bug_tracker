@@ -25,11 +25,23 @@ passport.use(new LocalStrategy(
 ));
 
 router.get('/', (req, res) => {
-    res.render('security/login')
+    if (req.user !== undefined) {
+        res.redirect('/task');
+    } else {
+        res.render('security/login');
+    }
 });
 
 router.post('/login', passport.authenticate('local', { failureRedirect: '/fail' }), (req, res) => {
+    res.locals.loggedUser = req.user;
     res.redirect('/task');
+});
+
+router.get('/logout', (req, res) => {
+    req.session.destroy(function (err) {
+        delete res.locals.loggedUser;
+        res.redirect('/');
+    });
 });
 
 module.exports = router;
