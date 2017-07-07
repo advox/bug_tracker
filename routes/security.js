@@ -33,13 +33,13 @@ router.get('/', (req, res) => {
 });
 
 router.post('/login', passport.authenticate('local', { failureRedirect: '/fail' }), (req, res) => {
-    res.locals.loggedUser = req.user;
+    req.app.locals.loggedUser = req.user;
     res.redirect('/task');
 });
 
 router.get('/logout', (req, res) => {
     req.session.destroy(function (err) {
-        delete res.locals.loggedUser;
+        delete req.app.locals.loggedUser;
         res.redirect('/');
     });
 });

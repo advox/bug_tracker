@@ -43,7 +43,6 @@ app.use(passport.session());
 app.use('/', routes);
 app.use(function (req, res, next) {
     app.locals.loggedUser = req.user;
-    res.locals.loggedUser = req.user;
 
     var err = new Error('Not Found');
     err.status = 404;
