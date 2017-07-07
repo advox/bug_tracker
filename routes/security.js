@@ -5,23 +5,29 @@ const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/user');
 const md5 = require('md5');
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
     done(null, user);
 });
 
-passport.deserializeUser(function(user, done) {
+passport.deserializeUser(function (user, done) {
     done(null, user);
 });
 
 passport.use(new LocalStrategy(
-    function(username, password, done) {
-        User.findOne({login: username }, function (err, user) {
-            if (err) { return done(err); }
-            if (!user) { return done(null, false); }
-            if (user.password !== password) { return done(null, false); }
-            return done(null, user);
-        });
-    }
+        function (username, password, done) {
+            User.findOne({login: username}, function (err, user) {
+                if (err) {
+                    return done(err);
+                }
+                if (!user) {
+                    return done(null, false);
+                }
+                if (user.password !== md5(password)) {
+                    return done(null, false);
+                }
+                return done(null, user);
+            });
+        }
 ));
 
 router.get('/', (req, res) => {
@@ -32,14 +38,14 @@ router.get('/', (req, res) => {
     }
 });
 
-router.post('/login', passport.authenticate('local', { failureRedirect: '/fail' }), (req, res) => {
-    res.locals.loggedUser = req.user;
+router.post('/login', passport.authenticate('local', {failureRedirect: '/'}), (req, res) => {
+    req.app.locals.loggedUser = req.user;
     res.redirect('/task');
 });
 
 router.get('/logout', (req, res) => {
     req.session.destroy(function (err) {
-        delete res.locals.loggedUser;
+        delete req.app.locals.loggedUser;
         res.redirect('/');
     });
 });

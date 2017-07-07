@@ -1,0 +1,33 @@
+{{#if user._id}}
+    <form id="user-delete" action="/user/delete" method="post">
+        <input type="hidden" name="_id" value="{{{user._id}}}">
+        <h1>Edit user
+            <small><button class="btn btn-danger" type="submit">Delete</button></small>
+            <small><a href="/user" class="btn btn-warning">Go Back</a></small>
+        </h1>
+    </form>
+{{else}}
+    <h1>Create user
+        <small><a href="/user" class="btn btn-warning">go back</a></small>
+    </h1>
+{{/if}}
+
+{{>errorMessages errors=errors}}
+
+<div class="panel panel-default">
+    <div class="panel-body">
+
+        <form id="user-save" enctype="multipart/form-data" action="/user/save" method="post">
+            <fieldset>
+                <input type="hidden" name="_id" value="{{{user._id}}}"/>
+                <div class="form-group">
+                    <label for="title">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{{user.name}}}">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </fieldset>
+        </form>
+
+    </div>
+</div>
