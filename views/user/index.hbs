@@ -1,0 +1,44 @@
+<div class="container">
+    <h2>User list</h2>
+    
+    <div class="form-group">
+        <button onclick="window.document.location='/task/new'" class="btn btn-lg btn-primary">Add new</button>
+    </div>    
+    {{>userGrid id='userList'}}
+            
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#userList').DataTable({
+            processing: true,
+            serverSide: true,
+            dom: '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
+            sPaginationType: "full_numbers",
+            lengthMenu: [[10, 30, 50, 100], [10, 30, 50, 100]],
+            order: [[0, "asc"]],
+            pageLength: 30,
+            ajax: {
+                url: "/user/grid",
+                type: "POST"
+            },
+            columns : [
+                {
+                    data: "login",
+                    render: function ( data, type, full, meta ) {
+                        return '<a href="/user/edit/' + full._id + '">' + data + '</a>';
+                    }
+                },
+                {
+                    data: "name",
+                },
+                {
+                    data: "surname",
+                },
+                {
+                    data: "email",
+                },
+            ]
+        });
+    } );
+</script>
