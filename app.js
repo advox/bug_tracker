@@ -41,11 +41,13 @@ app.use(flash());
 app.use(passport.session());
 
 app.use('/', routes);
+app.use(function (req, res, next) {
+    app.locals.loggedUser = req.user;
+    res.locals.loggedUser = req.user;
 
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 app.use(function(err, req, res, next) {
@@ -53,5 +55,6 @@ app.use(function(err, req, res, next) {
     res.locals.error = req.app.get('env') === 'development' ? err : {};
     res.status(err.status || 500);
 });
+
 
 module.exports = app;
