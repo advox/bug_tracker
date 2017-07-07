@@ -21,7 +21,8 @@ const taskSchema = new Schema({
     },
     assignee: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: false
     },
     notifications: Array,
     files: Array,

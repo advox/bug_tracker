@@ -45,5 +45,4 @@ usersImporter
         console.log(err);
     })
 ;
-console.log('End');
 return null;
