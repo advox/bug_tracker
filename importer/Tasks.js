@@ -1,6 +1,8 @@
 const pool = require('./db/connection');
 const Task = require('../models/task');
 const User = require('../models/user');
+const Status = require('../models/task/status');
+const Importance = require('../models/task/importance');
 const db = require("../bin/db");
 const Promise = require('bluebird');
 
@@ -14,6 +16,62 @@ module.exports = {
                 return resolved();
             });
         })
+    },
+    removeTaskStatuses: function() {
+        return new Promise((resolved, reject) => {
+            Status.remove({}, (err) => {
+                if (err) {
+                    return reject(err)
+                }
+                return resolved();
+            });
+        })
+    },
+    addTaskStatuses: function () {
+        let status = new Status({
+            externalId: 0, name: 'Dev-wait'
+        });
+        status.save();
+        status = new Status({
+            externalId: 1, name: 'Paker'
+        });
+        status.save();
+        status = new Status({
+            externalId: 2, name: 'Done'
+        });
+        status.save();
+        status = new Status({
+            externalId: 3, name: 'Feature'
+        });
+        status.save();
+        status = new Status({
+            externalId: 4, name: 'Dev-active'
+        });
+        status.save();
+    },
+    removeTaskImportance: function() {
+        return new Promise((resolved, reject) => {
+            Importance.remove({}, (err) => {
+                if (err) {
+                    return reject(err)
+                }
+                return resolved();
+            });
+        })
+    },
+    addTaskImportance: function () {
+        let importance = new Importance({
+            externalId: 1, name: 'Normal'
+        });
+        importance.save();
+        importance = new Importance({
+            externalId: 2, name: 'Urgent'
+        });
+        importance.save();
+        importance = new Importance({
+            externalId: 3, name: 'Sebastian'
+        });
+        importance.save();
     },
     importTasks: function (adminIds) {
         return new Promise((resolved, reject) => {

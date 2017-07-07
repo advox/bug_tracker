@@ -12,6 +12,18 @@ usersImporter
         return taskImporter.removeAllTasks();
     })
     .then(() => {
+        return taskImporter.removeTaskStatuses();
+    })
+    .then(() => {
+        return taskImporter.addTaskStatuses();
+    })
+    .then(() => {
+        return taskImporter.removeTaskImportance();
+    })
+    .then(() => {
+        return taskImporter.addTaskImportance();
+    })
+    .then(() => {
         return usersImporter.getImportedUsersIdsString();
     })
     .then(adminIdsString => {
@@ -33,3 +45,5 @@ usersImporter
         console.log(err);
     })
 ;
+console.log('End');
+return null;

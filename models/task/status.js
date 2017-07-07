@@ -13,6 +13,10 @@ const statusSchema = new Schema({
     updatedAt: {
         type: Date,
         default: Date.now
+    },
+    externalId: {
+        type: Number,
+        required: true
     }
 });
 
