@@ -4,6 +4,10 @@ const Task = require('../models/task');
 const User = require('../models/user');
 const db = require("../bin/db");
 const Promise = require('bluebird');
+const http = require('http');
+const fs = require('fs');
+const mkdirp = require('mkdirp');
+const mime = require('mime-types')
 
 module.exports = {
     removeAllComments: function () {
@@ -38,7 +42,102 @@ module.exports = {
                                 status: row.odp_done,
                             });
                             try {
-                                comment.save()
+                                comment
+                                    .save()
+                                    .then(function(result){
+
+                                        let filesArray = [];
+
+                                        if (row.odp_file1 != '') {
+                                            var fileObject = {
+                                                'size': '',
+                                                'path': 'public/images/upload/' + result.task + '/' + row.odp_file1,
+                                                'filename': row.odp_file1,
+                                                'destination': 'public/images/upload/' + result.task,
+                                                'mimetype': mime.lookup(row.odp_file1),
+                                                'encoding': '7bit',
+                                                'originalname': row.odp_file1,
+                                                'fieldname': 'files'
+                                            };
+                                            filesArray.push(fileObject);
+                                        }
+                                        if (row.odp_file2 != '') {
+                                            var fileObject = {
+                                                'size': '',
+                                                'path': 'public/images/upload/' + result.task + '/' + row.odp_file2,
+                                                'filename': row.odp_file2,
+                                                'destination': 'public/images/upload/' + result.task,
+                                                'mimetype': mime.lookup(row.odp_file2),
+                                                'encoding': '7bit',
+                                                'originalname':  row.odp_file2,
+                                                'fieldname': 'files'
+                                            };
+                                            filesArray.push(fileObject);
+                                        }
+                                        if (row.odp_file3 != '') {
+                                            var fileObject = {
+                                                'size': '',
+                                                'path': 'public/images/upload/' + result.task + '/' + row.odp_file3,
+                                                'filename': row.odp_file3,
+                                                'destination': 'public/images/upload/' + result.task,
+                                                'mimetype': mime.lookup(row.odp_file3),
+                                                'encoding': '7bit',
+                                                'originalname':  row.odp_file3,
+                                                'fieldname': 'files'
+                                            };
+                                            filesArray.push(fileObject);
+                                        }
+                                        if (row.odp_file4 != '') {
+                                            var fileObject = {
+                                                'size': '',
+                                                'path': 'public/images/upload/' + result.task + '/' + row.odp_file4,
+                                                'filename': row.odp_file4,
+                                                'destination': 'public/images/upload/' + result.task,
+                                                'mimetype': mime.lookup(row.odp_file4),
+                                                'encoding': '7bit',
+                                                'originalname':  row.odp_file4,
+                                                'fieldname': 'files'
+                                            };
+                                            filesArray.push(fileObject);
+                                        }
+                                        if (row.odp_file5 != '') {
+                                            var fileObject = {
+                                                'size': '',
+                                                'path': 'public/images/upload/' + result.task + '/' + row.odp_file5,
+                                                'filename': row.odp_file5,
+                                                'destination': 'public/images/upload/' + result.task,
+                                                'mimetype': mime.lookup(row.odp_file5),
+                                                'encoding': '7bit',
+                                                'originalname':  row.odp_file5,
+                                                'fieldname': 'files'
+                                            };
+                                            filesArray.push(fileObject);
+                                        }
+
+                                        if (filesArray.length > 0) {
+
+                                            for (let i = 1; i<=5; i++) {
+                                                let field = "odp_file" + i;
+
+                                                if (row[field] != '') {
+                                                    mkdirp('public/images/upload/' + result._id, function (err) {
+                                                        if (err) {
+                                                            console.log(err);
+                                                        }
+                                                        let file = fs.createWriteStream("public/images/upload/" + result._id + "/" + row[field]);
+                                                        http.get("http://www.paker.co.uk/_admin/pliki/zgl/" + row[field], function(response) {
+                                                            response.pipe(file);
+                                                        });
+                                                    });
+                                                }
+                                            }
+
+                                            result.files = filesArray;
+                                            result.save();
+                                        }
+
+                                    });
+
                             } catch (err) {
                                 return reject(err)
                             }

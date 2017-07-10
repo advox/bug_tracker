@@ -40,9 +40,9 @@
                         {{#each task.files}}
                             <div class="media">
                                 {{#if (isImage mimetype)}}
-                                    <a href="{{{baseUrl}}}images/upload/{{{task._id}}}/{{{filename}}}"><img class="img-thumbnail" src="{{{baseUrl}}}images/upload/{{{../task._id}}}/{{{filename}}}" alt=""></a>
+                                    <a target="_blank" href="{{{baseUrl}}}images/upload/{{{../task._id}}}/{{{filename}}}"><img class="img-thumbnail" src="{{{baseUrl}}}images/upload/{{{../task._id}}}/{{{filename}}}" alt=""></a>
                                 {{else}}
-                                    <a href="{{{baseUrl}}}images/upload/{{{../task._id}}}/{{{filename}}}">{{{filename}}}</a>
+                                    <a target="_blank" href="{{{baseUrl}}}images/upload/{{{../task._id}}}/{{{filename}}}">{{{filename}}}</a>
                                 {{/if}}
                             </div>
                         {{/each}}
