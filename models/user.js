@@ -2,9 +2,19 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    login: String,
-    password: String,
-    email: String,
+    login: {
+        type: String,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    email: {
+        type: String,
+        unique: true
+    },
     name: String,
     surname: String,
     status: Boolean,
@@ -94,7 +104,6 @@ userSchema.statics.findById = function (userId) {
             if (err) {
                 return reject(err);
             }
-    console.log('witam');
             return resolve(user);
         });
     });

@@ -4,23 +4,8 @@ const router = express.Router();
 const User = require('../models/user');
 //const Comment = require('../models/comment');
 const Promise = require('bluebird');
+const md5 = require('md5');
 //const util = require('util');
-//const mkdirp = require('mkdirp');
-//const multer = require('multer');
-//const storage = multer.diskStorage({
-//    destination: function (req, file, callback) {
-//        mkdirp('public/images/upload/' + req.body._id, function (err) {
-//            if (err) {
-//                console.log(err);
-//            }
-//            callback(null, 'public/images/upload/' + req.body._id);
-//        });
-//    },
-//    filename: function (req, file, callback) {
-//        callback(null, Date.now() + '-' + file.originalname);
-//    }
-//});
-//const upload = multer({storage: storage}).array('files', 5);
 
 router.get(
     '/',
@@ -32,22 +17,22 @@ router.get(
     }
 );
 
-//router.get(
-//    '/new',
-//    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
-//    (request, response) => {
-//        Promise.props({
+router.get(
+    '/new',
+    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+    (request, response) => {
+        Promise.props({
 //            users: User.findAll(),
 //            priority: Task.getTaskPriorityArray(),
-//        }).then(function (results) {
-//            response.render('task/edit', {
+        }).then(function (results) {
+            response.render('user/edit', {
 //                users: results.users,
 //                priority: results.priority,
-//                task: new Task(),
-//            });
-//        })
-//    }
-//);
+                user: new User(),
+            });
+        });
+    }
+);
 
 router.post(
     '/grid',
@@ -80,54 +65,47 @@ router.get(
         }).then(function (results) {
             response.render('user/edit', {
                 user: results.user,
-                errors: request.flash('errors')
+                message: {errors: request.flash('errors'), success: request.flash('success')}
             });
         });
     }
 );
 
-//router.post(
-//    '/save',
-//    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
-//    (request, response) => {
-//        if (request.body._id) {
-//            request.flash('errors', 'Cannot update an existing task.');
-//            response.redirect('/task/edit/' + request.body._id);
-//        }
-//        upload(request, response, function (err) {
-//            if (err) {
-//                if (err) {
-//                    request.flash('errors', err.errors);
-//                }
-//                response.redirect('/task/edit/' + request.body._id);
-//            }
-//            let files = request.files;
-//            delete request.body.files;
-//            Task.findOneAndUpdate(
-//                {_id: request.body._id},
-//                {
-//                    '$set': request.body,
-//                    '$push': {
-//                        files: {
-//                            '$each': files
-//                        }
-//                    }
-//                },
-//                {
-//                    runValidators: true,
-//                    new: true,
-//                    upsert: true
-//                },
-//                function (err) {
-//                    if (err) {
-//                        request.flash('errors', err.errors);
-//                    }
-//                    response.redirect('/task/edit/' + request.body._id);
-//                }
-//            );
-//        });
-//    }
-//);
+router.post(
+    '/save',
+    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+    (request, response) => {
+        if (request.body.newPassword.length) {
+            if (request.body.newPassword === request.body.newPasswordRepeat) {
+                request.body.password = md5(request.body.newPassword);
+            } else {
+                request.flash('errors', { 'error' : {message : 'Passwords are not the same'}});
+                response.redirect('/user/edit/' + request.body._id);
+                return;
+            }
+        }
+        
+        User.findOneAndUpdate(
+            {_id: request.body._id},
+            {
+                '$set': request.body
+            },
+            {
+                runValidators: true,
+                new : true,
+                upsert: true
+            },
+            function (err, user) {
+                if (err) {
+                    request.flash('errors', err.errors);
+                } else {
+                    request.flash('success', 'Saved!');
+                }
+                response.redirect('/user/edit/' + user.id);
+            }
+    );
+    }
+);
 //
 //router.post(
 //    '/delete',

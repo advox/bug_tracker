@@ -11,23 +11,43 @@
         <small><a href="/user" class="btn btn-warning">go back</a></small>
     </h1>
 {{/if}}
-
-{{>errorMessages errors=errors}}
+    
+{{>messages success=success}}
 
 <div class="panel panel-default">
     <div class="panel-body">
 
-        <form id="user-save" enctype="multipart/form-data" action="/user/save" method="post">
+        <form id="user-save" action="/user/save" method="post">
             <fieldset>
                 <input type="hidden" name="_id" value="{{{user._id}}}"/>
                 <div class="form-group">
                     <label for="title">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{{user.name}}}">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{{user.name}}}" required>
                 </div>
-
+                <div class="form-group">
+                    <label for="title">Surname</label>
+                    <input type="text" class="form-control" id="surname" name="surname" placeholder="Surname" value="{{{user.surname}}}" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">Login</label>
+                    <input type="text" class="form-control" id="login" name="login" placeholder="Login" value="{{{user.login}}}" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{{user.email}}}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="title">New password</label>
+                    <input type="password" class="form-control" id="newPassword" name="newPassword" placeholder="New password" value="{{{user.newPassword}}}" {{#if user._id.length}}required{{/if}}>
+                </div>
+                <div class="form-group">
+                    <label for="title">New password repeat</label>
+                    <input type="password" class="form-control" id="newPasswordRepeat" name="newPasswordRepeat" placeholder="New password repeat" value="{{{user.newPasswordRepeat}}}" {{#if user._id.length}}required{{/if}}>
+                </div>
+                
                 <button type="submit" class="btn btn-primary">Submit</button>
             </fieldset>
         </form>
-
     </div>
 </div>

@@ -3,26 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/var/www/bug_tracker/views/user/edit.hbs</file>
             <file>file:/var/www/bug_tracker/routes/index.js</file>
+            <file>file:/var/www/bug_tracker/routes/comment.js</file>
             <file>file:/var/www/bug_tracker/app.js</file>
             <file>file:/var/www/bug_tracker/views/layout.hbs</file>
             <file>file:/var/www/bug_tracker/routes/security.js</file>
             <file>file:/var/www/bug_tracker/app/handlebars/index.js</file>
-            <file>file:/var/www/bug_tracker/bin/www</file>
-            <file>file:/var/www/bug_tracker/importer/index.js</file>
-            <file>file:/var/www/bug_tracker/views/task/view.hbs</file>
+            <file>file:/var/www/bug_tracker/views/user/index.hbs</file>
             <file>file:/var/www/bug_tracker/views/task/index.hbs</file>
-            <file>file:/var/www/bug_tracker/views/partials/task/grid.hbs</file>
+            <file>file:/var/www/bug_tracker/routes/user.js</file>
+            <file>file:/var/www/bug_tracker/views/user/view.hbs</file>
+            <file>file:/var/www/bug_tracker/views/partials/menu/top.hbs</file>
+            <file>file:/var/www/bug_tracker/views/partials/user/grid.hbs</file>
             <file>file:/var/www/bug_tracker/models/task.js</file>
             <file>file:/var/www/bug_tracker/models/user.js</file>
-            <file>file:/var/www/bug_tracker/importer/db/config.js</file>
-            <file>file:/var/www/bug_tracker/routes/task.js</file>
+            <file>file:/var/www/bug_tracker/views/partials/messages/list.hbs</file>
+            <file>file:/var/www/bug_tracker/models/comment.js</file>
+            <file>file:/var/www/bug_tracker/views/security/login.hbs</file>
             <file>file:/var/www/bug_tracker/app/handlebars/helpers.js</file>
             <file>file:/var/www/bug_tracker/package.json</file>
-            <file>file:/var/www/bug_tracker/importer/db/connection.js</file>
-            <file>file:/var/www/bug_tracker/package-lock.json</file>
             <file>file:/var/www/bug_tracker/views/error.hbs</file>
-            <file>file:/var/www/bug_tracker/views/partials/comment/add.hbs</file>
         </group>
     </open-files>
 </project-private>

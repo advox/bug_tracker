@@ -1,0 +1,18 @@
+{{#if message}}
+    {{#if message.errors}}
+        <ul id="error-list" class="alert alert-danger">
+            {{#each message.errors as |value key|}}
+                {{#each value as |errorValue errorKey|}}
+                    <li class="entry">{{{errorValue.message}}}</li>
+                {{/each}}
+            {{/each}}
+        </ul>
+    {{/if}}
+    {{#if message.success}}
+        <div id="success-list" class="alert alert-success">
+             {{#each message.success as |value key|}}
+                <span class="entry">{{value}}</span>
+            {{/each}}
+        </div>
+    {{/if}}
+{{/if}}
