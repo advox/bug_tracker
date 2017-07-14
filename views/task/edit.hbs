@@ -1,15 +1,15 @@
 {{#if task._id}}
     <form id="task-delete" action="/task/delete" method="post">
         <input type="hidden" name="_id" value="{{{task._id}}}">
-        <h1>Edit entry
+        <h2>Edit entry
             <small><button class="btn btn-danger" type="submit">Delete</button></small>
             <small><a href="/task" class="btn btn-warning">Go Back</a></small>
-        </h1>
+        </h2>
     </form>
 {{else}}
-    <h1>Create entry
+    <h2>Create entry
         <small><a href="/task" class="btn btn-warning">go back</a></small>
-    </h1>
+    </h2>
 {{/if}}
 
 {{>messages}}
