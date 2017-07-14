@@ -1,15 +1,12 @@
-<div class="container">
-    <h2>User list</h2>
-    
-    {{> messages}}
-    
-    <div class="form-group">
-        <button onclick="window.document.location='/user/new'" class="btn btn-lg btn-primary">Add new</button>
-    </div>    
-    {{>userGrid id='userList'}}
-            
-</div>
+<h2>User list</h2>
 
+{{> messages}}
+
+<div class="form-group">
+    <button onclick="window.document.location='/user/new'" class="btn btn-lg btn-primary">Add new</button>
+</div>    
+{{>userGrid id='userList'}}
+            
 <script>
     $(document).ready(function() {
         $('#userList').DataTable({

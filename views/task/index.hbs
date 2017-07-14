@@ -1,21 +1,19 @@
-<div class="container">
-    <h2>Task list</h2>
-    <div>
-        <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#active-tasks" aria-controls="active-tasks" role="tab" data-toggle="tab">Active tasks</a></li>
-            <li role="presentation"><a href="#done-tasks" aria-controls="done-tasks" role="tab" data-toggle="tab">Done tasks</a></li>
-        </ul>
+<h2>Task list</h2>
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#active-tasks" aria-controls="active-tasks" role="tab" data-toggle="tab">Active tasks</a></li>
+        <li role="presentation"><a href="#done-tasks" aria-controls="done-tasks" role="tab" data-toggle="tab">Done tasks</a></li>
+    </ul>
 
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="active-tasks">
-                <h3>Active tasks</h3>
-                <button onclick="window.document.location='/task/new'" class="btn btn-lg btn-primary">Add new</button>
-                {{>taskGrid tasks=todo id='todoTasks'}}
-            </div>
-            <div role="tabpanel" class="tab-pane" id="done-tasks">
-                <h3>Done tasks</h3>
-                {{>taskGrid tasks=done id='doneTasks'}}
-            </div>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="active-tasks">
+            <h3>Active tasks</h3>
+            <button onclick="window.document.location='/task/new'" class="btn btn-lg btn-primary">Add new</button>
+            {{>taskGrid tasks=todo id='todoTasks'}}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="done-tasks">
+            <h3>Done tasks</h3>
+            {{>taskGrid tasks=done id='doneTasks'}}
         </div>
     </div>
 </div>
