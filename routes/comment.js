@@ -25,7 +25,7 @@ const upload = multer({storage: storage}).array('files', 5);
 /**
  * comment get ajax action
  */
-router.post('/', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+router.post('/',
     (request, response) => {
         Promise.props({
             comments: Comment.findByTaskId(request.body.taskId, request.body.commentId),
@@ -44,7 +44,6 @@ router.post('/', require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'
  * comment create ajax action
  */
 router.post('/save',
-    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         console.log(request.body);
         upload(request, response, function (err) {

@@ -34,7 +34,6 @@ router.get(
 
 router.get(
     '/new',
-    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         Promise.props({
             users: User.findAll(),
@@ -51,7 +50,6 @@ router.get(
 
 router.post(
     '/grid',
-    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         Promise.props({
             taskList: Task.filterTasks(request.body),
@@ -73,7 +71,6 @@ router.post(
 
 router.get(
     '/edit/:id',
-    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         Promise.props({
             task: Task.findById(request.params.id),
@@ -94,7 +91,6 @@ router.get(
 
 router.post(
     '/save',
-    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         if (request.body._id) {
             request.flash('errors', 'Cannot update an existing task.');
@@ -137,7 +133,6 @@ router.post(
 
 router.post(
     '/delete',
-    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         Task.remove({_id: request.body._id}, function (err) {
             if (err) {

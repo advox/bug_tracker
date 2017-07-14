@@ -14,7 +14,6 @@ router.get(
 
 router.get(
     '/new',
-    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         Promise.props({
         }).then(function (results) {
@@ -27,7 +26,6 @@ router.get(
 
 router.post(
     '/grid',
-    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         Promise.props({
             userList: User.filterUsers(request.body),
@@ -63,7 +61,6 @@ router.get(
 
 router.post(
     '/update',
-    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         if (request.body.newPassword.length) {
             if (request.body.newPassword === request.body.newPasswordRepeat) {
@@ -104,7 +101,6 @@ router.post(
 
 router.post(
     '/add',
-    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         if (request.body.newPassword.length) {
             if (request.body.newPassword === request.body.newPasswordRepeat) {
@@ -144,18 +140,20 @@ router.post(
     }
 );
 
-//
-//router.post(
-//    '/delete',
-//    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
-//    (request, response) => {
-//        Task.remove({_id: request.body._id}, function (err) {
-//            if (err) {
-//                console.log(err);
-//            }
-//            response.redirect('/task');
-//        });
-//    }
-//);
+
+router.post(
+    '/delete',
+    (request, response) => {
+        User.remove({_id: request.body._id}, function (err) {
+            if (err) {
+                console.log(err);
+            }
+            
+            request.flash('success', 'Deleted!');
+            response.redirect('/user');
+            return;
+        });
+    }
+);
 
 module.exports = router;
