@@ -78,7 +78,7 @@ taskSchema.statics.filterTasks = function (filter) {
         let orderColumnDir = filter.order[0].dir;
 
         tasks.sort({ [orderColumnName] : orderColumnDir });
-
+        
         tasks.exec((err, result) => {
             if (err) {
                 return reject(err);
@@ -128,6 +128,13 @@ taskSchema.statics.getTaskPriorityArray = function () {
     ];
 };
 
+taskSchema.statics.getTaskStatusArray = function () {
+    return [
+        {id: 1, name: 'New'},
+        {id: 2, name: 'In progress'},
+        {id: 3, name: 'NIE WIEM JAKI'}
+    ];
+};
 
 let Task = mongoose.model('Task', taskSchema);
 

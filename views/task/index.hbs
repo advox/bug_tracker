@@ -4,7 +4,7 @@
         <li role="presentation" class="active"><a href="#active-tasks" aria-controls="active-tasks" role="tab" data-toggle="tab">Active tasks</a></li>
         <li role="presentation"><a href="#done-tasks" aria-controls="done-tasks" role="tab" data-toggle="tab">Done tasks</a></li>
     </ul>
-
+    
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="active-tasks">
             <h3>Active tasks</h3>
@@ -19,7 +19,73 @@
 </div>
 
 <script>
-    $(document).ready(function() {
+    var taskStatuses = '{{{taskStatuses}}}';
+            
+    function showStatusSelect(item) {
+        $(item).hide();
+        $(item).parent().children('#statusSelect').show();
+    }
+    
+    function updateStatus(item, id) {
+        var value = $(item).parent().parent().children('#statusSelect').find('select').val();
+        var labelItem = $(item).parent().parent().children('#statusLabel');
+        
+        $.ajax({
+            url: 'task/saveAjax',
+            method: 'POST',
+            data: {
+                _id : id,
+                status: value
+            },
+            success: function(data) {
+                if(data.status === 'success') {
+                    for(var i = 0; i < taskStatuses.length; i++) {
+                        if(taskStatuses[i].id == value) {
+                            labelItem.html(taskStatuses[i].name);
+                            break;
+                        }
+                    }
+                    
+                    showStatusLabel(item);
+                }
+            }
+        });
+    }
+            
+    function showStatusLabel(item) {
+        $(item).parent().parent().children('#statusSelect').hide();
+        $(item).parent().parent().children('#statusLabel').show();
+    }
+            
+    function renderStatusColumn(data, id) {
+        var template = '<div class="input-group" id="statusSelect" style="display: none;"><select name="newStatus" class="form-control">';
+        var name = '';
+        
+        for(var i = 0; i < taskStatuses.length; i++) {
+            if(taskStatuses[i].id == data) {
+                name = taskStatuses[i].name;
+                template += '<option value="' + taskStatuses[i].id + '" selected="selected">' + taskStatuses[i].name + '</option>';
+            } else {
+                template += '<option value="' + taskStatuses[i].id + '">' +taskStatuses[i].name + '</option>';
+            }
+        }
+        
+        template += '</select><span class="input-group-addon" onclick="updateStatus(this, \'' + id + '\');"><i class="glyphicon glyphicon-ok"></i></span></div>';
+        
+        template += '<div id="statusLabel" onclick="showStatusSelect(this);">' + name + '</div>';
+        
+        return template;
+    }
+            
+    $.ajax({
+        url: 'task/statuses',
+        type: 'GET',
+        success : function(data) {
+            taskStatuses = data.statuses;
+        }
+    })
+    .promise()
+    .done(function() {
         $('#todoTasks').DataTable({
             processing: true,
             serverSide: true,
@@ -44,6 +110,9 @@
                 },
                 {
                     data: "status",
+                    render: function (data, type, full, meta ) {
+                        return renderStatusColumn(data, full._id);
+                    }
                 },
                 { data: "rank" },
                 {
@@ -122,6 +191,9 @@
                 },
                 {
                     data: "status",
+                    render: function (data, type, full, meta ) {
+                        return renderStatusColumn(data, full._id);
+                    }
                 },
                 { data: "rank"},
                 { data: "important"},
@@ -173,6 +245,5 @@
                 },
             ]
         });
-
-    } );
+    });
 </script>

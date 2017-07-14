@@ -27,7 +27,7 @@ router.get(
     require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         response.render('task/index', {
-            importanceArray: Task.getTaskPriorityArray(),
+            importanceArray: Task.getTaskPriorityArray()
         });
     }
 );
@@ -37,14 +37,28 @@ router.get(
     (request, response) => {
         Promise.props({
             users: User.findAll(),
-            priority: Task.getTaskPriorityArray(),
+            priority: Task.getTaskPriorityArray()
         }).then(function (results) {
             response.render('task/edit', {
                 users: results.users,
                 priority: results.priority,
-                task: new Task(),
+                task: new Task()
             });
-        })
+        });
+    }
+);
+
+router.get(
+    '/statuses',
+    (request, response) => {
+        Promise.props({
+        }).then(function (results) {
+            response.status(200).json(
+                {
+                    statuses: Task.getTaskStatusArray()
+                }
+            );
+        });
     }
 );
 
@@ -53,14 +67,14 @@ router.post(
     (request, response) => {
         Promise.props({
             taskList: Task.filterTasks(request.body),
-            countTask: Task.countTasks({status: request.body.status}),
+            countTask: Task.countTasks({status: request.body.status})
         }).then(function (results) {
             response.status(200).json(
                 {
-                    "draw": request.body.draw,
-                    "recordsTotal": results.countTask.length,
-                    "recordsFiltered": results.countTask.length,
-                    "data": results.taskList
+                    draw: request.body.draw,
+                    recordsTotal: results.countTask.length,
+                    recordsFiltered: results.countTask.length,
+                    data: results.taskList
                 }
             );
         }).catch(function (error) {
@@ -76,7 +90,7 @@ router.get(
             task: Task.findById(request.params.id),
             users: User.findAll(),
             comments: Comment.findByTaskId(request.params.id),
-            priority: Task.getTaskPriorityArray(),
+            priority: Task.getTaskPriorityArray()
         }).then(function (results) {
             response.render('task/edit', {
                 task: results.task,
@@ -85,7 +99,7 @@ router.get(
                 priority: results.priority,
                 errors: request.flash('errors')
             });
-        })
+        });
     }
 );
 
@@ -128,6 +142,35 @@ router.post(
                 }
             );
         });
+    }
+);
+
+router.post(
+    '/saveAjax',
+    (request, response) => {
+        Task.findOneAndUpdate(
+            {_id: request.body._id},
+            {
+                '$set': request.body
+            },
+            {
+                runValidators: true,
+                new: true,
+                upsert: true
+            },
+            function (err) {
+                if (err) {
+                    response.status(200).json({
+                        status: 'failure',
+                        error: err.errors
+                    });
+                } else {
+                    response.status(200).json({
+                        status: 'success'
+                    });
+                }
+            }
+        );
     }
 );
 
