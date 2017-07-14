@@ -155,13 +155,13 @@
                 {
                     data: "createdAt",
                     render: function ( data, type, full, meta ) {
-                        return '{{{dateYmdHis data}}}';
+                        return data.replace('T', ' ').substring(0, 19);
                     }
                 },
                 {
                     data: "updatedAt",
                     render: function (data, type, full, meta) {
-                        return '{{{dateYmdHis data}}}';
+                        return data.replace('T', ' ').substring(0, 19);
                     }
                 },
             ]
@@ -234,13 +234,13 @@
                 {
                     data: "createdAt",
                     render: function ( data, type, full, meta ) {
-                        return '{{{dateYmdHis data}}}';
+                        return data.replace('T', ' ').substring(0, 19);
                     }
                 },
                 {
                     data: "updatedAt",
                     render: function (data, type, full, meta) {
-                        return '{{{dateYmdHis data}}}';
+                        return data.replace('T', ' ').substring(0, 19);
                     }
                 },
             ]
