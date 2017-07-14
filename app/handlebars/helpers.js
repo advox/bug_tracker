@@ -62,6 +62,10 @@ module.exports = {
         return message;
     },
     toHex: (string) => {
+        if(string === null) {
+            return '#000000';
+        }
+        
         var hash = 0;
         for (var i = 0; i < string.length; i++) {
             hash = string.charCodeAt(i) + ((hash << 5) - hash);
@@ -75,7 +79,11 @@ module.exports = {
         return colour;
     },
     firstLetter: (string) => {
-        return string.charAt(0);
+        if(string !== null && string.length) {
+            return string.charAt(0);
+        }
+        
+        return '';
     },
     inArray: (needle, haystack) => {
         var length = haystack.length;
