@@ -23,7 +23,7 @@ app.use(
         }),
         resave: false,
         saveUninitialized: false,
-        secret: '53cr3t',
+        secret: 't0p_53cr3t',
     })
 );
 app.set('views', path.join(__dirname, 'views'));
@@ -40,20 +40,27 @@ app.use(flash());
 
 app.use(passport.session());
 
+app.use(function(req, res, next) {
+    if(req.url !== '/login') {
+        if(typeof req.user === 'undefined') {
+            res.redirect('/login');
+            return;
+        }
+        
+        if(req.url.indexOf('/user') === 0) {
+            if(!req.user.userManagement) {
+                res.redirect('/');
+                return;
+            }
+        }
+    }
+    
+    req.app.locals.loggedUser = { name : req.user.name, userManagement: req.user.userManagement };
+    res.locals.message  = {errors: req.flash('errors'), success: req.flash('success')};
+
+    next();
+});
+
 app.use('/', routes);
-app.use(function (req, res, next) {
-    app.locals.loggedUser = req.user;
-
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
-
-app.use(function(err, req, res, next) {
-    res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err : {};
-    res.status(err.status || 500);
-});
-
 
 module.exports = app;

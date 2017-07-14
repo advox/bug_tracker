@@ -21,4 +21,8 @@ hbs.handlebars.registerPartial('commentEntry', fs.readFileSync(partialsDir + 'co
 hbs.handlebars.registerPartial('commentAdd', fs.readFileSync(partialsDir + 'comment/add.hbs', 'utf8'));
 hbs.handlebars.registerPartial('messages', fs.readFileSync(partialsDir + 'messages/list.hbs', 'utf8'));
 
+hbs.handlebars.registerHelper('json', function(context) {
+    return JSON.stringify(context);
+});
+
 module.exports = hbs;

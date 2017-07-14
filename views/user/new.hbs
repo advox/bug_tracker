@@ -1,17 +1,13 @@
-<form id="user-delete" action="/user/delete" method="post">
-    <input type="hidden" name="_id" value="{{{user._id}}}">
-    <h1>Edit user
-        <small><button class="btn btn-danger" type="submit">Delete</button></small>
-        <small><a href="/user" class="btn btn-warning">Go Back</a></small>
-    </h1>
-</form>
-
-{{> messages}}
+<h1>Create user
+    <small><a href="/user" class="btn btn-warning">go back</a></small>
+</h1>
+    
+{{>messages success=success errors=errors}}
 
 <div class="panel panel-default">
     <div class="panel-body">
 
-        <form id="user-save" action="/user/update" method="post">
+        <form id="user-save" action="/user/add" method="post">
             <fieldset>
                 <input type="hidden" name="_id" value="{{{user._id}}}"/>
                 <div class="form-group">
@@ -30,24 +26,24 @@
                     <label for="title">Email</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{{user.email}}}" required>
                 </div>
-
+                
                 <div class="form-group">
                     <label for="title">New password</label>
-                    <input type="password" class="form-control" id="newPassword" name="newPassword" placeholder="New password" value="{{{user.newPassword}}}">
+                    <input type="password" class="form-control" id="newPassword" name="newPassword" placeholder="New password" value="{{{user.newPassword}}}" required>
                 </div>
                 <div class="form-group">
                     <label for="title">New password repeat</label>
-                    <input type="password" class="form-control" id="newPasswordRepeat" name="newPasswordRepeat" placeholder="New password repeat" value="{{{user.newPasswordRepeat}}}">
+                    <input type="password" class="form-control" id="newPasswordRepeat" name="newPasswordRepeat" placeholder="New password repeat" value="{{{user.newPasswordRepeat}}}" required>
                 </div>
                 <h4>Privileges</h4>
                 <div class="form-group">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" id="userManagement" name="userManagement" value="1" {{#if user.userManagement}}checked="checked"{{/if}}> User management
+                            <input type="checkbox" id="userManagement" name="userManagement" value="1"> User management
                         </label>
                     </div>
                 </div>
-
+                
                 <button type="submit" class="btn btn-primary">Submit</button>
             </fieldset>
         </form>

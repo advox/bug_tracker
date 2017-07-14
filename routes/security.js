@@ -31,15 +31,15 @@ passport.use(new LocalStrategy(
 ));
 
 router.get('/', (req, res) => {
-    if (req.user !== undefined) {
-        res.redirect('/task');
-    } else {
-        res.render('security/login');
-    }
+    res.redirect('/task');
+});
+
+router.get('/login', (req, res) => {
+    res.render('security/login');
 });
 
 router.post('/login', passport.authenticate('local', {failureRedirect: '/'}), (req, res) => {
-    req.app.locals.loggedUser = req.user;
+    req.app.locals.loggedUser = { name : req.user.name, userManagement: req.user.userManagement };
     res.redirect('/task');
 });
 

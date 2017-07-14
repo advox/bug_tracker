@@ -8,8 +8,7 @@ const userSchema = new Schema({
     },
     password: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     email: {
         type: String,
@@ -21,6 +20,7 @@ const userSchema = new Schema({
     group: Number,
     color: String,
     externalId: Number,
+    userManagement: Boolean,
     createdAt: {type: Date, default: Date.now},
     updatedAt: {type: Date, default: Date.now},
     lastLogin: {type: Date},

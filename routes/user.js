@@ -1,18 +1,13 @@
 const express = require('express');
 const router = express.Router();
-//const Task = require('../models/task');
 const User = require('../models/user');
-//const Comment = require('../models/comment');
 const Promise = require('bluebird');
 const md5 = require('md5');
-//const util = require('util');
 
 router.get(
     '/',
-    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         response.render('user/index', {
-//            importanceArray: Task.getTaskPriorityArray(),
         });
     }
 );
@@ -22,13 +17,9 @@ router.get(
     require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         Promise.props({
-//            users: User.findAll(),
-//            priority: Task.getTaskPriorityArray(),
         }).then(function (results) {
-            response.render('user/edit', {
-//                users: results.users,
-//                priority: results.priority,
-                user: new User(),
+            response.render('user/new', {
+                user: new User()
             });
         });
     }
@@ -64,25 +55,28 @@ router.get(
             user: User.findById(request.params.id),
         }).then(function (results) {
             response.render('user/edit', {
-                user: results.user,
-                message: {errors: request.flash('errors'), success: request.flash('success')}
+                user: results.user
             });
         });
     }
 );
 
 router.post(
-    '/save',
+    '/update',
     require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         if (request.body.newPassword.length) {
             if (request.body.newPassword === request.body.newPasswordRepeat) {
                 request.body.password = md5(request.body.newPassword);
             } else {
-                request.flash('errors', { 'error' : {message : 'Passwords are not the same'}});
+                request.flash('errors', { message : 'Passwords are not the same'});
                 response.redirect('/user/edit/' + request.body._id);
                 return;
             }
+        }
+        
+        if(typeof request.body.userManagement === 'undefined') {
+            request.body.userManagement = false;
         }
         
         User.findOneAndUpdate(
@@ -95,17 +89,61 @@ router.post(
                 new : true,
                 upsert: true
             },
-            function (err, user) {
+            function (err) {
                 if (err) {
-                    request.flash('errors', err.errors);
+                    request.flash('errors', err);
                 } else {
                     request.flash('success', 'Saved!');
                 }
-                response.redirect('/user/edit/' + user.id);
+                
+                response.redirect('/user/edit/' + request.body._id);
             }
     );
     }
 );
+
+router.post(
+    '/add',
+    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+    (request, response) => {
+        if (request.body.newPassword.length) {
+            if (request.body.newPassword === request.body.newPasswordRepeat) {
+                request.body.password = md5(request.body.newPassword);
+            } else {
+                request.flash('errors', { message : 'Passwords are not the same'});
+                response.redirect('/user/new');
+                return;
+            }
+        } else {
+            request.flash('errors', { message : 'Empty password'});
+            response.redirect('/user/new');
+            return;
+        }
+        
+        User.findOneAndUpdate(
+            {_id: request.body._id},
+            {
+                '$set': request.body
+            },
+            {
+                runValidators: true,
+                new : true,
+                upsert: true
+            },
+            function (err) {
+                if (err) {
+                    request.flash('errors', err);
+                } else {
+                    request.flash('success', 'Saved!');
+                }
+                
+                response.redirect('/user/new');
+                return;
+            }
+    );
+    }
+);
+
 //
 //router.post(
 //    '/delete',

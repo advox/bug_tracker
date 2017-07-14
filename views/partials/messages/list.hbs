@@ -1,10 +1,9 @@
+{{json message}}
 {{#if message}}
     {{#if message.errors}}
         <ul id="error-list" class="alert alert-danger">
-            {{#each message.errors as |value key|}}
-                {{#each value as |errorValue errorKey|}}
-                    <li class="entry">{{{errorValue.message}}}</li>
-                {{/each}}
+            {{#each message.errors}}
+                <li class="entry">{{{this.message}}}</li>
             {{/each}}
         </ul>
     {{/if}}

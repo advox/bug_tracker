@@ -64,9 +64,13 @@
                     }
                 },
                 {
-                    data: "author.name",
+                    data: "author",
                     render: function ( data, type, row ) {
-                        return data + ' ' + row.author.surname;
+                        if(row.author !== null) {
+                            return data + ' ' + row.author.surname;
+                        }
+                        
+                        return '';
                     }
                 },
 //                {
@@ -136,9 +140,13 @@
                     }
                 },
                 {
-                    data: "author.name",
+                    data: "author",
                     render: function ( data, type, row ) {
-                        return data + ' ' + row.author.surname;
+                        if(row.author !== null) {
+                            return data + ' ' + row.author.surname;
+                        }
+                        
+                        return '';
                     }
                 },
 //                {
