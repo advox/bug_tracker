@@ -16,6 +16,11 @@ const commentSchema = new Schema({
         type: String,
         required: true
     },
+    status: {
+        type: String,
+        required: true,
+        default: 'todo'
+    },
     task: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Task',

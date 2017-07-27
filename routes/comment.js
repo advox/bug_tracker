@@ -40,6 +40,35 @@ router.post('/',
     }
 );
 
+router.post(
+    '/status',
+    (request, response) => {
+        Comment.findOneAndUpdate(
+            {_id: request.body._id},
+            {
+                '$set': request.body
+            },
+            {
+                runValidators: true,
+                new: true,
+                upsert: true
+            },
+            function (err) {
+                if (err) {
+                    response.status(200).json({
+                        status: 'failure',
+                        error: err.errors
+                    });
+                } else {
+                    response.status(200).json({
+                        status: 'success'
+                    });
+                }
+            }
+        );
+    }
+);
+
 /**
  * comment create ajax action
  */

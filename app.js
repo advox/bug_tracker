@@ -55,7 +55,9 @@ app.use(function(req, res, next) {
         }
     }
     
-    req.app.locals.loggedUser = { name : req.user.name, userManagement: req.user.userManagement };
+    if(typeof req.user !== 'undefined') {
+        req.app.locals.loggedUser = { name : req.user.name, userManagement: req.user.userManagement };
+    } 
     res.locals.message  = {errors: req.flash('errors'), success: req.flash('success')};
 
     next();

@@ -27,7 +27,7 @@ router.get(
     require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         response.render('task/index', {
-            importanceArray: Task.getTaskPriorityArray()
+            taskImportance: Task.getTaskImportanceArray()
         });
     }
 );
@@ -62,6 +62,20 @@ router.get(
     }
 );
 
+router.get(
+    '/importance',
+    (request, response) => {
+        Promise.props({
+        }).then(function (results) {
+            response.status(200).json(
+                {
+                    importance: Task.getTaskImportanceArray()
+                }
+            );
+        });
+    }
+);
+
 router.post(
     '/grid',
     (request, response) => {
@@ -90,7 +104,7 @@ router.get(
             task: Task.findById(request.params.id),
             users: User.findAll(),
             comments: Comment.findByTaskId(request.params.id),
-            priority: Task.getTaskPriorityArray()
+            priority: Task.getTaskStatusArray()
         }).then(function (results) {
             response.render('task/edit', {
                 task: results.task,

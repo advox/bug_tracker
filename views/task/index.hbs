@@ -20,6 +20,7 @@
 
 <script>
     var taskStatuses = '{{{taskStatuses}}}';
+    var taskImportance = '{{{taskImportance}}}';
             
     function showStatusSelect(item) {
         $(item).hide();
@@ -76,15 +77,41 @@
         
         return template;
     }
-            
-    $.ajax({
-        url: 'task/statuses',
-        type: 'GET',
-        success : function(data) {
-            taskStatuses = data.statuses;
+    
+    function renderImportantColumn(data) {
+        for(var i = 0; i < taskImportance.length; i++) {
+            if(taskImportance[i].id == data) {
+                return taskImportance[i].name;
+            }
         }
-    })
-    .promise()
+        
+        return data;
+    }
+    
+    function renderSEBColumn(importance) {
+        if(importance == 3) {
+            return '<img src="images/superman.color.webp">'
+        }
+        
+        return '<img src="images/superman.mono.webp">';
+    }
+    
+    $.when(
+        $.ajax({
+            url: 'task/statuses',
+            type: 'GET',
+            success : function(data) {
+                taskStatuses = data.statuses;
+            }
+        }),
+        $.ajax({
+            url: 'task/importance',
+            type: 'GET',
+            success : function(data) {
+                taskImportance = data.importance;
+            }
+        }),
+    )
     .done(function() {
         $('#todoTasks').DataTable({
             processing: true,
@@ -116,12 +143,16 @@
                 },
                 { data: "rank" },
                 {
-                    data: "important"
+                    data: "important",
+                    render: function ( data, type, full, meta ) {
+                        return renderImportantColumn(data);
+                    }
+                    
                 },
                 {
                     data: "important",
                     render: function ( data, type, full, meta ) {
-                        return '<img src="images/superman.mono.webp">';
+                        return renderSEBColumn(data);
                     }
                 },
                 {
@@ -137,15 +168,9 @@
                             return data + ' ' + row.author.surname;
                         }
                         
-                        return '';
+                        return '-';
                     }
                 },
-//                {
-//                    data: "assignee.name",
-//                    render: function ( data, type, row ) {
-//                        return data + ' ' + row.assignee.surname;
-//                    }
-//                },
                 {
                     data: "comments",
                     render:  function ( data, type, row ) {
@@ -219,12 +244,6 @@
                         return '';
                     }
                 },
-//                {
-//                    data: "assignee.name",
-//                    render: function ( data, type, row ) {
-//                        return data + ' ' + row.assignee.surname;
-//                    }
-//                },
                 {
                     data: "comments",
                     render:  function ( data, type, row ) {

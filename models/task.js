@@ -121,18 +121,21 @@ taskSchema.statics.getByExternalId = function (id) {
     })
 };
 
-taskSchema.statics.getTaskPriorityArray = function () {
+taskSchema.statics.getTaskStatusArray = function () {
     return [
-        {id: 0, name: 'Normal'},
-        {id: 1, name: 'Urgent'}
+        {id: 0, name: 'Dev-wait'},
+        {id: 1, name: 'Paker'},
+        {id: 2, name: 'Done'},
+        {id: 3, name: 'Feature'},
+        {id: 4, name: 'Dev-active'}
     ];
 };
 
-taskSchema.statics.getTaskStatusArray = function () {
+taskSchema.statics.getTaskImportanceArray = function () {
     return [
-        {id: 1, name: 'New'},
-        {id: 2, name: 'In progress'},
-        {id: 3, name: 'NIE WIEM JAKI'}
+        {id: 1, name: 'Normal'},
+        {id: 2, name: 'Urgent'},
+        {id: 3, name: 'Sebastian'}
     ];
 };
 
