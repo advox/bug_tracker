@@ -24,11 +24,10 @@ const upload = multer({storage: storage}).array('files', 5);
 
 router.get(
     '/',
-    require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
+    // require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
-        response.render('task/index', {
-            taskImportance: Task.getTaskImportanceArray()
-        });
+        response.statusCode = 200;
+        response.send({x : 'y'});
     }
 );
 

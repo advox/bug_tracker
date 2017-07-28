@@ -61,3 +61,4 @@ typings/
 # Other
 upload/*
 public/stylesheets/style.css
+/nbproject/private/

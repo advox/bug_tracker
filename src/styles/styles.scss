@@ -1,0 +1,19 @@
+@import "~bootstrap/scss/bootstrap";
+$fa-font-path: "~font-awesome/fonts/";
+@import "~font-awesome/scss/font-awesome";
+@import 'variables';
+
+body {
+    background-color: #ececec;
+}
+
+.login-panel {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+}
