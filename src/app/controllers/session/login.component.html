@@ -3,10 +3,10 @@
         <h5>Login</h5>
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" [(ngModel)]="login" placeholder="Login" required />
+        <input type="text" class="form-control" [(ngModel)]="form.login" placeholder="Login" required />
     </div>
     <div class="form-group">
-        <input type="password" class="form-control" [(ngModel)]="password" placeholder="Password" required />
+        <input type="password" class="form-control" [(ngModel)]="form.password" placeholder="Password" required />
     </div>
     <div class="form-group text-right">
         <button class="btn btn-primary" (click)="loginFunction();">

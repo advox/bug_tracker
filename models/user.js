@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const md5 = require('md5');
 
 const userSchema = new Schema({
     login: {
@@ -108,6 +109,20 @@ userSchema.statics.findById = function (userId) {
         });
     });
 };
+
+userSchema.statics.findByLoginAndPassword = function(login, password) {
+    return new Promise((resolve, reject) => {
+        User.findOne({
+            login: login,
+            password: md5(password)
+        }, (err, user) => {
+            if (err) {
+                return reject(err);
+            }
+            return resolve(user);
+        });
+    });
+}
 
 let User = mongoose.model('User', userSchema);
 

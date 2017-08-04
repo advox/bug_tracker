@@ -1,23 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Restangular } from 'ngx-restangular';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'login',
     templateUrl: './login.component.html'
 })
-export class LoginComponent {
-    private taskRest = null;
-    private login = 'xxxx';
+export class LoginComponent implements OnInit {
+    private sessionRest : Restangular = null;
+    private form : any = {
+        login: '',
+        password: ''
+    };
 
     constructor(
-        private restangular: Restangular
+        private restangular: Restangular,
+        private router: Router
     ) {
-        this.taskRest = restangular.all('task');
+        this.sessionRest = restangular.all('session');
     }
 
     public loginFunction() {
-        this.taskRest.getList().subscribe((data) => {
-            console.log(data);
+        this.sessionRest.post(this.form).subscribe((data) => {
+            localStorage.setItem('user', JSON.stringify({
+                login: data.login,
+                token: data.token
+            }));
+            
+            this.router.navigate(['/task']);
         });
+    }
+    
+    public ngOnInit() {
+        let loggedUser = localStorage.getItem('user');
+
+        if (loggedUser !== null) {
+            this.router.navigate(['task']);
+        }
     }
 }

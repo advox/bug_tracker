@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './controllers/home';
-import { LoginComponent } from './controllers/session';
+import { TaskComponent } from './controllers/task';
+import { LoginComponent, LogoutComponent } from './controllers/session';
 
 import { DataResolver } from './app.resolver';
 
 export const ROUTES: Routes = [
     { path: '', component: LoginComponent },
-    { path: 'home', component: HomeComponent },
+    { path: 'task', component: TaskComponent },
+    { path: 'logout', component: LogoutComponent },
     { path: '**', component: LoginComponent },
 ];

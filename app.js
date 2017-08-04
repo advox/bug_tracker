@@ -52,6 +52,9 @@ app.use(function(req, res, next) {
     //     req.app.locals.loggedUser = { name : req.user.name, userManagement: req.user.userManagement };
     // } 
     // 
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization-Token, X-Requested-With");
     res.setHeader('content-type', 'text/javascript');
 
     next();

@@ -27,7 +27,7 @@ router.get(
     // require('connect-ensure-login').ensureLoggedIn({redirectTo: '/'}),
     (request, response) => {
         response.statusCode = 200;
-        response.send({x : 'y'});
+        response.send([]);
     }
 );
 
