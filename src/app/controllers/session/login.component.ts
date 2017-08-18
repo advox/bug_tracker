@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthorizationService } from './../../services/authorization';
+import { AuthorizationService } from './../../services/authorization/authorization.service';
 import { Restangular } from 'ngx-restangular';
 
 @Component({

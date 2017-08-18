@@ -4,7 +4,7 @@ import {
     ViewContainerRef
 } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
-import { AuthorizationService } from './services/authorization';
+import { AuthorizationService } from './services/authorization/authorization.service';
 import { NotificationService } from './services/notification';
 import { ToastsManager } from 'ng2-toastr';
 

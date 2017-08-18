@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthorizationService } from './../../services/authorization';
+import { AuthorizationService } from './../../services/authorization/authorization.service';
 import { Router } from '@angular/router';
 import { Restangular } from 'ngx-restangular';
 
