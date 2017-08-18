@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { RouterModule, PreloadAllModules } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { RestangularModule } from 'ngx-restangular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -35,7 +36,7 @@ const APP_PROVIDERS = [
     AppState
 ];
 
-export function RestangularConfigFactory(RestangularProvider, toast: ToastsManager, auth: AuthorizationService, notification: NotificationService) {
+export function RestangularConfigFactory(RestangularProvider, toast: ToastsManager, auth: AuthorizationService, notification: NotificationService, router : Router) {
     RestangularProvider.setBaseUrl('http://localhost:3001');
 
     if (auth.isUserLoggedIn()) {
@@ -56,7 +57,7 @@ export function RestangularConfigFactory(RestangularProvider, toast: ToastsManag
             case 401:
                 notification.displayError(response.data.error);
                 auth.logout().then((data) => {
-
+                    this.router.navigate(['/']);
                 });
                 // toast.error(response.data.error);
                 break;
@@ -99,7 +100,7 @@ export function RestangularConfigFactory(RestangularProvider, toast: ToastsManag
         HttpModule,
         RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules}),
         ToastModule.forRoot(),
-        RestangularModule.forRoot([ToastsManager, AuthorizationService, NotificationService], RestangularConfigFactory),
+        RestangularModule.forRoot([ToastsManager, AuthorizationService, NotificationService, Router], RestangularConfigFactory),
     ],
     providers: [
         ENV_PROVIDERS,
