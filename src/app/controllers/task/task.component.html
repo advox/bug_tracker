@@ -24,9 +24,13 @@
                     <td>{{task.title}}</td>
                     <td>{{task.status}}</td>
                     <td>{{task.rank}}</td>
+                    <td>{{task.important}}</td>
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td></td>
+                    <td>{{task.createdAt | date: 'yyyy-MM-dd hh:mm'}}</td>
+                    <td>{{task.updatedAt | date: 'yyyy-MM-dd hh:mm'}}</td>
                 </tr>
             </ng-container>
             <ng-container *ngIf="tasks.length === 0">

@@ -36,7 +36,7 @@ const APP_PROVIDERS = [
     AppState
 ];
 
-export function RestangularConfigFactory(RestangularProvider, toast: ToastsManager, auth: AuthorizationService, notification: NotificationService, router : Router) {
+export function RestangularConfigFactory(RestangularProvider, auth: AuthorizationService, notification: NotificationService, router : Router) {
     RestangularProvider.setBaseUrl('http://localhost:3001');
 
     if (auth.isUserLoggedIn()) {
@@ -51,15 +51,12 @@ export function RestangularConfigFactory(RestangularProvider, toast: ToastsManag
         switch (response.status) {
             case 400:
             case 500:
-                // notification.
-                // toast.error(response.data.error);
                 break;
             case 401:
                 notification.displayError(response.data.error);
                 auth.logout().then((data) => {
                     router.navigate(['/']);
                 });
-                // toast.error(response.data.error);
                 break;
             default:
                 break;
@@ -100,7 +97,7 @@ export function RestangularConfigFactory(RestangularProvider, toast: ToastsManag
         HttpModule,
         RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules}),
         ToastModule.forRoot(),
-        RestangularModule.forRoot([ToastsManager, AuthorizationService, NotificationService, Router], RestangularConfigFactory),
+        RestangularModule.forRoot([AuthorizationService, NotificationService, Router], RestangularConfigFactory),
     ],
     providers: [
         ENV_PROVIDERS,

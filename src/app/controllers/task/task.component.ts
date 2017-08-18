@@ -22,7 +22,6 @@ export class TaskComponent implements OnInit {
 
         this.taskRest.doGET(null, this.filters).subscribe((data) => {
             this.tasks = data.tasks;
-            console.log(data);
         });
     }
 
