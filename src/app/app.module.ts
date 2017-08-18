@@ -43,8 +43,6 @@ export function RestangularConfigFactory(RestangularProvider, toast: ToastsManag
     }
 
     RestangularProvider.addResponseInterceptor((data, operation, what, url, response) => {
-        console.log(response.status);
-        console.log(response.data);
         return data;
     });
 
@@ -57,6 +55,9 @@ export function RestangularConfigFactory(RestangularProvider, toast: ToastsManag
                 break;
             case 401:
                 notification.displayError(response.data.error);
+                auth.logout().then((data) => {
+
+                });
                 // toast.error(response.data.error);
                 break;
             default:
