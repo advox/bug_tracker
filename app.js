@@ -39,10 +39,10 @@ app.use(function (req, res, next) {
         next();
     }
 
-    if (req.url !== '/login') {
+    if (req.url !== '/session') {
         let token = req.header('Authentication-Token');
 
-        if (true || typeof token === 'undefined' || !Session.isTokenValid()) {
+        if (typeof token === 'undefined' || !Session.isTokenValid()) {
             res.statusCode = 401;
             res.send({
                 error_code: 'authenticated_failure',

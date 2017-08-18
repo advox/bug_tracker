@@ -57,7 +57,7 @@ export function RestangularConfigFactory(RestangularProvider, toast: ToastsManag
             case 401:
                 notification.displayError(response.data.error);
                 auth.logout().then((data) => {
-                    this.router.navigate(['/']);
+                    router.navigate(['/']);
                 });
                 // toast.error(response.data.error);
                 break;
