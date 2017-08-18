@@ -62,3 +62,4 @@ typings/
 upload/*
 public/stylesheets/style.css
 /nbproject/private/
+.awcache

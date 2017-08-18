@@ -1,30 +1,34 @@
-import { Component } from '@angular/core';
-import { Restangular } from 'ngx-restangular';
+import { Component, OnInit } from '@angular/core';
+import { AuthorizationService } from './../../services/authorization';
 import { Router } from '@angular/router';
+import { Restangular } from 'ngx-restangular';
 
 @Component({
     selector: 'logout',
     templateUrl: './logout.component.html'
 })
-export class LogoutComponent {
+export class LogoutComponent implements OnInit {
     private sessionRest: Restangular = null;
 
     constructor(
-        private restangular: Restangular,
-        private router: Router
+        private router: Router,
+        private authorizationService: AuthorizationService,
+        private restangular: Restangular
     ) {
         this.sessionRest = restangular.all('session');
+    }
 
-        let loggedUser = localStorage.getItem('user');
-
-        if (loggedUser !== null) {
-            loggedUser = JSON.parse(loggedUser);
-
-            this.sessionRest.doDELETE().subscribe((data) => {
-                localStorage.removeItem('user');
-                this.router.navigate(['']);
-            });
+    public ngOnInit(): void {
+        if (this.authorizationService.isUserLoggedIn()) {
+            this.sessionRest.doDELETE().subscribe(
+                () => {
+                    this.authorizationService.logout().then(
+                        () => {
+                            this.router.navigate(['']);
+                        },
+                        () => undefined);
+                },
+                () => undefined);
         }
-
     }
 }

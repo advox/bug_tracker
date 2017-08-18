@@ -1,2 +1,40 @@
-<a routerLink="/logout">Logout</a>
-Witam serdecznie!
+<navigation></navigation>
+<div class="container-fluid">
+    <h1 class="page-header">Tasks</h1>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Rank</th>
+                <th>Importance</th>
+                <th>SEB</th>
+                <th>Brief</th>
+                <th>From</th>
+                <th>Posts</th>
+                <th>Created</th>
+                <th>Updated</th>
+            </tr>
+            </thead>
+            <tbody>
+            <ng-container *ngIf="tasks.length">
+                <tr *ngFor="let task of tasks">
+                    <td>{{task.title}}</td>
+                    <td>{{task.status}}</td>
+                    <td>{{task.rank}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </ng-container>
+            <ng-container *ngIf="tasks.length === 0">
+                <tr>
+                    <td colspan="99">No tasks</td>
+                </tr>
+            </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>

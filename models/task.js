@@ -27,8 +27,8 @@ const taskSchema = new Schema({
     notifications: Array,
     files: Array,
     externalId: Number,
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now },
+    createdAt: {type: Date, default: Date.now},
+    updatedAt: {type: Date, default: Date.now},
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comment'
@@ -41,48 +41,49 @@ taskSchema.statics.countTasks = function (filter) {
         let statusArray = statusString.split(',');
         this.find(
             {
-                status: { $in: statusArray }
+                status: {$in: statusArray}
             }
         ).exec((err, result) => {
             if (err) {
                 return reject(err);
             }
             return resolve(result);
-        });
+        })
     });
 };
 
 taskSchema.statics.filterTasks = function (filter) {
+    console.log(filter);
     return new Promise((resolve, reject) => {
         let statusString = filter.status;
         let statusArray = statusString.split(',');
         let tasks = this.find(
             {
                 status: { $in: statusArray },
-                title: new RegExp(filter.search.value, 'i'),
-                content: new RegExp(filter.search.value, 'i'),
+                title: new RegExp(filter.search, 'i'),
+                content: new RegExp(filter.search, 'i'),
             }
         )
-        .populate('author assignee comments');
+            .populate('author assignee comments');
 
-        if (typeof filter.start != "undefined") {
-            tasks.skip(parseInt(filter.start));
-        }
+        // if (typeof filter.start != "undefined") {
+        //     tasks.skip(parseInt(filter.start));
+        // }
+        //
+        // if (typeof filter.length != "undefined") {
+        //     tasks.limit(parseInt(filter.length));
+        // }
 
-        if (typeof filter.length != "undefined") {
-            tasks.limit(parseInt(filter.length));
-        }
+        let orderColumn = filter.orderBy;
+        let orderDir = filter.orderDir;
 
-        let orderColumnId = filter.order[0].column;
-        let orderColumnName = filter.columns[orderColumnId].name;
-        let orderColumnDir = filter.order[0].dir;
+        tasks.sort({ [orderColumn] : orderDir });
 
-        tasks.sort({ [orderColumnName] : orderColumnDir });
-        
         tasks.exec((err, result) => {
             if (err) {
                 return reject(err);
             }
+            console.log(result);
             return resolve(result);
         });
     });

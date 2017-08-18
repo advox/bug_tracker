@@ -29,11 +29,11 @@ router.post('/', function(request, response) {
         Session.remove({
             userId: user._id
         }, function(err, result) {
-            let session = new Session({
+            var session = new Session({
                 userId: user._id,
                 token: randomstring.generate(256),
                 expireDate: new Date("2014-10-01T00:00:00Z")
-            })
+            });
 
             session.save(function(err, result) {
                 response.statusCode = 200;
