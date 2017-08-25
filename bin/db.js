@@ -6,8 +6,9 @@ mongoose.connect(
     {
         server: {
             socketOptions: {
-                keepAlive: 300000,
-                connectTimeoutMS: 30000
+                keepAlive: 30000000,
+                connectTimeoutMS: 30000000,
+                socketTimeoutMS: 30000000
             }
         }
     }

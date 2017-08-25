@@ -80,6 +80,7 @@ module.exports = {
     importTasks: function (adminIds) {
 
         return new Promise((resolved, reject) => {
+            var counter = 1;
             pool.query(`
             SELECT * FROM zgloszenia WHERE zgl_admin_id in (${adminIds}) AND zgl_title > '' AND zgl_desc > ''`,
             function (error, results, fields) {
@@ -87,6 +88,7 @@ module.exports = {
                     Promise.props({
                         author: User.getByExternalId(row.zgl_admin_id),
                         assignee: User.getByExternalId(row.zgl_to_admin_id),
+                        taskStatus: Status.getByExternalId(row.zgl_status),
                     }).then(results => {
                         let author = null;
                         let assignee = null;
@@ -98,7 +100,7 @@ module.exports = {
                         }
 
                         let task = new Task({
-                            status: row.zgl_status,
+                            status: results.taskStatus[0]._id,
                             title: row.zgl_title,
                             content: row.zgl_desc,
                             rank: row.zgl_ranga,
@@ -111,6 +113,7 @@ module.exports = {
                             createdAt: row.zgl_date,
                             updatedAt: row.zgl_akt,
                         });
+
                         try {
                             task.save()
                                 .then(function(result){
@@ -205,7 +208,8 @@ module.exports = {
                                         result.save();
                                     }
                                 });
-
+                            console.log(counter);
+                            counter = counter + 1;
                         } catch (err) {
                             return reject(err)
                         }
