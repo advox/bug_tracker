@@ -12,10 +12,7 @@ const taskSchema = new Schema({
         type: String,
         required: true
     },
-    content: {
-        type: String,
-        required: true
-    },
+    content: String,
     rank: Number,
     importance: {
         type: mongoose.Schema.Types.ObjectId,

@@ -78,11 +78,11 @@ module.exports = {
         importance.save();
     },
     importTasks: function (adminIds) {
-
         return new Promise((resolved, reject) => {
             var counter = 1;
+            console.log(`SELECT * FROM zgloszenia WHERE zgl_admin_id in (${adminIds}) AND zgl_title != ''`);
             pool.query(`
-            SELECT * FROM zgloszenia WHERE zgl_admin_id in (${adminIds}) AND zgl_title > '' AND zgl_desc > ''`,
+            SELECT * FROM zgloszenia WHERE zgl_admin_id in (${adminIds}) AND zgl_title != ''`,
             function (error, results, fields) {
                 results.map(row => {
                     Promise.props({
