@@ -1,13 +1,13 @@
 <navigation></navigation>
 <div class="container-fluid">
-    <h1 class="page-header">Tasks</h1>
+    <h1 class="page-header">Tasks <small>({{totalItems}})</small></h1>
 
-    <div class="form-group">
-        <button class="btn btn-default" (click)="setFilter('status', 1); getTasks();" title="Get tasks to do">
-            To do
-        </button>
-        <button class="btn btn-success" (click)="setFilter('status', 2); getTasks();" title="Get completed tasks">
-            <i class="fa fa-check"></i> Done
+    <div class="btn-group form-group">
+        <button class="btn btn-default"
+                [ngClass]="{'btn-success' : status._id === filters.status}"
+                (click)="setFilter('status', status._id); setFilter('page', 1); getTasks();"
+                *ngFor="let status of taskStatuses">
+            {{status.name}}
         </button>
     </div>
 
@@ -36,11 +36,11 @@
                     <td>{{task.title}}</td>
                     <td>
                         <span *ngIf="!task.showStatusChange" (click)="task.showStatusChange = !task.showStatusChange;">
-                            {{task.status}}
+                            {{task.status.name}}
                         </span>
                         <span *ngIf="task.showStatusChange">
                             <div class="input-group">
-                                <select class="form-control" [(ngModel)]="task.status">
+                                <select class="form-control" [(ngModel)]="task.status._id">
                                     <option *ngFor="let status of taskStatuses" value="{{status._id}}">
                                         {{status.name}}
                                     </option>
