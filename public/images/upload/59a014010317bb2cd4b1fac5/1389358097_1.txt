@@ -1,0 +1,18 @@
+<!-- Become Sales Tracking Script V 1.0.0 - All rights reserved -->
+<script language="JavaScript">
+ 	 var pg_pangora_merchant_id='102221';
+var pg_order_id='$order_id';
+var pg_cart_size='$cart_size';
+var pg_cart_value='$cart_value';
+var pg_currency='GBP';
+var pg_customer_flag='$customer_flag';
+var pg_product_id='$product_id';
+var pg_product_name='$product_name';
+var pg_product_price='$product_price';
+var pg_product_units='$product_units';
+</script>
+<script language="JavaScript" src="https://clicks.pangora.com/sales-tracking/salesTracker.js">
+</script>
+<noscript>
+<img src="https://clicks.pangora.com/sales-tracking/102221/salesPixel.do"/>
+</noscript>

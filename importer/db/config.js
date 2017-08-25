@@ -4,5 +4,5 @@ module.exports = {
     user     : 'root',
     password : 'root',
     database : 'paker',
-    acquireTimeout: 1000000
+    acquireTimeout: 100000000
 };

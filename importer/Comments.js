@@ -25,7 +25,10 @@ module.exports = {
         return new Promise((resolved, reject) => {
             pool.query(`select * from zgloszenia_odp where odp_text > '' order by odp_main_odp_id`,
             function (error, results, fields) {
+                var counter = 1;
+
                 if (error) console.log(error);
+
                 results.map(row => {
                     Promise.props({
                         parentTask: Task.getByExternalId(row.odp_zgl_id),
@@ -137,7 +140,8 @@ module.exports = {
                                         }
 
                                     });
-
+                                console.log(counter);
+                                counter = counter + 1;
                             } catch (err) {
                                 return reject(err)
                             }

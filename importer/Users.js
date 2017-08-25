@@ -15,6 +15,7 @@ module.exports = {
     },
     importUsers: function () {
         return new Promise((resolve, reject) => {
+            var counter = 1;
             pool.query('SELECT * FROM admins', function (error, results, fields) {
                 results.map(row => {
                     name = row.name.split(' ');
@@ -31,9 +32,12 @@ module.exports = {
                     });
                     try {
                         user.save();
+
                     } catch (err) {
                         return reject(err);
                     }
+                    console.log(counter);
+                    counter = counter + 1;
                     return resolve();
                 });
             });

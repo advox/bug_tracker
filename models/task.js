@@ -4,7 +4,10 @@ const db = require('../bin/db');
 const assert = require('assert');
 
 const taskSchema = new Schema({
-    status: Number,
+    status: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Status'
+    },
     title: {
         type: String,
         required: true
@@ -53,7 +56,6 @@ taskSchema.statics.countTasks = function (filter) {
 };
 
 taskSchema.statics.filterTasks = function (filter) {
-    console.log(filter);
     return new Promise((resolve, reject) => {
         let statusString = filter.status;
         let statusArray = statusString.split(',');
