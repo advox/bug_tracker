@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthorizationService } from './../../services/authorization/authorization.service';
+import { AuthorizationService } from './../../services/authorization';
 import { Restangular } from 'ngx-restangular';
 
 @Component({
@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
     }
 
     public loginFunction() {
+        console.log(this.form);
         this.sessionRest.post(this.form).subscribe(
             (data) => {
                 this.authorizationService.login(data).then(() => {

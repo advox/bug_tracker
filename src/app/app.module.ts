@@ -17,16 +17,21 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState } from './app.service';
-import { TaskComponent } from './controllers/task';
-import { LoginComponent, LogoutComponent } from './controllers/session';
 
 // toastr
 import { ToastModule, ToastsManager } from 'ng2-toastr';
+
+// primeng
+import { PaginatorModule } from 'primeng/primeng';
 
 // Services
 import { AuthorizationService } from './services/authorization';
 import { NotificationService } from './services/notification';
 import { NavigationComponent } from './components/navigation';
+
+// controllers
+import { TaskComponent } from './controllers/task';
+import { LoginComponent, LogoutComponent } from './controllers/session';
 
 import '../styles/styles.scss';
 
@@ -36,7 +41,7 @@ const APP_PROVIDERS = [
     AppState
 ];
 
-export function RestangularConfigFactory(RestangularProvider, auth: AuthorizationService, notification: NotificationService, router : Router) {
+export function RestangularConfigFactory(RestangularProvider, auth: AuthorizationService, notification: NotificationService, router: Router) {
     RestangularProvider.setBaseUrl('http://localhost:3001');
 
     if (auth.isUserLoggedIn()) {
@@ -50,6 +55,7 @@ export function RestangularConfigFactory(RestangularProvider, auth: Authorizatio
     RestangularProvider.addErrorInterceptor((response, subject, responseHandler) => {
         switch (response.status) {
             case 400:
+                notification.displayError(response.data.error);
             case 500:
                 break;
             case 401:
@@ -95,6 +101,7 @@ export function RestangularConfigFactory(RestangularProvider, auth: Authorizatio
         BrowserAnimationsModule,
         FormsModule,
         HttpModule,
+        PaginatorModule,
         RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules}),
         ToastModule.forRoot(),
         RestangularModule.forRoot([AuthorizationService, NotificationService, Router], RestangularConfigFactory),

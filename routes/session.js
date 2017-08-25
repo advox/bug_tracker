@@ -36,6 +36,9 @@ router.post('/', function(request, response) {
             });
 
             session.save(function(err, result) {
+
+                console.log(err);
+
                 response.statusCode = 200;
                 response.send({
                     login: user.login,

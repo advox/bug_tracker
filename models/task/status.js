@@ -20,6 +20,17 @@ const statusSchema = new Schema({
     }
 });
 
-let Status = mongoose.model('Status', statusSchema);
+statusSchema.statics.findAll = function () {
+    return new Promise((resolve, reject) => {
+        Status.find({}, (err, statuses) => {
+            if (err) {
+                return reject(err);
+            }
 
+            return resolve(statuses);
+        });
+    });
+};
+
+let Status = mongoose.model('Status', statusSchema);
 module.exports = Status;

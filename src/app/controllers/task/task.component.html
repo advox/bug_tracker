@@ -2,6 +2,18 @@
 <div class="container-fluid">
     <h1 class="page-header">Tasks</h1>
 
+    <div class="form-group">
+        <button class="btn btn-default" (click)="setFilter('status', 1); getTasks();" title="Get tasks to do">
+            To do
+        </button>
+        <button class="btn btn-success" (click)="setFilter('status', 2); getTasks();" title="Get completed tasks">
+            <i class="fa fa-check"></i> Done
+        </button>
+    </div>
+
+    <p-paginator rows="{{filters.perPage}}" totalRecords="{{totalItems}}" [rowsPerPageOptions]="[25,50,100]"
+                 (onPageChange)="getTasks($event);"></p-paginator>
+
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -22,7 +34,26 @@
             <ng-container *ngIf="tasks.length">
                 <tr *ngFor="let task of tasks">
                     <td>{{task.title}}</td>
-                    <td>{{task.status}}</td>
+                    <td>
+                        <span *ngIf="!task.showStatusChange" (click)="task.showStatusChange = !task.showStatusChange;">
+                            {{task.status}}
+                        </span>
+                        <span *ngIf="task.showStatusChange">
+                            <div class="input-group">
+                                <select class="form-control" [(ngModel)]="task.status">
+                                    <option *ngFor="let status of taskStatuses" value="{{status._id}}">
+                                        {{status.name}}
+                                    </option>
+                                </select>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-success btn-xs"
+                                            (click)="updateTask({status : task.status}, task._id)">
+                                        <i class="fa fa-save"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </span>
+                    </td>
                     <td>{{task.rank}}</td>
                     <td>{{task.important}}</td>
                     <td></td>
@@ -35,10 +66,12 @@
             </ng-container>
             <ng-container *ngIf="tasks.length === 0">
                 <tr>
-                    <td colspan="99">No tasks</td>
+                    <td colspan="99" class="text-center">No tasks</td>
                 </tr>
             </ng-container>
             </tbody>
         </table>
     </div>
+    <p-paginator rows="{{filters.perPage}}" totalRecords="{{totalItems}}" [rowsPerPageOptions]="[25,50,100]"
+                 (onPageChange)="getTasks($event);"></p-paginator>
 </div>

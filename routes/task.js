@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 var url = require('url');
 const Task = require('../models/task');
+const Status = require('../models/task/status');
+
 const User = require('../models/user');
 const Comment = require('../models/comment');
 const Promise = require('bluebird');
@@ -28,14 +30,17 @@ router.get(
     function (request, response) {
         let urlParts = url.parse(request.url, true);
 
-        Task.filterTasks(urlParts.query).then(function (data) {
-            response.statusCode = 200;
-            response.send({
-                tasks: data,
+        Promise.props({
+            tasks: Task.filterTasks(urlParts.query),
+            totalItems: Task.countTasks(urlParts.query)
+        })
+            .then(function (data) {
+                response.statusCode = 200;
+                response.send({
+                    tasks: data.tasks,
+                    totalItems: data.totalItems
+                });
             });
-        });
-
-
     }
 );
 
@@ -56,19 +61,15 @@ router.get(
 // )
 // ;
 //
-// router.get(
-//     '/statuses',
-//     (request, response) = > {
-//     Promise.props({}).then(function (results) {
-//     response.status(200).json(
-//         {
-//             statuses: Task.getTaskStatusArray()
-//         }
-//     );
-// });
-// }
-// )
-// ;
+router.get(
+    '/statuses',
+    (request, response) => {
+        Promise.props({
+            statuses: Status.findAll()
+        }).then(function (results) {
+            response.status(200).json(results);
+        });
+    });
 //
 // router.get(
 //     '/importance',
@@ -172,35 +173,34 @@ router.get(
 // )
 // ;
 //
-// router.post(
-//     '/saveAjax',
-//     (request, response) = > {
-//     Task.findOneAndUpdate(
-//     {_id: request.body._id},
-//     {
-//         '$set': request.body
-//     },
-//     {
-//         runValidators: true,
-//         new: true,
-//         upsert: true
-//     },
-//     function (err) {
-//         if (err) {
-//             response.status(200).json({
-//                 status: 'failure',
-//                 error: err.errors
-//             });
-//         } else {
-//             response.status(200).json({
-//                 status: 'success'
-//             });
-//         }
-//     }
-// );
-// }
-// )
-// ;
+router.put(
+    '/:id',
+    (request, response) => {
+        Task.findOneAndUpdate(
+            {_id: request.params.id},
+            {
+                '$set': request.body
+            },
+            {
+                runValidators: true,
+                new: true,
+                upsert: true
+            },
+            function (err) {
+                if (err) {
+                    response.status(200).json({
+                        status: 'failure',
+                        error: err.errors
+                    });
+                } else {
+                    response.status(200).json({
+                        status: 'success'
+                    });
+                }
+            }
+        );
+    }
+);
 //
 // router.post(
 //     '/delete',

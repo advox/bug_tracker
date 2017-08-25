@@ -4,7 +4,10 @@ const db = require('../bin/db');
 const assert = require('assert');
 
 const taskSchema = new Schema({
-    status: Number,
+    status: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Status'
+    },
     title: {
         type: String,
         required: true
@@ -39,51 +42,48 @@ taskSchema.statics.countTasks = function (filter) {
     return new Promise((resolve, reject) => {
         let statusString = filter.status;
         let statusArray = statusString.split(',');
-        this.find(
+
+        this.count(
             {
-                status: {$in: statusArray}
+                status: {$in: statusArray},
+                title: new RegExp(filter.search, 'i'),
+                content: new RegExp(filter.search, 'i'),
             }
         ).exec((err, result) => {
             if (err) {
                 return reject(err);
             }
+
             return resolve(result);
         })
     });
 };
 
 taskSchema.statics.filterTasks = function (filter) {
-    console.log(filter);
     return new Promise((resolve, reject) => {
         let statusString = filter.status;
         let statusArray = statusString.split(',');
+
         let tasks = this.find(
             {
-                status: { $in: statusArray },
+                status: {$in: statusArray},
                 title: new RegExp(filter.search, 'i'),
                 content: new RegExp(filter.search, 'i'),
             }
         )
+            .skip((filter.page - 1) * filter.perPage)
+            .limit(parseInt(filter.perPage))
             .populate('author assignee comments');
-
-        // if (typeof filter.start != "undefined") {
-        //     tasks.skip(parseInt(filter.start));
-        // }
-        //
-        // if (typeof filter.length != "undefined") {
-        //     tasks.limit(parseInt(filter.length));
-        // }
 
         let orderColumn = filter.orderBy;
         let orderDir = filter.orderDir;
 
-        tasks.sort({ [orderColumn] : orderDir });
+        tasks.sort({[orderColumn]: orderDir});
 
         tasks.exec((err, result) => {
             if (err) {
                 return reject(err);
             }
-            console.log(result);
             return resolve(result);
         });
     });
@@ -122,23 +122,23 @@ taskSchema.statics.getByExternalId = function (id) {
     })
 };
 
-taskSchema.statics.getTaskStatusArray = function () {
-    return [
-        {id: 0, name: 'Dev-wait'},
-        {id: 1, name: 'Paker'},
-        {id: 2, name: 'Done'},
-        {id: 3, name: 'Feature'},
-        {id: 4, name: 'Dev-active'}
-    ];
-};
-
-taskSchema.statics.getTaskImportanceArray = function () {
-    return [
-        {id: 1, name: 'Normal'},
-        {id: 2, name: 'Urgent'},
-        {id: 3, name: 'Sebastian'}
-    ];
-};
+// taskSchema.statics.getTaskStatusArray = function () {
+//     return [
+//         {id: 0, name: 'Dev-wait'},
+//         {id: 1, name: 'Paker'},
+//         {id: 2, name: 'Done'},
+//         {id: 3, name: 'Feature'},
+//         {id: 4, name: 'Dev-active'}
+//     ];
+// };
+//
+// taskSchema.statics.getTaskImportanceArray = function () {
+//     return [
+//         {id: 1, name: 'Normal'},
+//         {id: 2, name: 'Urgent'},
+//         {id: 3, name: 'Sebastian'}
+//     ];
+// };
 
 let Task = mongoose.model('Task', taskSchema);
 
