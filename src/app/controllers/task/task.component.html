@@ -1,6 +1,8 @@
 <navigation></navigation>
 <div class="container-fluid">
-    <h1 class="page-header">Tasks <small>({{totalItems}})</small></h1>
+    <h1 class="page-header">Tasks
+        <small>({{totalItems}})</small>
+    </h1>
 
     <div class="btn-group form-group">
         <button class="btn btn-default"
@@ -23,7 +25,6 @@
                 <th>Rank</th>
                 <th>Importance</th>
                 <th>SEB</th>
-                <th>Brief</th>
                 <th>From</th>
                 <th>Posts</th>
                 <th>Created</th>
@@ -55,9 +56,10 @@
                         </span>
                     </td>
                     <td>{{task.rank}}</td>
-                    <td>{{task.important}}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{task.importance.name}}</td>
+                    <td>
+                        <div class="seb" [ngClass]="{'seb-active' : task.seb}"></div>
+                    </td>
                     <td></td>
                     <td></td>
                     <td>{{task.createdAt | date: 'yyyy-MM-dd hh:mm'}}</td>

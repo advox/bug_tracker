@@ -87,7 +87,7 @@ taskSchema.statics.filterTasks = function (filter) {
         let tasks = this.find(condition)
             .skip((filter.page - 1) * filter.perPage)
             .limit(parseInt(filter.perPage))
-            .populate('author assignee comments status');
+            .populate('author assignee comments status importance');
 
         let orderColumn = filter.orderBy;
         let orderDir = filter.orderDir;
