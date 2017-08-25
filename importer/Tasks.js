@@ -96,16 +96,17 @@ module.exports = {
 
                         let author = null;
                         let assignee = null;
-                        let importanceArray = [];
+                        let importance = null;
+                        let importanceSeb = 0;
 
                         if (results.importance.length > 0) {
-                            importanceArray.push(results.importance[0]._id);
+                            importance = results.importance[0]._id;
                         } else {
-                            importanceArray.push(results.importanceNormal[0]._id);
+                            importance = results.importanceNormal[0]._id;
                         }
 
                         if (row.zgl_sebastian > 0) {
-                            importanceArray.push(results.importanceSebastian[0]._id);
+                            importanceSeb = 1;
                         }
 
                         if(results.author[0]._id) {
@@ -121,7 +122,8 @@ module.exports = {
                             title: row.zgl_title,
                             content: row.zgl_desc,
                             rank: row.zgl_ranga,
-                            important: importanceArray,
+                            importance: importance,
+                            seb: importanceSeb,
                             author: author,
                             assignee: assignee,
                             notifications: [],

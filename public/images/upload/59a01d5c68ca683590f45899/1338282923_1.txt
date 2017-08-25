@@ -1,0 +1,1387 @@
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 317
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 318
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 319
+
+Warning: fopen(aa.txt) [function.fopen]: failed to open stream: Permission denied in /home/paker/www/_admin/importpocz.php on line 355
+
+Warning: fputs(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 356
+
+Warning: fclose(): supplied argument is not a valid stream resource in /home/paker/www/_admin/importpocz.php on line 357
+Barcode Number	Service Code	Senders reference	user_id
+CZ875665712GB	CZ875665712GB	CRL01	CRL01	177571	177571	51513
+CZ875665726GB	CZ875665726GB	CRL01	CRL01	177573	177573	6365
+CZ875665730GB	CZ875665730GB	CRL01	CRL01	177574	177574	51515
+CZ875665743GB	CZ875665743GB	CRL01	CRL01	177575	177575	44956
+CZ875665757GB	CZ875665757GB	CRL01	CRL01	177577	177577	46592
+CZ875665765GB	CZ875665765GB	CRL01	CRL01	177580	177580	6365
+CZ875665774GB	CZ875665774GB	CRL01	CRL01	177581	177581	27760
+CZ875665788GB	CZ875665788GB	CRL01	CRL01	177583	177583	46726
+CZ875665791GB	CZ875665791GB	CRL01	CRL01	177584	177584	47075
+CZ875665805GB	CZ875665805GB	CRL01	CRL01	177587	177587	5614
+CZ875665814GB	CZ875665814GB	CRL01	CRL01	177591	177591	17009
+CZ875665828GB	CZ875665828GB	CRL01	CRL01	177595	177595	6365
+CZ875665831GB	CZ875665831GB	CRL01	CRL01	177598	177598	6365
+CZ875665845GB	CZ875665845GB	CRL01	CRL01	177599	177599	44336
+CZ875665859GB	CZ875665859GB	CRL01	CRL01	177603	177603	6365
+CZ875665862GB	CZ875665862GB	CRL01	CRL01	177606	177606	6365
+CZ875665876GB	CZ875665876GB	CRL01	CRL01	177609	177609	24330
+CZ875665880GB	CZ875665880GB	CRL01	CRL01	177614	177614	18351
+CZ875665893GB	CZ875665893GB	CRL01	CRL01	177618	177618	51525
+CZ875665902GB	CZ875665902GB	CRL01	CRL01	177619	177619	35735
+CZ875665916GB	CZ875665916GB	CRL01	CRL01	177622	177622	46359
+CZ875665920GB	CZ875665920GB	CRL01	CRL01	177624	177624	38285
+CZ875665933GB	CZ875665933GB	CRL01	CRL01	177627	177627	6365
+CZ875665947GB	CZ875665947GB	CRL01	CRL01	177630	177630	16121
+CZ875665955GB	CZ875665955GB	CRL01	CRL01	177631	177631	46763
+CZ875665964GB	CZ875665964GB	CRL01	CRL01	177633	177633	6365
+CZ875665978GB	CZ875665978GB	CRL01	CRL01	177636	177636	51531
+CZ875665981GB	CZ875665981GB	CRL01	CRL01	177637	177637	40087
+CZ875665995GB	CZ875665995GB	CRL01	CRL01	177638	177638	6365
+CZ875666001GB	CZ875666001GB	CRL01	CRL01	177642	177642	31305
+CZ875666015GB	CZ875666015GB	CRL01	CRL01	177649	177649	4748
+CZ875666029GB	CZ875666029GB	CRL01	CRL01	177650	177650	51534
+CZ875666032GB	CZ875666032GB	CRL01	CRL01	177651	177651	6365
+CZ875666046GB	CZ875666046GB	CRL01	CRL01	177652	177652	51535
+CZ875666050GB	CZ875666050GB	CRL01	CRL01	177653	177653	6365
+CZ875666063GB	CZ875666063GB	CRL01	CRL01	177657	177657	6365
+CZ875666077GB	CZ875666077GB	CRL01	CRL01	177663	177663	40449
+CZ875666085GB	CZ875666085GB	CRL01	CRL01	177671	177671	6365
+CZ875666094GB	CZ875666094GB	CRL01	CRL01	177672	177672	6365
+CZ875666103GB	CZ875666103GB	CRL01	CRL01	177674	177674	6365
+CZ875666117GB	CZ875666117GB	CRL01	CRL01	177675	177675	51540
+CZ875666125GB	CZ875666125GB	CRL01	CRL01	177676	177676	6365
+CZ875666148GB	CRL01	175156	50907
+CZ875666151GB	CZ875666151GB	CRL01	CRL01	177681	177681	6365
+CZ875666165GB	CZ875666165GB	CRL01	CRL01	177683	177683	1590
+CZ875666179GB	CZ875666179GB	CRL01	CRL01	177684	177684	33978
+CZ875666182GB	CZ875666182GB	CRL01	CRL01	177689	177689	51030
+CZ875666196GB	CZ875666196GB	CRL01	CRL01	177691	177691	51544
+CZ875666205GB	CZ875666205GB	CRL01	CRL01	177692	177692	15021
+CZ875666219GB	CZ875666219GB	CRL01	CRL01	177693	177693	51545
+CZ875666222GB	CZ875666222GB	CRL01	CRL01	177703	177703	51548
+CZ875666236GB	CZ875666236GB	CRL01	CRL01	177706	177706	51549
+CZ875666240GB	CZ875666240GB	CRL01	CRL01	177711	177711	6365
+CZ875666253GB	CZ875666253GB	CRL01	CRL01	177713	177713	48675
+CZ875666267GB	CZ875666267GB	CRL01	CRL01	177714	177714	51552
+CZ875666275GB	CZ875666275GB	CRL01	CRL01	177716	177716	51553
+CZ875666284GB	CZ875666284GB	CRL01	CRL01	177717	177717	39311
+CZ875666298GB	CZ875666298GB	CRL01	CRL01	177718	177718	30695
+CZ875666307GB	CZ875666307GB	CRL01	CRL01	177720	177720	6365
+CZ875666315GB	CZ875666315GB	CRL01	CRL01	177721	177721	6365
+CZ875666324GB	CZ875666324GB	CRL01	CRL01	177722	177722	6365
+		CRL01	CRL01	177725	177725	6365
+CZ875666338GB	CZ875666338GB	CRL01	CRL01	177729	177729	51555
+CZ875666341GB	CZ875666341GB	CRL01	CRL01	177732	177732	8863
+CZ875666355GB	CZ875666355GB	CRL01	CRL01	177735	177735	6365
+CZ875666369GB	CZ875666369GB	CRL01	CRL01	177739	177739	51557
+		CRL01	CRL01	177742	177742	6365
+		CRL01	CRL01	177743	177743	51277
+CZ875666372GB	CZ875666372GB	CRL01	CRL01	177744	177744	6365
+CZ875666386GB	CZ875666386GB	CRL01	CRL01	177746	177746	6365
+CZ875666390GB	CZ875666390GB	CRL01	CRL01	177747	177747	6365
+CZ875666409GB	CZ875666409GB	CRL01	CRL01	177751	177751	6365
+CZ875666412GB	CZ875666412GB	CRL01	CRL01	177752	177752	51560
+CZ875666426GB	CZ875666426GB	CRL01	CRL01	177754	177754	25525
+		CRL01	CRL01	177755	177755	6365
+CZ875666430GB	CZ875666430GB	CRL01	CRL01	177759	177759	6365
+		CRL01	CRL01	177760	177760	6365
+CZ875666443GB	CZ875666443GB	CRL01	CRL01	177761	177761	6365
+CZ875666457GB	CZ875666457GB	CRL01	CRL01	177764	177764	47347
+CZ875666465GB	CZ875666465GB	CRL01	CRL01	177765	177765	36683
+CZ875666474GB	CZ875666474GB	CRL01	CRL01	177768	177768	6365
+CZ875666488GB	CZ875666488GB	CRL01	CRL01	177769	177769	51563
+CZ875666491GB	CZ875666491GB	CRL01	CRL01	177774	177774	6365
+CZ875666505GB	CZ875666505GB	CRL01	CRL01	177775	177775	6365
+CZ875666514GB	CZ875666514GB	CRL01	CRL01	177777	177777	47753
+CZ875666528GB	CZ875666528GB	CRL01	CRL01	177778	177778	6365
+CZ875666531GB	CZ875666531GB	CRL01	CRL01	177779	177779	6365
+CZ875666545GB	CZ875666545GB	CRL01	CRL01	177780	177780	46895
+CZ875666559GB	CZ875666559GB	CRL01	CRL01	177782	177782	6365
+CZ875666562GB	CZ875666562GB	CRL01	CRL01	177784	177784	6365
+CZ875666576GB	CZ875666576GB	CRL01	CRL01	177786	177786	51567
+CZ875666580GB	CZ875666580GB	CRL01	CRL01	177790	177790	6365
+CZ875666593GB	CZ875666593GB	CRL01	CRL01	177791	177791	38091
+CZ875666602GB	CZ875666602GB	CRL01	CRL01	177792	177792	47958
+CZ875666616GB	CZ875666616GB	CRL01	CRL01	177793	177793	51568
+CZ875666620GB	CZ875666620GB	CRL01	CRL01	177796	177796	6365
+CZ875666633GB	CZ875666633GB	CRL01	CRL01	177801	177801	25578
+CZ875666647GB	CZ875666647GB	CRL01	CRL01	177804	177804	48162
+CZ875666655GB	CZ875666655GB	CRL01	CRL01	177806	177806	6365
+CZ875666664GB	CZ875666664GB	CRL01	CRL01	177808	177808	38564
+		CRL01	CRL01	177809	177809	6365
+CZ875666678GB	CZ875666678GB	CRL01	CRL01	177817	177817	6365
+CZ875666681GB	CZ875666681GB	CRL01	CRL01	177818	177818	6365
+CZ875666695GB	CZ875666695GB	CRL01	CRL01	177821	177821	6365
+CZ875666704GB	CZ875666704GB	CRL01	CRL01	177822	177822	6365
+CZ875666718GB	CZ875666718GB	CRL01	CRL01	177823	177823	6365
+CZ875666721GB	CZ875666721GB	CRL01	CRL01	177824	177824	6365
+		CRL01	CRL01	177825	177825	6365
+		CRL01	CRL01	177826	177826	6365
+		CRL01	CRL01	177827	177827	6365
+		CRL01	CRL01	177828	177828	6365
+CZ875666735GB	CZ875666735GB	CRL01	CRL01	177829	177829	6365
+CZ875666749GB	CZ875666749GB	CRL01	CRL01	177830	177830	6365
+CZ875666752GB	CZ875666752GB	CRL01	CRL01	177832	177832	6365
+CZ875666766GB	CZ875666766GB	CRL01	CRL01	177834	177834	6365
+CZ875666770GB	CZ875666770GB	CRL01	CRL01	177836	177836	6365
+CZ875666783GB	CZ875666783GB	CRL01	CRL01	177837	177837	6365
+CZ875666797GB	CZ875666797GB	CRL01	CRL01	177838	177838	6365
+CZ875666806GB	CZ875666806GB	CRL01	CRL01	177839	177839	6365
+CZ875666810GB	CZ875666810GB	CRL01	CRL01	177840	177840	6365
+		CRL01	CRL01	177841	177841	6365
+CZ875666823GB	CZ875666823GB	CRL01	CRL01	177861	177861	6365
+CZ875666837GB	CZ875666837GB	CRL01	CRL01	177867	177867	6365
+CZ875666845GB	CZ875666845GB	CRL01	CRL01	177868	177868	6365
+		CRL01	CRL01	177876	177876	6365
+CZ875666854GB	CZ875666854GB	CRL01	CRL01	177884	177884	6365
+CZ875666868GB	CZ875666868GB	CRL01	CRL01	177885	177885	6365
+		CRL01	CRL01	177899	177899	6365
+CZ875666871GB	CZ875666871GB	CRL01	CRL01	177915	177915	6365
+CZ875666885GB	CZ875666885GB	CRL01	CRL01	177917	177917	6365
+CZ875666899GB	CZ875666899GB	CRL01	CRL01	177929	177929	6365
+CZ875666908GB	CZ875666908GB	CRL01	CRL01	177933	177933	6365
+CZ875666911GB	CZ875666911GB	CRL01	CRL01	177938	177938	6365
+CZ875666925GB	CZ875666925GB	CRL01	CRL01	177959	177959	6365
+CZ875666939GB	CZ875666939GB	CRL01	CRL01	177964	177964	51604
+CZ875666942GB	CZ875666942GB	CRL01	CRL01	177962	177962	23770
+CZ875666956GB	CZ875666956GB	CRL01	CRL01	177957	177957	51602
+CZ875666960GB	CZ875666960GB	CRL01	CRL01	177944	177944	46311
+CZ875666973GB	CZ875666973GB	CRL01	CRL01	177943	177943	50121
+CZ875666987GB	CZ875666987GB	CRL01	CRL01	177937	177937	51597
+CZ875666995GB	CZ875666995GB	CRL01	CRL01	177936	177936	51596
+CZ875667007GB	CZ875667007GB	CRL01	CRL01	177935	177935	51595
+CZ875667015GB	CZ875667015GB	CRL01	CRL01	177927	177927	51293
+CZ875667024GB	CZ875667024GB	CRL01	CRL01	177914	177914	9369
+CZ875667038GB	CZ875667038GB	CRL01	CRL01	177893	177893	51583
+CZ875667041GB	CZ875667041GB	CRL01	CRL01	177891	177891	51587
+CZ875667055GB	CZ875667055GB	CRL01	CRL01	177889	177889	51586
+CZ875667069GB	CZ875667069GB	CRL01	CRL01	177888	177888	2871
+CZ875667072GB	CZ875667072GB	CRL01	CRL01	177886	177886	31487
+CZ875667086GB	CZ875667086GB	CRL01	CRL01	177883	177883	51584
+CZ875667090GB	CZ875667090GB	CRL01	CRL01	177882	177882	19345
+CZ875667109GB	CZ875667109GB	CRL01	CRL01	177874	177874	45876
+CZ875667112GB	CZ875667112GB	CRL01	CRL01	177860	177860	51429
+CZ875667126GB	CZ875667126GB	CRL01	CRL01	177856	177856	6458
+CZ875667130GB	CZ875667130GB	CRL01	CRL01	177851	177851	51578
+CZ875667143GB	CZ875667143GB	CRL01	CRL01	177685	177685	31426
+CZ875667157GB	CZ875667157GB	CRL01	CRL01	177940	177940	51599
+CZ875667165GB	CZ875667165GB	CRL01	CRL01	177892	177892	45816
+CZ889203445GB	CZ889203445GB	CRL01	CRL01	177890	177890	20232
+CZ889203454GB	CZ889203454GB	CRL01	CRL01	177814	177814	6365
+CZ889203468GB	CRL01	175615	34143
+CZ889203471GB	CZ889203471GB	CRL01	CRL01	177968	177968	6365
+CZ889203485GB	CZ889203485GB	CRL01	CRL01	177971	177971	46265
+CZ889203499GB	CZ889203499GB	CRL01	CRL01	177975	177975	49373
+CZ889203508GB	CZ889203508GB	CRL01	CRL01	177980	177980	51606
+CZ889203511GB	CZ889203511GB	CRL01	CRL01	177981	177981	6773
+		CRL01	CRL01	177985	177985	6365
+CZ889203525GB	CZ889203525GB	CRL01	CRL01	177993	177993	32013
+CZ889203539GB	CZ889203539GB	CRL01	CRL01	177995	177995	6365
+CZ889203542GB	CZ889203542GB	CRL01	CRL01	177997	177997	6365
+CZ889203556GB	CZ889203556GB	CRL01	CRL01	178000	178000	6365
+CZ889203560GB	CZ889203560GB	CRL01	CRL01	178004	178004	5020
+CZ889203573GB	CZ889203573GB	CRL01	CRL01	178005	178005	13597
+CZ889203587GB	CZ889203587GB	CRL01	CRL01	178008	178008	51608
+CZ889203595GB	CZ889203595GB	CRL01	CRL01	178009	178009	24113
+CZ889203613GB	CZ889203613GB	CRL01	CRL01	178027	178027	6365
+CZ889203627GB	CZ889203627GB	CRL01	CRL01	178029	178029	6365
+CZ889203635GB	CZ889203635GB	CRL01	CRL01	178035	178035	6365
+CZ889203644GB	CZ889203644GB	CRL01	CRL01	178037	178037	15472
+CZ889203658GB	CZ889203658GB	CRL01	CRL01	178039	178039	6365
+CZ889203661GB	CZ889203661GB	CRL01	CRL01	178044	178044	22367
+CZ889203675GB	CZ889203675GB	CRL01	CRL01	178048	178048	6365
+CZ889203689GB	CZ889203689GB	CRL01	CRL01	178051	178051	47344
+CZ889203692GB	CZ889203692GB	CRL01	CRL01	178052	178052	6365
+CZ889203701GB	CZ889203701GB	CRL01	CRL01	178053	178053	6365
+CZ889203715GB	CZ889203715GB	CRL01	CRL01	178054	178054	6365
+CZ889203729GB	CZ889203729GB	CRL01	CRL01	178055	178055	6365
+CZ889203732GB	CZ889203732GB	CRL01	CRL01	178057	178057	8203
+CZ889203746GB	CZ889203746GB	CRL01	CRL01	178062	178062	33201
+CZ889203750GB	CZ889203750GB	CRL01	CRL01	178083	178083	4822
+CZ889203763GB	CZ889203763GB	CRL01	CRL01	178091	178091	6365
+CZ889203777GB	CZ889203777GB	CRL01	CRL01	178101	178101	6365
+CZ889203785GB	CZ889203785GB	CRL01	CRL01	178108	178108	50380
+CZ889203794GB	CZ889203794GB	CRL01	CRL01	178109	178109	6365
+CZ889203803GB	CZ889203803GB	CRL01	CRL01	178116	178116	47608
+CZ889203817GB	CZ889203817GB	CRL01	CRL01	178118	178118	51619
+CZ889203825GB	CZ889203825GB	CRL01	CRL01	178120	178120	6365
+CZ889203834GB	CZ889203834GB	CRL01	CRL01	178127	178127	6365
+CZ889203848GB	CZ889203848GB	CRL01	CRL01	178132	178132	29878
+CZ889203851GB	CZ889203851GB	CRL01	CRL01	178139	178139	51622
+CZ889203865GB	CZ889203865GB	CRL01	CRL01	178141	178141	19075
+CZ889203879GB	CZ889203879GB	CRL01	CRL01	178142	178142	51320
+CZ889203882GB	CZ889203882GB	CRL01	CRL01	178145	178145	6365
+CZ889203896GB	CZ889203896GB	CRL01	CRL01	178147	178147	42976
+CZ889203905GB	CZ889203905GB	CRL01	CRL01	178148	178148	6365
+CZ889203919GB	CZ889203919GB	CRL01	CRL01	178097	178097	1620
+	Dodano	Powtorzone	RAZEM
+Cancelled	 	 	1
+TP201	0	0	0
+CRL01	204	2	206
