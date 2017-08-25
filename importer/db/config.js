@@ -1,8 +1,8 @@
 module.exports = {
-    host     : 'paker.co.uk',
+    host     : 'localhost',
     port     : 3306,
-    user     : 'node',
-    password : '_pakeradmin2014',
+    user     : 'root',
+    password : 'root',
     database : 'paker',
     acquireTimeout: 1000000
 };

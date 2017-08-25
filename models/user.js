@@ -124,6 +124,17 @@ userSchema.statics.findByLoginAndPassword = function(login, password) {
     });
 }
 
+userSchema.statics.getByExternalId = function (id) {
+    return new Promise((resolve, reject) => {
+        this.find({externalId: id}, (err, user) => {
+            if (err) {
+                return reject(err);
+            }
+            return resolve(user);
+        })
+    })
+};
+
 let User = mongoose.model('User', userSchema);
 
 module.exports = User;
