@@ -89,12 +89,30 @@ module.exports = {
                         author: User.getByExternalId(row.zgl_admin_id),
                         assignee: User.getByExternalId(row.zgl_to_admin_id),
                         taskStatus: Status.getByExternalId(row.zgl_status),
+                        importance: Importance.getByExternalId(row.zgl_priorytet),
+                        importanceSebastian: Importance.getByExternalId(3),
+                        importanceNormal: Importance.getByExternalId(1),
                     }).then(results => {
+
                         let author = null;
                         let assignee = null;
+                        let importance = null;
+                        let importanceSeb = 0;
+
+                        if (results.importance.length > 0) {
+                            importance = results.importance[0]._id;
+                        } else {
+                            importance = results.importanceNormal[0]._id;
+                        }
+
+                        if (row.zgl_sebastian > 0) {
+                            importanceSeb = 1;
+                        }
+
                         if(results.author[0]._id) {
                             author = results.author[0]._id;
                         }
+
                         if(results.assignee[0]) {
                             assignee = results.assignee[0]._id;
                         }
@@ -104,7 +122,8 @@ module.exports = {
                             title: row.zgl_title,
                             content: row.zgl_desc,
                             rank: row.zgl_ranga,
-                            important: 1,
+                            importance: importance,
+                            seb: importanceSeb,
                             author: author,
                             assignee: assignee,
                             notifications: [],

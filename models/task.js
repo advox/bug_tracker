@@ -17,7 +17,11 @@ const taskSchema = new Schema({
         required: true
     },
     rank: Number,
-    important: Array,
+    importance: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Importance'
+    },
+    seb: Number,
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
