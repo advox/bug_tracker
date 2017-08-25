@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Task } from './../../models';
 import { Status } from './../../models';
 import { Restangular } from 'ngx-restangular';
-import { ToastsManager } from "ng2-toastr"
+import { ToastsManager } from 'ng2-toastr';
 
 @Component({
     selector: 'task',
@@ -10,7 +10,7 @@ import { ToastsManager } from "ng2-toastr"
 })
 export class TaskComponent implements OnInit {
     public tasks: Task[] = [];
-    public totalItems = 100;
+    public totalItems = 0;
     public filters: any = {};
     public taskStatuses: Status[] = [];
     private taskRest: Restangular;
@@ -49,8 +49,8 @@ export class TaskComponent implements OnInit {
     public clearFilters() {
         this.filters = {
             search: '',
-            status: 1,
-            orderBy: 'created_at',
+            status: null,
+            orderBy: 'createdAt',
             orderDir: 'desc',
             page: 1,
             perPage: 25

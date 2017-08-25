@@ -6,10 +6,15 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
 const app = express();
-const session = require('express-session');
 const Session = require('./models/session');
 // const db = require('./bin/db');
 // const MongoStore = require('connect-mongo')(session);
+
+require('./models/task/importance');
+require('./models/task/status');
+require('./models/task');
+require('./models/user');
+require('./models/comment');
 
 app.use(cookieParser());
 

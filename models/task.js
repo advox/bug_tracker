@@ -45,15 +45,20 @@ const taskSchema = new Schema({
 taskSchema.statics.countTasks = function (filter) {
     return new Promise((resolve, reject) => {
         let statusString = filter.status;
-        let statusArray = statusString.split(',');
 
-        this.count(
-            {
-                status: {$in: statusArray},
-                title: new RegExp(filter.search, 'i'),
-                content: new RegExp(filter.search, 'i'),
+        let condition = {
+            title: new RegExp(filter.search, 'i'),
+            content: new RegExp(filter.search, 'i'),
+        };
+
+        if (statusString !== 'null') {
+            let statusArray = statusString.split(',');
+            if (statusArray.length) {
+                condition.status = {$in: statusArray}
             }
-        ).exec((err, result) => {
+        }
+
+        this.count(condition).exec((err, result) => {
             if (err) {
                 return reject(err);
             }
@@ -66,18 +71,23 @@ taskSchema.statics.countTasks = function (filter) {
 taskSchema.statics.filterTasks = function (filter) {
     return new Promise((resolve, reject) => {
         let statusString = filter.status;
-        let statusArray = statusString.split(',');
 
-        let tasks = this.find(
-            {
-                status: {$in: statusArray},
-                title: new RegExp(filter.search, 'i'),
-                content: new RegExp(filter.search, 'i'),
+        let condition = {
+            title: new RegExp(filter.search, 'i'),
+            content: new RegExp(filter.search, 'i'),
+        };
+
+        if (statusString !== 'null') {
+            let statusArray = statusString.split(',');
+            if (statusArray.length) {
+                condition.status = {$in: statusArray}
             }
-        )
+        }
+
+        let tasks = this.find(condition)
             .skip((filter.page - 1) * filter.perPage)
             .limit(parseInt(filter.perPage))
-            .populate('author assignee comments');
+            .populate('author assignee comments status importance');
 
         let orderColumn = filter.orderBy;
         let orderDir = filter.orderDir;
