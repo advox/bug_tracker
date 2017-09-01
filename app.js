@@ -40,14 +40,23 @@ app.use(function (req, res, next) {
     res.setHeader("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authentication-Token, X-Requested-With");
     res.setHeader('content-type', 'text/javascript');
 
-    if(req.method === 'OPTIONS') {
+    if (req.method === 'OPTIONS') {
         next();
     }
 
-    if (req.url !== '/session') {
-        let token = req.header('Authentication-Token');
+    let token = req.header('Authentication-Token');
 
-        if (typeof token === 'undefined' || !Session.isTokenValid()) {
+    Session.isTokenValid(token).then(
+        function () {
+            next();
+            return;
+        },
+        function () {
+            if (req.url === '/session') {
+                next();
+                return;
+            }
+
             res.statusCode = 401;
             res.send({
                 error_code: 'authenticated_failure',
@@ -55,9 +64,7 @@ app.use(function (req, res, next) {
             });
             return;
         }
-    }
-
-    next();
+    );
 });
 
 app.use('/', routes);

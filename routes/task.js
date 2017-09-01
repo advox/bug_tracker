@@ -107,26 +107,25 @@ router.get(
 // )
 // ;
 //
-// router.get(
-//     '/edit/:id',
-//     (request, response) = > {
-//     Promise.props({
-//     task: Task.findById(request.params.id),
-//     users: User.findAll(),
-//     comments: Comment.findByTaskId(request.params.id),
-//     priority: Task.getTaskStatusArray()
-// }).then(function (results) {
-//     response.render('task/edit', {
-//         task: results.task,
-//         users: results.users,
-//         comments: results.comments,
-//         priority: results.priority,
-//         errors: request.flash('errors')
-//     });
-// });
-// }
-// )
-// ;
+router.get(
+    '/:id',
+    (request, response) => {
+        Promise.props({
+            task: Task.findById(request.params.id),
+            users: User.findAll(),
+            // comments: Comment.findByTaskId(request.params.id),
+            // priority: Task.getTaskStatusArray()
+        }).then(function (results) {
+            response.statusCode = 200;
+            response.send({
+                task: results.task,
+                users: results.users,
+                // comments: results.comments,
+                // priority: results.priority,
+            });
+        });
+    }
+);
 //
 // router.post(
 //     '/save',

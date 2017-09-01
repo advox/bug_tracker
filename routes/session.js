@@ -5,11 +5,11 @@ const randomstring = require('randomstring');
 const User = require('../models/user');
 const Session = require('../models/session');
 
-router.post('/', function(request, response) {
+router.post('/', function (request, response) {
     User.findOne({
         login: request.body.login,
         password: md5(request.body.password)
-    }, function(err, user) {
+    }, function (err, user) {
         if (err) {
             response.statusCode = 500;
             response.send({
@@ -28,14 +28,26 @@ router.post('/', function(request, response) {
 
         Session.remove({
             userId: user._id
-        }, function(err, result) {
+        }, function (err, result) {
+            let currentDate = new Date();
+            let expireDate = new Date(currentDate);
+            expireDate.setMinutes(currentDate.getMinutes() + 30);
+
             var session = new Session({
                 userId: user._id,
                 token: randomstring.generate(256),
-                expireDate: new Date("2014-10-01T00:00:00Z")
+                expireDate: new Date(expireDate)
             });
 
-            session.save(function(err, result) {
+            session.save(function (err, result) {
+                if (err) {
+                    response.statusCode = 500;
+                    response.send({
+                        error: err
+                    });
+                    return;
+                }
+
                 response.statusCode = 200;
                 response.send({
                     login: user.login,
@@ -47,10 +59,10 @@ router.post('/', function(request, response) {
     });
 });
 
-router.delete('/', function(request, response) {
+router.delete('/', function (request, response) {
     Session.remove({
-        token: request.headers['Authorization-Token']
-    }, function(err, result) {
+        token: request.headers['authentication-token']
+    }, function (err, result) {
         if (err) {
             response.statusCode = 500;
             response.send({
@@ -70,7 +82,7 @@ router.delete('/', function(request, response) {
         response.statusCode = 200;
         response.send();
         return;
-    })
+    });
 });
 
 module.exports = router;

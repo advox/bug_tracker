@@ -16,7 +16,7 @@
     <p-paginator rows="{{filters.perPage}}" totalRecords="{{totalItems}}" [rowsPerPageOptions]="[25,50,100]"
                  (onPageChange)="getTasks($event);"></p-paginator>
 
-    <div class="table-responsive">
+    <div class="table-responsive task-list">
         <table class="table table-striped">
             <thead>
             <tr>
@@ -34,7 +34,11 @@
             <tbody>
             <ng-container *ngIf="tasks.length">
                 <tr *ngFor="let task of tasks">
-                    <td>{{task.title}}</td>
+                    <td>
+                        <span (click)="showTask(task._id);" class="link">
+                            {{task.title}}
+                        </span>
+                    </td>
                     <td>
                         <span *ngIf="!task.showStatusChange" (click)="task.showStatusChange = !task.showStatusChange;">
                             {{task.status.name}}
@@ -60,7 +64,9 @@
                     <td>
                         <div class="seb" [ngClass]="{'seb-active' : task.seb}"></div>
                     </td>
-                    <td></td>
+                    <td>
+                        {{task.author.name}}
+                    </td>
                     <td></td>
                     <td>{{task.createdAt | date: 'yyyy-MM-dd hh:mm'}}</td>
                     <td>{{task.updatedAt | date: 'yyyy-MM-dd hh:mm'}}</td>

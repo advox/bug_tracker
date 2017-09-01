@@ -22,6 +22,19 @@ const storage = multer.diskStorage({
 });
 const upload = multer({storage: storage}).array('files', 5);
 
+router.get(
+    '/:id',
+    (request, response) => {
+        Promise.props({
+            comment: Comment.findById(request.params.id),
+            children: Comment.find({parent: request.params.id}),
+        }).then(function (results) {
+            response.statusCode = 200;
+            response.send(results);
+        });
+    }
+);
+
 /**
  * comment get ajax action
  */
@@ -112,15 +125,15 @@ router.post('/save',
 
             comment
                 .save()
-                .then(function(result){
-                    Task.findOne({ _id: request.body.task }, function (err, task) {
+                .then(function (result) {
+                    Task.findOne({_id: request.body.task}, function (err, task) {
                         task.important = request.body.important;
                         task.rank = request.body.rank;
                         task.assignee = request.body.assignee;
                         task.save();
                     });
                 })
-                .then(function() {
+                .then(function () {
                     response.status(200).json({});
                 });
         });

@@ -3,12 +3,13 @@ import { Task } from './../../models';
 import { Status } from './../../models';
 import { Restangular } from 'ngx-restangular';
 import { ToastsManager } from 'ng2-toastr';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'task',
-    templateUrl: './task.component.html'
+    templateUrl: './list.component.html'
 })
-export class TaskComponent implements OnInit {
+export class TaskListComponent implements OnInit {
     public tasks: Task[] = [];
     public totalItems = 0;
     public filters: any = {};
@@ -17,7 +18,8 @@ export class TaskComponent implements OnInit {
 
     public constructor(
         private restangular: Restangular,
-        private toastr: ToastsManager
+        private toastr: ToastsManager,
+        private router: Router
     ) {
         this.taskRest = this.restangular.all('task');
     }
@@ -66,5 +68,9 @@ export class TaskComponent implements OnInit {
             this.toastr.success('Updated!');
             this.getTasks();
         });
+    }
+
+    public showTask(taskId) {
+        this.router.navigateByUrl('task/' + taskId);
     }
 }
