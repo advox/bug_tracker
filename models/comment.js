@@ -5,26 +5,19 @@ const commentSchema = new Schema({
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: true
     },
     parent: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comment',
-        required: false
     },
     content: {
         type: String,
         required: true
     },
-    status: {
-        type: String,
-        required: true,
-        default: 'todo'
-    },
+    status: String,
     task: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Task',
-        required: true
     },
     files: Array,
     notifications: Array,
