@@ -1,0 +1,7 @@
+<navigation></navigation>
+<div class="container-fluid">
+    <h1 class="page-header">Task #{{task._id}}</h1>
+    <h4>{{task.title}}</h4>
+
+    <comment-view *ngFor="let comment of comments" [commentId]="comment._id"></comment-view>
+</div>

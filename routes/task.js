@@ -70,63 +70,21 @@ router.get(
             response.status(200).json(results);
         });
     });
-//
-// router.get(
-//     '/importance',
-//     (request, response) = > {
-//     Promise.props({}).then(function (results) {
-//     response.status(200).json(
-//         {
-//             importance: Task.getTaskImportanceArray()
-//         }
-//     );
-// });
-// }
-// )
-// ;
-//
-// router.post(
-//     '/grid',
-//     (request, response) = > {
-//     Promise.props({
-//     taskList: Task.filterTasks(request.body),
-//     countTask: Task.countTasks({status: request.body.status})
-// }).then(function (results) {
-//     response.status(200).json(
-//         {
-//             draw: request.body.draw,
-//             recordsTotal: results.countTask.length,
-//             recordsFiltered: results.countTask.length,
-//             data: results.taskList
-//         }
-//     );
-// }).catch(function (error) {
-//     console.log(error);
-// });
-// }
-// )
-// ;
-//
-// router.get(
-//     '/edit/:id',
-//     (request, response) = > {
-//     Promise.props({
-//     task: Task.findById(request.params.id),
-//     users: User.findAll(),
-//     comments: Comment.findByTaskId(request.params.id),
-//     priority: Task.getTaskStatusArray()
-// }).then(function (results) {
-//     response.render('task/edit', {
-//         task: results.task,
-//         users: results.users,
-//         comments: results.comments,
-//         priority: results.priority,
-//         errors: request.flash('errors')
-//     });
-// });
-// }
-// )
-// ;
+
+router.get(
+    '/:id',
+    (request, response) => {
+        Promise.props({
+            task: Task.findById(request.params.id),
+            users: User.findAll(),
+            comments: Comment.findByTaskId(request.params.id, null),
+            // priority: Task.getTaskStatusArray()
+        }).then(function (results) {
+            response.statusCode = 200;
+            response.send(results);
+        });
+    }
+);
 //
 // router.post(
 //     '/save',

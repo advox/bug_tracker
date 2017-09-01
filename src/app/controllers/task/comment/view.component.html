@@ -1,0 +1,32 @@
+<div class="card">
+    <h6 class="card-header"><small>author:</small> <b>{{getAuthor()}}</b> <small class="pull-right">#{{comment._id}}</small> </h6>
+    <div class="card-block">
+        <p class="card-text">{{comment.content}}</p>
+        <button type="button" class="btn btn-default btn-sm pull-right" (click)="showReplies();" *ngIf="replies.length && !showReplies">
+            <i class="fa fa-eye"></i> Show replies
+        </button>
+        <button type="button" class="btn btn-default btn-sm pull-right" (click)="showReplies = !showReplies" *ngIf="showReplies">
+            <i class="fa fa-eye-slash"></i> Hide replies
+        </button>
+        <button type="button" class="btn btn-primary btn-sm pull-right" (click)="showReplyForm = !showReplyForm;"
+                *ngIf="!showReplyForm">
+            <i class="fa fa-reply"></i> Reply
+        </button>
+        <div class="form-group" *ngIf="showReplyForm">
+            <div class="form-group">
+            <textarea class="form-control" [(ngModel)]="reply.content"></textarea>
+            </div>
+            <div class="form-group text-center">
+                <button type="button" class="btn btn-primary btn-sm" (click)="saveReply();">
+                    <i class="fa fa-reply"></i> Reply
+                </button>
+                <button type="button" class="btn btn-default btn-sm" (click)="cancelReply();">
+                    <i class="fa fa-ban"></i> Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="ml-2" *ngIf="showReplies">
+        <comment-view *ngFor="let comment of replies"></comment-view>
+    </div>
+</div>

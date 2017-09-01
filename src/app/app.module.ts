@@ -18,6 +18,9 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState } from './app.service';
 
+// ng-bootstrap
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 // toastr
 import { ToastModule, ToastsManager } from 'ng2-toastr';
 
@@ -30,7 +33,8 @@ import { NotificationService } from './services/notification';
 import { NavigationComponent } from './components/navigation';
 
 // controllers
-import { TaskComponent } from './controllers/task';
+import { TaskListComponent, TaskEditComponent } from './controllers/task';
+import { CommentViewComponent } from './controllers/task/comment';
 import { LoginComponent, LogoutComponent } from './controllers/session';
 
 import '../styles/styles.scss';
@@ -91,7 +95,9 @@ export function RestangularConfigFactory(RestangularProvider, auth: Authorizatio
     bootstrap: [AppComponent],
     declarations: [
         AppComponent,
-        TaskComponent,
+        TaskListComponent,
+        TaskEditComponent,
+        CommentViewComponent,
         LoginComponent,
         LogoutComponent,
         NavigationComponent
@@ -105,6 +111,7 @@ export function RestangularConfigFactory(RestangularProvider, auth: Authorizatio
         RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules}),
         ToastModule.forRoot(),
         RestangularModule.forRoot([AuthorizationService, NotificationService, Router], RestangularConfigFactory),
+        NgbModule.forRoot()
     ],
     providers: [
         ENV_PROVIDERS,

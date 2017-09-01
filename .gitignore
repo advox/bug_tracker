@@ -63,3 +63,4 @@ public/images/upload/*
 public/stylesheets/style.css
 /nbproject/private/
 .awcache
+package-lock.json

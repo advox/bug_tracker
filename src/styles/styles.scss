@@ -20,12 +20,20 @@ body {
     width: 300px;
 }
 
-.seb {
-    width: 30px;
-    height: 30px;
-    background-image: url('../assets/img/angular-logo.png');
-}
+.task-list {
+    .seb {
+        width: 30px;
+        height: 30px;
+        background: url('/assets/img/superman.mono.webp') no-repeat;
+        background-size: contain;
+    }
 
-.seb-active {
-    background-image: url('../assets/img/angularclass-avatar.png');
+    .seb-active {
+        background-image: url('/assets/img/superman.color.webp');
+    }
+
+    .link {
+        color: $brand-primary;
+        cursor: pointer;
+    }
 }
