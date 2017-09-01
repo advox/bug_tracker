@@ -79,8 +79,6 @@ module.exports = {
     },
     importTasks: function (adminIds) {
         return new Promise((resolved, reject) => {
-            var counter = 1;
-            console.log(`SELECT * FROM zgloszenia WHERE zgl_admin_id in (${adminIds}) AND zgl_title != ''`);
             pool.query(`
             SELECT * FROM zgloszenia WHERE zgl_admin_id in (${adminIds}) AND zgl_title != ''`,
             function (error, results, fields) {
@@ -227,8 +225,6 @@ module.exports = {
                                         result.save();
                                     }
                                 });
-                            console.log(counter);
-                            counter = counter + 1;
                         } catch (err) {
                             return reject(err)
                         }
