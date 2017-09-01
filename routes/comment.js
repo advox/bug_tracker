@@ -26,8 +26,8 @@ router.get(
     '/:id',
     (request, response) => {
         Promise.props({
-            comment: Comment.findById(request.params.id),
-            children: Comment.find({parent: request.params.id}),
+            comment: Comment.findById(request.params.id).populate('author'),
+            replies: Comment.find({parent: request.params.id}),
         }).then(function (results) {
             response.statusCode = 200;
             response.send(results);
@@ -35,57 +35,7 @@ router.get(
     }
 );
 
-/**
- * comment get ajax action
- */
 router.post('/',
-    (request, response) => {
-        Promise.props({
-            comments: Comment.findByTaskId(request.body.taskId, request.body.commentId),
-        }).then(function (results) {
-            response.render('partials/comment/entries', {
-                layout: false,
-                comments: results.comments,
-            });
-        }).catch(function (error) {
-            console.log(error);
-        });
-    }
-);
-
-router.post(
-    '/status',
-    (request, response) => {
-        Comment.findOneAndUpdate(
-            {_id: request.body._id},
-            {
-                '$set': request.body
-            },
-            {
-                runValidators: true,
-                new: true,
-                upsert: true
-            },
-            function (err) {
-                if (err) {
-                    response.status(200).json({
-                        status: 'failure',
-                        error: err.errors
-                    });
-                } else {
-                    response.status(200).json({
-                        status: 'success'
-                    });
-                }
-            }
-        );
-    }
-);
-
-/**
- * comment create ajax action
- */
-router.post('/save',
     (request, response) => {
         console.log(request.body);
         upload(request, response, function (err) {
@@ -118,7 +68,7 @@ router.post('/save',
                 notifications: notifications,
                 task: request.body.task,
                 parent: parent,
-                author: request.session.passport.user._id
+                author: request.user._id
             };
 
             let comment = new Comment(data);

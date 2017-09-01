@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Comment } from './../../../models';
+import { Comment, User } from './../../../models';
 import { Restangular } from 'ngx-restangular';
 
 @Component({
@@ -10,6 +10,7 @@ export class CommentViewComponent implements OnInit {
     @Input() public commentId: string;
 
     private comment: Comment = new Comment();
+    private replies: Comment[] = [];
     private commentRest: Restangular = null;
     private showReplyForm = false;
     private showReplies = false;
@@ -27,14 +28,35 @@ export class CommentViewComponent implements OnInit {
     }
 
     public saveReply() {
-        this.commentRest.customPOST(this.reply).subscribe((data) => {
+        this.reply.task = this.comment.task;
+        this.reply.parent = this.comment;
 
+        this.commentRest.customPOST(this.reply).subscribe((data) => {
+            this.getTask();
         });
     }
 
     public ngOnInit() {
+        this.getTask();
+    }
+
+    public getAuthor() {
+        if (typeof this.comment.author !== 'undefined') {
+            return this.comment.author.name + ' ' + this.comment.author.surname;
+        }
+
+        return '';
+    }
+
+    private getTask() {
         this.commentRest.customGET(this.commentId).subscribe((data) => {
-            this.comment = data;
+            this.comment = data.comment;
+
+            if (this.comment.author === null) {
+                this.comment.author = new User();
+            }
+
+            this.replies = data.replies;
         });
     }
 }

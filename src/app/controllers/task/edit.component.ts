@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Task, User } from './../../models';
+import { Task, User, Comment } from './../../models';
 import { Restangular } from 'ngx-restangular';
 import { ActivatedRoute, Params } from '@angular/router';
 
@@ -10,6 +10,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class TaskEditComponent implements OnInit {
     private task: Task = new Task();
     private users: User[] = [];
+    private comments: Comment[] = [];
     private taskRest: Restangular = null;
 
     constructor(
@@ -23,6 +24,7 @@ export class TaskEditComponent implements OnInit {
         this.taskRest.customGET(taskId).subscribe((data) => {
             this.task = data.task;
             this.users = data.users;
+            this.comments = data.comments;
         });
     }
 

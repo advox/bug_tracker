@@ -36,17 +36,18 @@ sessionSchema.statics.isTokenValid = function (token) {
                 token: token,
                 // expireDate: {$gt: new Date()}
             }
-        ).exec((err, result) => {
-            if (err) {
-                return reject();
-            }
+        )
+            .exec((err, result) => {
+                if (err) {
+                    return reject();
+                }
 
-            if (result !== null) {
-                return resolve();
-            } else {
-                return reject();
-            }
-        });
+                if (result !== null) {
+                    return resolve(result.userId);
+                } else {
+                    return reject();
+                }
+            });
     });
 };
 

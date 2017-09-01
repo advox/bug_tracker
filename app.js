@@ -10,11 +10,11 @@ const Session = require('./models/session');
 // const db = require('./bin/db');
 // const MongoStore = require('connect-mongo')(session);
 
+require('./models/comment');
 require('./models/task/importance');
 require('./models/task/status');
 require('./models/task');
 require('./models/user');
-require('./models/comment');
 
 app.use(cookieParser());
 
@@ -47,7 +47,8 @@ app.use(function (req, res, next) {
     let token = req.header('Authentication-Token');
 
     Session.isTokenValid(token).then(
-        function () {
+        function (data) {
+            req.user = data;
             next();
             return;
         },
